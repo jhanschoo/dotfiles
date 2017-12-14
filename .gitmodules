@@ -10,3 +10,12 @@
 [submodule "asdf/.asdf"]
 	path = asdf/.asdf
 	url = https://github.com/asdf-vm/asdf.git
+[submodule "asdf-plugins/.asdf/repository"]
+	path = asdf-plugins/.asdf/repository
+	url = https://github.com/asdf-vm/asdf-plugins.git
+[submodule "asdf-nodejs/.asdf/plugins/nodejs"]
+	path = asdf-nodejs/.asdf/plugins/nodejs
+	url = https://github.com/asdf-vm/asdf-nodejs.git
+[submodule "asdf-ruby/.asdf/plugins/ruby"]
+	path = asdf-ruby/.asdf/plugins/ruby
+	url = https://github.com/asdf-vm/asdf-ruby.git
