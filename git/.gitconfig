@@ -1,0 +1,30 @@
+[user]
+	name = Johannes Choo
+	email = jhanschoo@gmail.com
+	signingkey = 57500927A5A0CF651DB5E2817F15D9749287C6E7
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
+[alias]
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	br = branch
+	c = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	visual = !gitk
+	stash-unapply = !git stash show -p | git apply -R
+	cob = checkout -b
+	cam = commit -am
+	s = status -s
+	d = diff
+	a = add
+	A = add -A
+	cm = commit -m
+[commit]
+	gpgsign = true
+
