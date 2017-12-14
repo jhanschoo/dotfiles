@@ -7,3 +7,6 @@
 [submodule "prelude/.emacs.d"]
 	path = prelude/.emacs.d
 	url = git://github.com/bbatsov/prelude.git
+[submodule "asdf/.asdf"]
+	path = asdf/.asdf
+	url = https://github.com/asdf-vm/asdf.git
