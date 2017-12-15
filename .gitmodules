@@ -19,3 +19,9 @@
 [submodule "asdf-ruby/.asdf/plugins/ruby"]
 	path = asdf-ruby/.asdf/plugins/ruby
 	url = https://github.com/asdf-vm/asdf-ruby.git
+[submodule "SpaceVim/.SpaceVim"]
+	path = SpaceVim/.SpaceVim
+	url = https://github.com/SpaceVim/SpaceVim.git
+[submodule "SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim"]
+	path = SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim.git
