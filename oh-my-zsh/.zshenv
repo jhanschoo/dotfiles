@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # add code to source all script files in .zshenv.d
 if [[ -d "${HOME}/.zshenv.d" ]]
 then
@@ -6,4 +8,3 @@ then
     source "${file}"
   done
 fi
-
