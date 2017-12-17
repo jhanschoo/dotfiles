@@ -1,0 +1,8 @@
+# MUDs
+alias shangrila="telnet shangrilamux.com 9999" # username: Aqua, password: aqua
+alias aardmud="telnet aardmud.org 4000" # username: Joha, password: PverMev5
+#
+# # SDF
+alias sdf="ssh jhanschoo@sdf.org"
+alias sdfsync='lftp -c "open -u jhanschoo sftp://sdf.lonestar.org/; mirror -L --verbose=3 ~ ~/Documents/sdf; mirror --verbose=3 -R -L ~/Documents/sdf ~"'
+
