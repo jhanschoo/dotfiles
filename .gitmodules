@@ -25,6 +25,6 @@
 [submodule "SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim"]
 	path = SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim
 	url = https://github.com/Shougo/dein.vim.git
-[submodule "z/.z"]
-	path = z/.z
+[submodule "z/.zdir"]
+	path = z/.zdir
 	url = https://github.com/rupa/z.git

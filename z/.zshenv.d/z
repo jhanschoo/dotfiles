@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ -f "${HOME}/.z/z.sh" ]]
+if [[ -f "${HOME}/.zdir/z.sh" ]]
 then
-  source "${HOME}/.z/z.sh"
+  source "${HOME}/.zdir/z.sh"
 fi
