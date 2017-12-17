@@ -98,8 +98,3 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -f "${HOME}/.zsh_aliases" ]]
-then
-  source "${HOME}/.zsh_aliases"
-fi
-
