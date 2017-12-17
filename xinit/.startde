@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case ${1} in
+    gnome)
+        echo 'exec gnome-session' > .xinitrc
+        startx
+        ;;
+    *)
+        exit 1
+        ;;
+esac
