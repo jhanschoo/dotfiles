@@ -7,3 +7,4 @@ autoload -U bashcompinit
 compinit
 bashcompinit
 source "${ASDF_DIR}/completions/asdf.bash"
+
