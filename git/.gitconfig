@@ -27,4 +27,7 @@
 	cm = commit -m
 [commit]
 	gpgsign = true
-
+[url "https://aur.archlinux.org/"]
+  insteadOf = "aur:"
+[url "https://aur4.archlinux.org/"]
+  pushInsteadOf = "aur:"
