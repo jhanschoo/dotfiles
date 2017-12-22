@@ -1,3 +1,6 @@
+# ls
+alias lh="ls -abcFlhs --time-style=long-iso"
+
 # MUDs
 alias shangrila="telnet shangrilamux.com 9999" # username: Aqua, password: aqua
 alias aardmud="telnet aardmud.org 4000" # username: Joha, password: PverMev5
