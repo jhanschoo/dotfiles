@@ -1,9 +1,12 @@
 #!/bin/sh
 
 case ${1} in
-    gnome)
+    gnome-x)
         echo 'exec gnome-session' > .xinitrc
         startx
+        ;;
+    gnome-wayland)
+        XDG_SESSION_TYPE=wayland exec dbus-run-session gnome-session
         ;;
     *)
         exit 1
