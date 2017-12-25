@@ -158,7 +158,7 @@ Contents/SharedSupport/displayline %n %o %b")
 
 ;; Color theme
 ;;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
-(load-theme 'gruvbox-light-medium t)
+(load-theme 'gruvbox t)
 
 ;; always show line numbers
 (global-linum-mode t)
