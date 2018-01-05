@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+if [[ -f "${HOME}/.kube/config" ]]
+then
+  export MINIKUBE_HOME="${HOME}/.kube"
+  export KUBECONFIG="${MINIKUBE_HOME}/config"
+fi
+
