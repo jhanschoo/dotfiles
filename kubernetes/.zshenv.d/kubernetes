@@ -6,3 +6,8 @@ then
   export KUBECONFIG="${MINIKUBE_HOME}/config"
 fi
 
+if [[ $commands[kubectl] ]]
+then
+  source <(kubectl completion zsh)
+fi
+
