@@ -13,6 +13,9 @@
 [submodule "asdf-plugins/.asdf/repository"]
 	path = asdf-plugins/.asdf/repository
 	url = https://github.com/asdf-vm/asdf-plugins.git
+[submodule "asdf-plugins/.asdf/plugins/minikube"]
+	path = asdf-plugins/.asdf/plugins/minikube
+	url = https://github.com/alvarobp/asdf-minikube
 [submodule "asdf-nodejs/.asdf/plugins/nodejs"]
 	path = asdf-nodejs/.asdf/plugins/nodejs
 	url = https://github.com/asdf-vm/asdf-nodejs.git
