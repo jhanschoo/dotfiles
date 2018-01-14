@@ -4,9 +4,6 @@
 [submodule "zsh-syntax-highlighting/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = zsh-syntax-highlighting/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "prelude/.emacs.d"]
-	path = prelude/.emacs.d
-	url = git://github.com/bbatsov/prelude.git
 [submodule "asdf/.asdf"]
 	path = asdf/.asdf
 	url = https://github.com/asdf-vm/asdf.git
@@ -22,6 +19,9 @@
 [submodule "asdf-ruby/.asdf/plugins/ruby"]
 	path = asdf-ruby/.asdf/plugins/ruby
 	url = https://github.com/asdf-vm/asdf-ruby.git
+[submodule "spacemacs/.emacs.d"]
+	path = spacemacs/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs.gitit
 [submodule "SpaceVim/.SpaceVim"]
 	path = SpaceVim/.SpaceVim
 	url = https://github.com/SpaceVim/SpaceVim.git
