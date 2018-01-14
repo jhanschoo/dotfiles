@@ -1,9 +1,11 @@
 #!/usr/bin/env zsh
 
-if [[ -f "${HOME}/.kube/config" ]]
+if [[ $commands[minikube] ]]
 then
-  export MINIKUBE_HOME="${HOME}/.kube"
-  export KUBECONFIG="${MINIKUBE_HOME}/config"
+  source <(minikube completion zsh)
+  export MINIKUBE_WANTUPDATENOTIFICATION=true
+  export MINIKUBE_WANTREPORTERROR=false
+  export MINIKUBE_WANTREPORTERRORPROMPT=false
 fi
 
 if [[ $commands[kubectl] ]]
