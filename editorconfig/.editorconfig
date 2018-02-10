@@ -12,7 +12,7 @@ indent_style = space
 trim_trailing_whitespace = true
 
 # 4 space indentation
-[*.py]
+[*.{c,cc,cxx,cpp,h,hh,hxx,hpp,py}]
 indent_size = 4
 
 # Tab indentation (no size specified)
