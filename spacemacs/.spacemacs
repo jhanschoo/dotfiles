@@ -31,7 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -46,15 +45,16 @@ values."
      emoji
      git
      helm
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
      html
      javascript
      latex
      markdown
      org
+     python
      selectric
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
      sql
@@ -71,13 +71,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(ess-R-object-popup
-                                    firebelly-theme
-                                    niflheim-theme
-                                    pastels-on-dark-theme
-                                    tronesque-theme
-                                    wolfram-mode
-                                    zonokai-theme)
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -328,6 +322,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq powerline-default-separator 'nil)
+  (setq case-fold-search 'nil)
+  (setq case-replace 'nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
