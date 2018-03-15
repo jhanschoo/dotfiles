@@ -341,6 +341,7 @@ Ligatures = TeX
 \NewDocumentCommand{\calU}{}{\symcal{U}}
 \NewDocumentCommand{\upb}{}{\symup{b}}
 \NewDocumentCommand{\upB}{}{\symup{B}}
+\NewDocumentCommand{\upZ}{}{\symup{Z}}
  
 % logical
 \NewDocumentCommand{\AND}{}{\wedge}
@@ -385,6 +386,7 @@ Ligatures = TeX
 % Use \m to typeset math variables that take up multiple symbols.
 \NewDocumentCommand{\m}{m}{\mathit{#1}}
 \NewDocumentCommand{\M}{m}{\mathup{#1}}
+\NewDocumentCommand{\q}{m}{\text{\texttt{#1}}}
 
 % vector shorthand
 % (w as a commonly used vector variable character)
@@ -454,7 +456,7 @@ Ligatures = TeX
 % Complex conjugate
 \NewDocumentCommand{\conj}{m}{\overline{#1}}
 
-\NewDocumentCommand{\n}{O{1} G{{}}}{#1\mathbin{:}#2}
+\NewDocumentCommand{\n}{O{1} G{\omega}}{#1\mathbin{:}#2}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
