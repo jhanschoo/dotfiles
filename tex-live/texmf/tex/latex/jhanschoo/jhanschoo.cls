@@ -132,7 +132,6 @@ Ligatures = TeX
 
 
 % definition of theorem environments, cf. ntheorem
-\makeatletter
 \newtheoremstyle{myplain}%
 {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}%
 {\item[\hskip\labelsep \theorem@headerfont ##1\
@@ -146,7 +145,6 @@ Ligatures = TeX
 \newtheoremstyle{nonumbersolution}%
 {\item[\hskip\labelsep \theorem@headerfont ##1\theorem@separator]}%
 {\item[\hskip\labelsep \theorem@headerfont\color{tngr} ##3\theorem@separator]}
-\makeatother
 
 % Customize equation numbering, cf. amsmath
 \numberwithin{equation}{chapter}
@@ -339,10 +337,13 @@ Ligatures = TeX
 \NewDocumentCommand{\calS}{}{\symcal{S}}
 \NewDocumentCommand{\calT}{}{\symcal{T}}
 \NewDocumentCommand{\calU}{}{\symcal{U}}
+\NewDocumentCommand{\calX}{}{\symcal{X}}
+\NewDocumentCommand{\calY}{}{\symcal{Y}}
+\NewDocumentCommand{\calZ}{}{\symcal{Z}}
 \NewDocumentCommand{\upb}{}{\symup{b}}
 \NewDocumentCommand{\upB}{}{\symup{B}}
 \NewDocumentCommand{\upZ}{}{\symup{Z}}
- 
+
 % logical
 \NewDocumentCommand{\AND}{}{\wedge}
 \NewDocumentCommand{\OR}{}{\vee}
