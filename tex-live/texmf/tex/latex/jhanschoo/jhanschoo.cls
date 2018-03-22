@@ -43,6 +43,8 @@
 
 \RequirePackage[inline,nomargin]{fixme}
 
+\RequirePackage[ruled]{algorithm2e}
+
 \RequirePackage[unicode]{hyperref}
 
 \RequirePackage{cleveref}
@@ -286,11 +288,13 @@ Ligatures = TeX
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\columnrank}{column\ rank}
 \DeclareMathOperator{\D}{D}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\ERM}{ERM}
 \DeclareMathOperator{\Laplace}{Laplace}
 \DeclareMathOperator{\nullity}{nullity}
 \DeclareMathOperator*{\plim}{plim}
@@ -299,8 +303,10 @@ Ligatures = TeX
 \DeclareMathOperator{\SE}{SE}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\softmax}{softmax}
+\DeclareMathOperator*{\st}{s.t.}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\VCdim}{VCdim}
 
 % probability operator shorthands
 \NewDocumentCommand{\Es}{O{} m}{\E_{#1}\s{#2}}
@@ -375,7 +381,7 @@ Ligatures = TeX
 \NewDocumentCommand{\inte}{m}{#1^\circ}
 
 % operators of functions
-\NewDocumentCommand{\comp}{}{\circ}
+\NewDocumentCommand{\cps}{}{\circ}
 \NewDocumentCommand{\restr}{}{\upharpoonright}
 
 % power set
@@ -447,6 +453,9 @@ Ligatures = TeX
 % exterior product
 \NewDocumentCommand{\ext}{}{\wedge}
 
+% inner product
+\NewDocumentCommand{\ip}{m m}{\ad{#1,#2}}
+
 % Hadamard product
 \NewDocumentCommand{\Hp}{}{\odot}
 
@@ -457,7 +466,7 @@ Ligatures = TeX
 % Complex conjugate
 \NewDocumentCommand{\conj}{m}{\overline{#1}}
 
-\NewDocumentCommand{\n}{O{1} G{\omega}}{#1\mathbin{:}#2}
+\NewDocumentCommand{\n}{O{1} G{\omega}}{\B{#1\mathbin{;}#2}}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
@@ -478,3 +487,6 @@ Ligatures = TeX
   {\fxnote[#1]{\textbf{WON'T FIX}}}%
   {\fxnote[#1]{\textbf{WON'T FIX:} #2}}
 }
+
+% algorithm definitions
+\SetKwInput{KwParam}{Parameter}
