@@ -29,6 +29,8 @@
 \RequirePackage{amsmath,amssymb}
 \RequirePackage[amsmath,hyperref,thmmarks]{ntheorem}
 
+%\RequirePackage[binary-units]{siunitx}
+
 \RequirePackage{mleftright}
 
 \RequirePackage{fontspec}
@@ -43,7 +45,7 @@
 
 \RequirePackage[inline,nomargin]{fixme}
 
-\RequirePackage[ruled]{algorithm2e}
+\RequirePackage[ruled,lined,linesnumbered]{algorithm2e}
 
 \RequirePackage[unicode]{hyperref}
 
@@ -57,19 +59,34 @@
   \array{#1}}
 
 % geometry, c.f. memoir
-\tolerance 1414
-\hbadness 1414
-\emergencystretch 1.5em
-\hfuzz 0.3pt
-\widowpenalty=10000
-\vfuzz \hfuzz
-\raggedbottom
+%\tolerance 1414
+%\hbadness 1414
+%\emergencystretch 1.5em
+%\hfuzz 0.3pt
+%\widowpenalty=10000
+%\vfuzz \hfuzz
+%\raggedbottom
 
 % Using Chivo for display text, Cochineal for body, and Pagella for
 % math c.f. fontspec and unicode-math
 \setmainfont{Cochineal}[Ligatures = TeX]
+%\setmainfont{LinLibertine}[
+%Extension = .otf,
+%UprightFont = *_R,
+%ItalicFont = *_RI,
+%BoldFont = *_RB,
+%BoldItalicFont = *_RBI,
+%Ligatures = TeX
+%]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
+%\setmathfont{TeXGyreTermesMath}[Scale=MatchLowercase]
+%\setmathfontface\mathrm{TeXGyreTermes-Regular}[Scale=MatchLowercase]
+%\let\mathup\undefined
+%\setmathfontface\mathup{TeXGyreTermes-Regular}[Scale=MatchLowercase]
+%\setmathfontface\mathit{TeXGyreTermes-Italic}[Scale=MatchLowercase]
+%\setmathfontface\mathbf{TeXGyreTermes-Bold}[Scale=MatchLowercase]
+%\setmathfontface\mathsf{TeXGyreHeros-Regular}[Scale=MatchLowercase]
 \setmathfont{TeXGyrePagellaMath}[Scale=MatchLowercase]
 \setmathfontface\mathrm{TeXGyrePagella-Regular}[Scale=MatchLowercase]
 \let\mathup\undefined
@@ -148,6 +165,12 @@ Ligatures = TeX
 {\item[\hskip\labelsep \theorem@headerfont ##1\theorem@separator]}%
 {\item[\hskip\labelsep \theorem@headerfont\color{tngr} ##3\theorem@separator]}
 
+% defining additional algorithm customizations and keywords
+% cf. algorithm2e
+\SetFuncSty{textsc}
+\SetProcNameSty{textsc}
+\DontPrintSemicolon
+
 % Customize equation numbering, cf. amsmath
 \numberwithin{equation}{chapter}
 
@@ -200,7 +223,7 @@ Ligatures = TeX
 \setlist{
   noitemsep,
   nosep,
-  font=\normalfont\chivobold\bfseries
+  font=\normalfont\chivo\bfseries
 }
 
 \setlist[itemize]{
@@ -279,34 +302,63 @@ Ligatures = TeX
 \NewDocumentCommand{\SP}{m}{\mleft[{#1}\mright)}
 \NewDocumentCommand{\PS}{m}{\mleft({#1}\mright]}
 
+\NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
+
 % math operators
 
 \DeclareMathOperator{\adj}{adj}
 \DeclareMathOperator*{\argmin}{arg\ min}
 \DeclareMathOperator*{\argmax}{arg\ max}
+\DeclareMathOperator{\Bern}{Bern}
+\DeclareMathOperator{\upBeta}{Beta}
+\DeclareMathOperator{\Bin}{Bin}
+
 \DeclareMathOperator{\bias}{bias}
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator{\diam}{diam}
-\DeclareMathOperator{\epig}{epigraph}
-\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\cossim}{cossim}
 \DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\columnrank}{column\ rank}
 \DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\df}{df}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\eH}{H}
+\DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
+\DeclareMathOperator{\glb}{glb}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\idf}{idf}
+\DeclareMathOperator{\KL}{KL}
 \DeclareMathOperator{\Laplace}{Laplace}
+\DeclareMathOperator{\lub}{lub}
+\DeclareMathOperator{\ML}{ML}
+\DeclareMathOperator{\netscore}{net-score}
+\DeclareMathOperator{\nul}{null}
 \DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\ntf}{ntf}
+\DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator*{\plim}{plim}
-\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rowrank}{row\ rank}
 \DeclareMathOperator{\SE}{SE}
+\DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\softmax}{softmax}
+\DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\st}{s.t.}
+\DeclareMathOperator{\tf}{tf}
+\DeclareMathOperator{\tfidf}{tf-idf}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\VCdim}{VCdim}
+\DeclareMathOperator{\wf}{wf}
+\DeclareMathOperator{\wfidf}{wf-idf}
+\DeclareMathOperator{\wop}{w}
 
 % probability operator shorthands
 \NewDocumentCommand{\Es}{O{} m}{\E_{#1}\s{#2}}
@@ -337,15 +389,22 @@ Ligatures = TeX
 \NewDocumentCommand{\calF}{}{\symcal{F}}
 \NewDocumentCommand{\calG}{}{\symcal{G}}
 \NewDocumentCommand{\calH}{}{\symcal{H}}
+\NewDocumentCommand{\calI}{}{\symcal{I}}
+\NewDocumentCommand{\calJ}{}{\symcal{J}}
 \NewDocumentCommand{\calL}{}{\symcal{L}}
+\NewDocumentCommand{\calM}{}{\symcal{M}}
 \NewDocumentCommand{\calN}{}{\symcal{N}}
 \NewDocumentCommand{\calP}{}{\symcal{P}}
+\NewDocumentCommand{\calR}{}{\symcal{R}}
 \NewDocumentCommand{\calS}{}{\symcal{S}}
 \NewDocumentCommand{\calT}{}{\symcal{T}}
 \NewDocumentCommand{\calU}{}{\symcal{U}}
+\NewDocumentCommand{\calW}{}{\symcal{W}}
 \NewDocumentCommand{\calX}{}{\symcal{X}}
 \NewDocumentCommand{\calY}{}{\symcal{Y}}
 \NewDocumentCommand{\calZ}{}{\symcal{Z}}
+\NewDocumentCommand{\sft}{}{\symsf{t}}
+\NewDocumentCommand{\sfx}{}{\symsf{x}}
 \NewDocumentCommand{\upb}{}{\symup{b}}
 \NewDocumentCommand{\upB}{}{\symup{B}}
 \NewDocumentCommand{\upZ}{}{\symup{Z}}
@@ -367,13 +426,19 @@ Ligatures = TeX
 \NewDocumentCommand{\bigsand}{}{\bigcap}
 \NewDocumentCommand{\bigsor}{}{\bigcup}
 \NewDocumentCommand{\sle}{}{\subseteq}
+\NewDocumentCommand{\nsle}{}{\nsubseteq}
 \NewDocumentCommand{\sge}{}{\supseteq}
+\NewDocumentCommand{\nsge}{}{\nsupseteq}
 \NewDocumentCommand{\slt}{}{\subsetneq}
 \NewDocumentCommand{\sgt}{}{\supsetneq}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
 \NewDocumentCommand{\bigcp}{}{\prod}
+
+% direct sum
+\NewDocumentCommand{\ds}{}{\oplus}
+\NewDocumentCommand{\bigds}{}{\bigoplus}
 
 % topology
 \NewDocumentCommand{\bnd}{m}{\bar{#1}}
@@ -386,6 +451,9 @@ Ligatures = TeX
 
 % power set
 \NewDocumentCommand{\pow}{m}{\symcal{P}\p{#1}}
+
+% complement
+\NewDocumentCommand{\cpl}{}{\complement}
 
 % row-equivalence with reduced row echelon form
 \NewDocumentCommand{\rref}{}{\xrightarrow{\mathup{rref}}}
@@ -404,6 +472,10 @@ Ligatures = TeX
 \NewDocumentCommand{\wrh}{}{\w{\rho}}
 \NewDocumentCommand{\wi}{}{\w{i}}
 \NewDocumentCommand{\wj}{}{\w{j}}
+\NewDocumentCommand{\ws}{}{\w{s}}
+\NewDocumentCommand{\wu}{}{\w{u}}
+\NewDocumentCommand{\wv}{}{\w{v}}
+\NewDocumentCommand{\ww}{}{\w{w}}
 \NewDocumentCommand{\wx}{}{\w{x}}
 \NewDocumentCommand{\wy}{}{\w{y}}
 \NewDocumentCommand{\wz}{}{\w{z}}
@@ -415,6 +487,7 @@ Ligatures = TeX
 \NewDocumentCommand{\wE}{}{\w{E}}
 \NewDocumentCommand{\wI}{}{\w{I}}
 \NewDocumentCommand{\wP}{}{\w{P}}
+\NewDocumentCommand{\wR}{}{\w{R}}
 \NewDocumentCommand{\Fmn}{}{F^{m\times{}n}}
 \NewDocumentCommand{\Fmm}{}{F^{m\times{}m}}
 \NewDocumentCommand{\Fmo}{}{F^{n\times{}1}}
@@ -438,8 +511,8 @@ Ligatures = TeX
 \NewDocumentCommand{\indep}{}{\bot}
 
 % divides |
-\NewDocumentCommand{\mdi}{}{\mid}
-\NewDocumentCommand{\nmdi}{}{\nmid}
+\NewDocumentCommand{\di}{}{\mid}
+\NewDocumentCommand{\ndi}{}{\nmid}
 
 % inverse
 \NewDocumentCommand{\inv}{}{^{-1}}
@@ -451,7 +524,7 @@ Ligatures = TeX
 \NewDocumentCommand{\T}{}{\intercal}
 
 % exterior product
-\NewDocumentCommand{\ext}{}{\wedge}
+\NewDocumentCommand{\ep}{}{\wedge}
 
 % inner product
 \NewDocumentCommand{\ip}{m m}{\ad{#1,#2}}
@@ -466,7 +539,7 @@ Ligatures = TeX
 % Complex conjugate
 \NewDocumentCommand{\conj}{m}{\overline{#1}}
 
-\NewDocumentCommand{\n}{O{1} G{\omega}}{\B{#1\mathbin{;}#2}}
+\NewDocumentCommand{\n}{O{1} G{\dotsc}}{\B{#1\mathbin{;}#2}}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
@@ -478,6 +551,7 @@ Ligatures = TeX
 % text shorthand
 
 \NewDocumentCommand{\nt}{m}{\textbf{#1}} % semantic markup: "new term"
+\NewDocumentCommand{\ts}{m}{\textsc{#1}} % text symbol
 
 \NewDocumentCommand{\todo}{O{} g}{\IfNoValueTF{#2}%
   {\fxnote[#1]{\textbf{TODO}}}%
@@ -489,4 +563,18 @@ Ligatures = TeX
 }
 
 % algorithm definitions
+\SetKwProg{Fn}{function}{}{end}
+
+\SetKwFunction{True}{true}
+\SetKwFunction{False}{false}
+\SetKwFunction{Nil}{nil}
+
 \SetKwInput{KwParam}{Parameter}
+\SetKwInOut{Require}{Require}
+\SetKwInOut{Ensure}{Ensure}
+
+\SetKw{Error}{error}
+\SetKw{Print}{print}
+
+
+
