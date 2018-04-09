@@ -148,7 +148,7 @@ values."
    dotspacemacs-default-font '("DejaVu Sans Mono"
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -323,8 +323,18 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq case-fold-search nil)
   (setq case-replace nil)
+
   (setq evil-move-beyond-eol t)
+
+  (setq fill-column 72)
+
   (setq powerline-default-separator nil)
+
+  (global-prettify-symbols-mode)
+  (setq prettify-symbols-unprettify-at-point 'right-edge)
+
+  (setq font-latex-fontify-script 'multi-level)
+  (setq font-latex-script-display '((raise -0.25) raise 0.25))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
