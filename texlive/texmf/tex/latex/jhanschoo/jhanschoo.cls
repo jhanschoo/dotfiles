@@ -3,13 +3,13 @@
 
 \DeclareOption{draft}{
   \PassOptionsToClass{\CurrentOption}{memoir}
-  \PassOptionsToPackage{\CurrentOption}{hyperref}
+%  \PassOptionsToPackage{\CurrentOption}{hyperref}
   \PassOptionsToPackage{\CurrentOption}{fixme}
 }
 
 \DeclareOption{final}{
   \PassOptionsToClass{\CurrentOption}{memoir}
-  \PassOptionsToPackage{\CurrentOption}{hyperref}
+%  \PassOptionsToPackage{\CurrentOption}{hyperref}
   \PassOptionsToPackage{\CurrentOption}{fixme}
 }
 
@@ -47,7 +47,7 @@
 
 \RequirePackage[ruled,lined,linesnumbered]{algorithm2e}
 
-\RequirePackage[unicode]{hyperref}
+\RequirePackage[colorlinks,unicode,final]{hyperref}
 
 \RequirePackage{cleveref}
 
@@ -65,7 +65,7 @@
 %\hfuzz 0.3pt
 %\widowpenalty=10000
 %\vfuzz \hfuzz
-%\raggedbottom
+\raggedbottom
 
 % Using Chivo for display text, Cochineal for body, and Pagella for
 % math c.f. fontspec and unicode-math
@@ -95,31 +95,34 @@
 \setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
 \setmathfontface\mathsf{DejaVuSans}[Scale=MatchLowercase]
 
-\newfontfamily\chivo{Chivo}[
+\newfontfamily\chivo{Raleway}[
 Extension = .otf,
 Scale = MatchLowercase,
-UprightFont = *-Regular,
-ItalicFont = *-Italic,
+UprightFont = *-SemiBold,
+ItalicFont = *-SemiBold-Italic,
 BoldFont = *-Bold,
-BoldItalicFont = *-BoldItalic,
+BoldItalicFont = *-Bold-Italic,
+Numbers = Lining,
 Ligatures = TeX
 ]
-\newfontfamily\chivobold{Chivo}[
+\newfontfamily\chivobold{Raleway}[
 Extension = .otf,
 Scale = MatchLowercase,
-UprightFont = *-Bold,
-ItalicFont = *-BoldItalic,
+UprightFont = *-ExtraBold,
+ItalicFont = *-ExtraBold-Italic,
 BoldFont = *-Black,
-BoldItalicFont = *-BlackItalic,
+BoldItalicFont = *-Black-Italic,
+Numbers = Lining,
 Ligatures = TeX
 ]
-\newfontfamily\chivolight{Chivo}[
+\newfontfamily\chivolight{Raleway}[
 Extension = .otf,
 Scale = MatchLowercase,
-UprightFont = *-Light,
-ItalicFont = *-LightItalic,
+UprightFont = *-ExtraLight,
+ItalicFont = *-ExtraLight-Italic,
 BoldFont = *-Light,
-BoldItalicFont = *-LightItalic,
+BoldItalicFont = *-Light-Italic,
+Numbers = Lining,
 Ligatures = TeX
 ]
 
@@ -319,8 +322,8 @@ Ligatures = TeX
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\columnrank}{column\ rank}
-\DeclareMathOperator{\D}{D}
 \DeclareMathOperator{\df}{df}
+\DeclareMathOperator{\DFT}{DFT}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\diam}{diam}
 \DeclareMathOperator{\E}{E}
@@ -365,6 +368,8 @@ Ligatures = TeX
 \NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
 \NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
 
+% Differential operator
+\NewDocumentCommand{\D}{}{D}
 
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
 \NewDocumentCommand{\bbC}{}{\symbb{C}}
@@ -448,6 +453,7 @@ Ligatures = TeX
 % operators of functions
 \NewDocumentCommand{\cps}{}{\circ}
 \NewDocumentCommand{\restr}{}{\upharpoonright}
+\NewDocumentCommand{\res}{m}{_{\upharpoonright #1}}
 
 % power set
 \NewDocumentCommand{\pow}{m}{\symcal{P}\p{#1}}
