@@ -324,6 +324,8 @@ you should place your code here."
   (setq case-fold-search nil)
   (setq case-replace nil)
 
+  (add-to-list 'default-frame-alist '(width . 100))
+
   (setq evil-move-beyond-eol t)
 
   (setq fill-column 72)
