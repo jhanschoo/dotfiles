@@ -59,9 +59,9 @@
   \array{#1}}
 
 % geometry, c.f. memoir
-%\tolerance 1414
-%\hbadness 1414
-%\emergencystretch 1.5em
+\tolerance 1600
+%\hbadness 1600
+\emergencystretch 1.5em
 %\hfuzz 0.3pt
 %\widowpenalty=10000
 %\vfuzz \hfuzz
@@ -368,9 +368,6 @@ Ligatures = TeX
 \NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
 \NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
 
-% Differential operator
-\NewDocumentCommand{\D}{}{D}
-
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
 \NewDocumentCommand{\bbC}{}{\symbb{C}}
 \NewDocumentCommand{\bbE}{}{\symbb{E}}
@@ -494,6 +491,9 @@ Ligatures = TeX
 \NewDocumentCommand{\wI}{}{\w{I}}
 \NewDocumentCommand{\wP}{}{\w{P}}
 \NewDocumentCommand{\wR}{}{\w{R}}
+\NewDocumentCommand{\wX}{}{\w{X}}
+\NewDocumentCommand{\wY}{}{\w{Y}}
+\NewDocumentCommand{\wZ}{}{\w{Z}}
 \NewDocumentCommand{\Fmn}{}{F^{m\times{}n}}
 \NewDocumentCommand{\Fmm}{}{F^{m\times{}m}}
 \NewDocumentCommand{\Fmo}{}{F^{n\times{}1}}
@@ -504,17 +504,26 @@ Ligatures = TeX
 \NewDocumentCommand{\Knn}{}{K^{n\times{}n}}
 \NewDocumentCommand{\LV}{m}{\Lambda^{#1}\p{V}}
 \NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
-\NewDocumentCommand{\Rmn}{}{\symbb{R}^{m\times n}}
-\NewDocumentCommand{\Rnn}{}{\symbb{R}^{n\times n}}
+\NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
+\NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
 \NewDocumentCommand{\DKL}{}{D_{\M{KL}}}
+
+\NewDocumentCommand{\sfi}{}{\symsf{1}}
 
 % random variables
 \NewDocumentCommand{\rv}{m}{\symup{#1}}
+\NewDocumentCommand{\rvX}{}{\rv{X}}
+\NewDocumentCommand{\rvY}{}{\rv{Y}}
+\NewDocumentCommand{\rvZ}{}{\rv{Z}}
+
 \NewDocumentCommand{\rw}{m}{\symbfup{#1}}
 
 % given
 \NewDocumentCommand{\giv}{}{\mid}
 \NewDocumentCommand{\indep}{}{\bot}
+
+% measured as in KL divergence
+\NewDocumentCommand{\measuredas}{}{\parallel}
 
 % divides |
 \NewDocumentCommand{\di}{}{\mid}
@@ -522,6 +531,9 @@ Ligatures = TeX
 
 % inverse
 \NewDocumentCommand{\inv}{}{^{-1}}
+
+% Differentiation operator
+\NewDocumentCommand{\D}{}{D}
 
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
@@ -545,7 +557,7 @@ Ligatures = TeX
 % Complex conjugate
 \NewDocumentCommand{\conj}{m}{\overline{#1}}
 
-\NewDocumentCommand{\n}{O{1} G{\dotsc}}{\B{#1\mathbin{;}#2}}
+\NewDocumentCommand{\n}{O{1} m}{\B{#1\mathbin{;}#2}}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
