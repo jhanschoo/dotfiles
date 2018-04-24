@@ -192,12 +192,12 @@ Ligatures = TeX
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\chivo\huge}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\chivo\huge}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\chivolight\huge\bfseries}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\chivolight\huge\bfseries}
 \RenewDocumentCommand{\chaptitlefont}{}{\normalfont\chivobold\Huge\bfseries}
 
-\setsecheadstyle{\normalfont\chivobold\bfseries\Large}%
-\setsubsecheadstyle{\normalfont\chivobold\bfseries\itshape\large}%
+\setsecheadstyle{\normalfont\chivobold\Large}%
+\setsubsecheadstyle{\normalfont\chivobold\itshape\large}%
 \setsubsubsecheadstyle{\normalfont\chivo\itshape\large}%
 \setparaheadstyle{\normalfont\chivo\bfseries\large}%
 \setsubparaheadstyle{\normalfont\chivo\large}%
@@ -309,15 +309,16 @@ Ligatures = TeX
 
 % math operators
 
+\DeclareMathOperator{\Aut}{Aut} % automorphism
 \DeclareMathOperator{\adj}{adj}
 \DeclareMathOperator*{\argmin}{arg\ min}
 \DeclareMathOperator*{\argmax}{arg\ max}
 \DeclareMathOperator{\Bern}{Bern}
 \DeclareMathOperator{\upBeta}{Beta}
 \DeclareMathOperator{\Bin}{Bin}
-
 \DeclareMathOperator{\bias}{bias}
 \DeclareMathOperator{\cf}{cf}
+\DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\cossim}{cossim}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Cov}{Cov}
@@ -326,11 +327,13 @@ Ligatures = TeX
 \DeclareMathOperator{\DFT}{DFT}
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\eH}{H}
 \DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
 \DeclareMathOperator{\glb}{glb}
+\DeclareMathOperator{\Hom}{Hom} % homomorphism
 \DeclareMathOperator{\I}{I}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Int}{Int}
@@ -345,6 +348,7 @@ Ligatures = TeX
 \DeclareMathOperator{\ntf}{ntf}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator*{\plim}{plim}
+\DeclareMathOperator{\range}{range}
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rowrank}{row\ rank}
 \DeclareMathOperator{\SE}{SE}
@@ -357,6 +361,7 @@ Ligatures = TeX
 \DeclareMathOperator{\tf}{tf}
 \DeclareMathOperator{\tfidf}{tf-idf}
 \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\unif}{U}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\VCdim}{VCdim}
 \DeclareMathOperator{\wf}{wf}
@@ -396,6 +401,7 @@ Ligatures = TeX
 \NewDocumentCommand{\calL}{}{\symcal{L}}
 \NewDocumentCommand{\calM}{}{\symcal{M}}
 \NewDocumentCommand{\calN}{}{\symcal{N}}
+\NewDocumentCommand{\calO}{}{\symcal{O}}
 \NewDocumentCommand{\calP}{}{\symcal{P}}
 \NewDocumentCommand{\calR}{}{\symcal{R}}
 \NewDocumentCommand{\calS}{}{\symcal{S}}
@@ -466,6 +472,9 @@ Ligatures = TeX
 \NewDocumentCommand{\M}{m}{\mathup{#1}}
 \NewDocumentCommand{\q}{m}{\text{\texttt{#1}}}
 
+% category
+\NewDocumentCommand{\ca}{m}{\mathbf{#1}}
+
 % vector shorthand
 % (w as a commonly used vector variable character)
 \NewDocumentCommand{\w}{m}{\symbfit{#1}}
@@ -506,17 +515,21 @@ Ligatures = TeX
 \NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
 \NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
 \NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
+
+
+% kullback-leibler divergence
 \NewDocumentCommand{\DKL}{}{D_{\M{KL}}}
 
+% Iversonian
 \NewDocumentCommand{\sfi}{}{\symsf{1}}
 
 % random variables
-\NewDocumentCommand{\rv}{m}{\symup{#1}}
-\NewDocumentCommand{\rvX}{}{\rv{X}}
-\NewDocumentCommand{\rvY}{}{\rv{Y}}
-\NewDocumentCommand{\rvZ}{}{\rv{Z}}
+\NewDocumentCommand{\R}{m}{\symup{#1}}
+\NewDocumentCommand{\RX}{}{\R{X}}
+\NewDocumentCommand{\RY}{}{\R{Y}}
+\NewDocumentCommand{\RZ}{}{\R{Z}}
 
-\NewDocumentCommand{\rw}{m}{\symbfup{#1}}
+\NewDocumentCommand{\Rw}{m}{\symbfup{#1}}
 
 % given
 \NewDocumentCommand{\giv}{}{\mid}
