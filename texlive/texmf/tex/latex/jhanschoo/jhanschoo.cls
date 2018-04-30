@@ -235,17 +235,27 @@ Ligatures = TeX
 
 \newlist{alphenum}{enumerate}{4}
 \setlist*[alphenum]{
-  label= (\alph*)
+  label=\alph*)
+}
+
+\newlist{Alphenum}{enumerate}{4}
+\setlist*[Alphenum]{
+  label=\Alph*)
 }
 
 \newlist{romanenum}{enumerate}{4}
 \setlist*[romanenum]{
-  label= (\roman*)
+  label=\roman*)
 }
 
 \newlist{Romanenum}{enumerate}{4}
 \setlist*[Romanenum]{
-  label=(\Roman*)
+  label=\Roman*)
+}
+
+\newlist{arabicenum}{enumerate}{4}
+\setlist*[arabicenum]{
+  label= \arabic*.
 }
 
 % customization of tabu environments
@@ -330,6 +340,7 @@ Ligatures = TeX
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\eH}{H}
+\DeclareMathOperator{\eb}{ep}
 \DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
 \DeclareMathOperator{\glb}{glb}
@@ -525,11 +536,17 @@ Ligatures = TeX
 
 % random variables
 \NewDocumentCommand{\R}{m}{\symup{#1}}
+\NewDocumentCommand{\RW}{}{\R{W}}
 \NewDocumentCommand{\RX}{}{\R{X}}
 \NewDocumentCommand{\RY}{}{\R{Y}}
 \NewDocumentCommand{\RZ}{}{\R{Z}}
 
 \NewDocumentCommand{\Rw}{m}{\symbfup{#1}}
+\NewDocumentCommand{\RwW}{}{\Rw{W}}
+\NewDocumentCommand{\RwX}{}{\Rw{X}}
+\NewDocumentCommand{\RwY}{}{\Rw{Y}}
+\NewDocumentCommand{\RwZ}{}{\Rw{Z}}
+
 
 % given
 \NewDocumentCommand{\giv}{}{\mid}
