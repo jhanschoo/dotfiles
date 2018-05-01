@@ -33,3 +33,6 @@ then
     source "${file}"
   done
 fi
+
+# workaround for /etc/profile resetting paths
+export ZSHENV_SET_PATH="$PATH"

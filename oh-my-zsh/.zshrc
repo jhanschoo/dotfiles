@@ -1,4 +1,8 @@
 #!/usr/bin/env zsh
+
+# workaround for /etc/profile resetting paths
+export PATH="$ZSHENV_SET_PATH"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -62,7 +66,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  brew
+  brew-cask
+  gem
+  github
   git
+  npm
+  osx
+  pip
   zsh-syntax-highlighting
 )
 
