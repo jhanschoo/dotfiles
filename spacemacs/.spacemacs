@@ -55,7 +55,8 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'multi-term)
+            shell-default-shell 'multi-term
+            shell-default-term-shell "/usr/bin/zsh")
      spell-checking
      syntax-checking
      sql
@@ -324,6 +325,9 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (load-theme 'gruvbox t)
+
+  (setq multi-term-program "/usr/bin/zsh")
+
   (setq case-fold-search nil)
   (setq case-replace nil)
 
