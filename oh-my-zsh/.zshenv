@@ -23,7 +23,7 @@ if [[ -x /usr/libexec/path_helper ]]; then
   eval $(/usr/libexec/path_helper -s)
 fi
 
-export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/bin:/usr/local/sbin:${PATH}"
 
 # add code to source all script files in .zshenv.d
 if [[ -d "${HOME}/.zshenv.d" ]]
