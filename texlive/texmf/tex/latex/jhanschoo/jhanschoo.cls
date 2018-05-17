@@ -19,15 +19,28 @@
 
 \ProcessOptions\relax
 
-\LoadClass[a4paper,12pt,twoside,onecolumn,article]{memoir}
+\LoadClass[a4paper,11pt,twoside,onecolumn,article]{memoir}
 
+\RequirePackage{etoolbox}
 \RequirePackage{xparse}
+\RequirePackage{graphicx}
 
-\RequirePackage{xcolor}
+\RequirePackage{multicol}
+
+\RequirePackage[table]{xcolor}
 
 \let\mathrm\undefined
 \RequirePackage{amsmath,amssymb}
 \RequirePackage[amsmath,hyperref,thmmarks]{ntheorem}
+
+% hack for name conflict
+\let\greek\undefined
+
+% workaround for missing hyphenation in LuaLaTeX, see https://github.com/reutenauer/polyglossia/issues/129
+\usepackage[base]{babel}
+\usepackage{polyglossia}
+
+% Additional markup
 
 %\RequirePackage[binary-units]{siunitx}
 
@@ -38,10 +51,11 @@
 \RequirePackage{unicode-math}
 \RequirePackage{microtype}
 
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 
 \RequirePackage{longtable}
 \RequirePackage{tabu}
+\RequirePackage{float}
 
 \RequirePackage[inline,nomargin]{fixme}
 
@@ -51,6 +65,10 @@
 
 \RequirePackage{cleveref}
 
+% color support
+\definecolor{re}{HTML}{AF270B}
+\definecolor{bl}{HTML}{0B536E}
+\definecolor{gr}{HTML}{5FA00A}
 
 % define augmented matrices
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -67,7 +85,7 @@
 %\vfuzz \hfuzz
 \raggedbottom
 
-% Using Chivo for display text, Cochineal for body, and Pagella for
+% Using Lato for display text, Cochineal for body, and Pagella for
 % math c.f. fontspec and unicode-math
 \setmainfont{Cochineal}[Ligatures = TeX]
 %\setmainfont{LinLibertine}[
@@ -93,36 +111,33 @@
 \setmathfontface\mathup{TeXGyrePagella-Regular}[Scale=MatchLowercase]
 \setmathfontface\mathit{TeXGyrePagella-Italic}[Scale=MatchLowercase]
 \setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
-\setmathfontface\mathsf{DejaVuSans}[Scale=MatchLowercase]
+\setmathfontface\mathsf{Lato}[Scale=MatchUppercase]
 
-\newfontfamily\chivo{Raleway}[
-Extension = .otf,
-Scale = MatchLowercase,
-UprightFont = *-SemiBold,
-ItalicFont = *-SemiBold-Italic,
-BoldFont = *-Bold,
-BoldItalicFont = *-Bold-Italic,
-Numbers = Lining,
+\newfontfamily\lato{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Regular,
+ItalicFont = *-Italic,
+BoldFont = *-Semibold,
+BoldItalicFont = *-SemiboldItalic,
 Ligatures = TeX
 ]
-\newfontfamily\chivobold{Raleway}[
-Extension = .otf,
-Scale = MatchLowercase,
-UprightFont = *-ExtraBold,
-ItalicFont = *-ExtraBold-Italic,
+\newfontfamily\latobold{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Bold,
+ItalicFont = *-BoldItalic,
 BoldFont = *-Black,
-BoldItalicFont = *-Black-Italic,
-Numbers = Lining,
+BoldItalicFont = *-BlackItalic,
 Ligatures = TeX
 ]
-\newfontfamily\chivolight{Raleway}[
-Extension = .otf,
-Scale = MatchLowercase,
-UprightFont = *-ExtraLight,
-ItalicFont = *-ExtraLight-Italic,
+\newfontfamily\latolight{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Thin,
+ItalicFont = *-ThinItalic,
 BoldFont = *-Light,
-BoldItalicFont = *-Light-Italic,
-Numbers = Lining,
+BoldItalicFont = *-LightItalic,
 Ligatures = TeX
 ]
 
@@ -183,30 +198,30 @@ Ligatures = TeX
 
 \RenewDocumentCommand{\beforepartskip}{}{\null\vskip 50pt}
 \RenewDocumentCommand{\afterpartskip}{}{\vskip 40pt}
-\RenewDocumentCommand{\partnamefont}{}{\normalfont\chivolight\Huge}
-\RenewDocumentCommand{\partnumfont}{}{\normalfont\chivolight\Huge}
-\RenewDocumentCommand{\parttitlefont}{}{\normalfont\chivobold\bfseries\HUGE}
+\RenewDocumentCommand{\partnamefont}{}{\normalfont\latolight\Huge}
+\RenewDocumentCommand{\partnumfont}{}{\normalfont\latolight\Huge}
+\RenewDocumentCommand{\parttitlefont}{}{\normalfont\latobold\bfseries\HUGE}
 \nopartblankpage{}
 
 \chapterstyle{default}
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\chivolight\huge\bfseries}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\chivolight\huge\bfseries}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\chivobold\Huge\bfseries}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\latolight\huge\bfseries}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\latolight\huge\bfseries}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\latobold\Huge\bfseries}
 
-\setsecheadstyle{\normalfont\chivobold\Large}%
-\setsubsecheadstyle{\normalfont\chivobold\itshape\large}%
-\setsubsubsecheadstyle{\normalfont\chivo\itshape\large}%
-\setparaheadstyle{\normalfont\chivo\bfseries\large}%
-\setsubparaheadstyle{\normalfont\chivo\large}%
+\setsecheadstyle{\normalfont\latobold\Large}%
+\setsubsecheadstyle{\normalfont\latobold\large}%
+\setsubsubsecheadstyle{\normalfont\lato\large}%
+\setparaheadstyle{\normalfont\lato\bfseries\large}%
+\setsubparaheadstyle{\normalfont\lato\large}%
 
 % customization of page styles cf. memoir
 \createmark{chapter}{left}{shownumber}
-{\normalfont\chivobold\small\@chapapp\ }{\ \tiny}
+{\normalfont\latobold\small\@chapapp\ }{\ \tiny}
 \createmark{section}{right}{shownumber}
-{\normalfont\chivobold\small}{\ \tiny}
+{\normalfont\latobold\small}{\ \tiny}
 
 \nouppercaseheads
 
@@ -215,8 +230,8 @@ Ligatures = TeX
 \makeoddhead{plain}{}{}{\rightmark}
 \makeevenhead{plain}{\leftmark}{}{}
 
-\makeoddfoot{plain}{}{}{\chivo\thepage}
-\makeevenfoot{plain}{\chivo\thepage}{}{}
+\makeoddfoot{plain}{}{}{\lato\thepage}
+\makeevenfoot{plain}{\lato\thepage}{}{}
 
 % customization of page notes cf. memoir
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
@@ -226,7 +241,7 @@ Ligatures = TeX
 \setlist{
   noitemsep,
   nosep,
-  font=\normalfont\chivo\bfseries
+  font=\normalfont\lato\bfseries
 }
 
 \setlist[itemize]{
@@ -265,6 +280,7 @@ Ligatures = TeX
 %\renewcommand*\FXLayoutInline[3]{%
 %  {\@fxuseface{inline} (\fxnotename{#1}: \textnormal{#2})}%
 %}
+\RenewDocumentCommand{\fixmelogo}{}{}
 
 % Cleveref counter names
 \crefname{thm}{thm.}{thms.}
@@ -293,11 +309,11 @@ Ligatures = TeX
 % format shorthand
 \NewDocumentCommand{\sbar}{o m}{\IfNoValueTF{#1}%
   {\sidebar{#2}}%
-  {\sidebar{{\chivo\textbf{#1}} #2}}%
+  {\sidebar{{\lato\textbf{#1}} #2}}%
 }
 \NewDocumentCommand{\sbart}{o m}{\IfNoValueTF{#1}%
   {\sidebar{\textit{#2}}}%
-  {\sidebar{{\chivo\textbf{#1}} \textit{#2}}}%
+  {\sidebar{{\lato\textbf{#1}} \textit{#2}}}%
 }
 
 % math shorthand
@@ -336,7 +352,7 @@ Ligatures = TeX
 \DeclareMathOperator{\df}{df}
 \DeclareMathOperator{\DFT}{DFT}
 \DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator*{\diam}{diam}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\eH}{H}
@@ -451,6 +467,11 @@ Ligatures = TeX
 \NewDocumentCommand{\slt}{}{\subsetneq}
 \NewDocumentCommand{\sgt}{}{\supsetneq}
 
+% limit shorthand
+\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
+\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
+\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
+
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
 \NewDocumentCommand{\bigcp}{}{\prod}
@@ -491,6 +512,7 @@ Ligatures = TeX
 \NewDocumentCommand{\w}{m}{\symbfit{#1}}
 \NewDocumentCommand{\wa}{}{\w{a}}
 \NewDocumentCommand{\wb}{}{\w{b}}
+\NewDocumentCommand{\wc}{}{\w{c}}
 \NewDocumentCommand{\we}{}{\w{\epsilon}}
 \NewDocumentCommand{\wrh}{}{\w{\rho}}
 \NewDocumentCommand{\wi}{}{\w{i}}
@@ -585,7 +607,7 @@ Ligatures = TeX
 \NewDocumentCommand{\tei}{m}{\symsfit{#1}}
 
 % Complex conjugate
-\NewDocumentCommand{\conj}{m}{\overline{#1}}
+\NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
 
 \NewDocumentCommand{\n}{O{1} m}{\B{#1\mathbin{;}#2}}
 
