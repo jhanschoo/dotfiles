@@ -45,6 +45,7 @@ values."
      emacs-lisp
      emoji
      git
+     greek-polytonic
      helm
      html
      javascript
@@ -335,6 +336,10 @@ you should place your code here."
 
   (setq case-fold-search nil)
   (setq case-replace nil)
+
+  (add-hook 'LaTeX-mode-hook (lambda ()
+                               (setq TeX-view-program-selection
+                                     '((output-pdf "Okular")))))
 
   (add-to-list 'default-frame-alist '(width . 100))
 
