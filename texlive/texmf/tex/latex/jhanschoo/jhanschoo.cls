@@ -19,11 +19,12 @@
 
 \ProcessOptions\relax
 
-\LoadClass[a4paper,11pt,twoside,onecolumn,article]{memoir}
+\LoadClass[a4paper,12pt,twoside,onecolumn,article]{memoir}
 
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 \RequirePackage{graphicx}
+\RequirePackage{rotating}
 
 \RequirePackage{multicol}
 
@@ -48,7 +49,7 @@
 
 \RequirePackage{fontspec}
 \RequirePackage{realscripts}
-\RequirePackage{unicode-math}
+\RequirePackage[math-style=ISO]{unicode-math}
 \RequirePackage{microtype}
 
 \RequirePackage[inline]{enumitem}
@@ -57,7 +58,7 @@
 \RequirePackage{tabu}
 \RequirePackage{float}
 
-\RequirePackage[inline,nomargin]{fixme}
+\RequirePackage[nomargin]{fixme}
 
 \RequirePackage[ruled,lined,linesnumbered]{algorithm2e}
 
@@ -69,6 +70,7 @@
 \definecolor{re}{HTML}{AF270B}
 \definecolor{bl}{HTML}{0B536E}
 \definecolor{gr}{HTML}{5FA00A}
+\definecolor{wh}{HTML}{FFFFFF}
 
 % define augmented matrices
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -118,8 +120,17 @@ Extension = .ttf,
 Scale = MatchUppercase,
 UprightFont = *-Regular,
 ItalicFont = *-Italic,
-BoldFont = *-Semibold,
-BoldItalicFont = *-SemiboldItalic,
+BoldFont = *-Bold,
+BoldItalicFont = *-BoldItalic,
+Numbers = OldStyle,
+Ligatures = TeX
+]
+\newfontfamily\latosemibold{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Semibold,
+ItalicFont = *-SemiboldItalic,
+Numbers = OldStyle,
 Ligatures = TeX
 ]
 \newfontfamily\latobold{Lato}[
@@ -129,6 +140,7 @@ UprightFont = *-Bold,
 ItalicFont = *-BoldItalic,
 BoldFont = *-Black,
 BoldItalicFont = *-BlackItalic,
+Numbers = OldStyle,
 Ligatures = TeX
 ]
 \newfontfamily\latolight{Lato}[
@@ -138,6 +150,7 @@ UprightFont = *-Thin,
 ItalicFont = *-ThinItalic,
 BoldFont = *-Light,
 BoldItalicFont = *-LightItalic,
+Numbers = OldStyle,
 Ligatures = TeX
 ]
 
@@ -214,7 +227,7 @@ Ligatures = TeX
 \setsecheadstyle{\normalfont\latobold\Large}%
 \setsubsecheadstyle{\normalfont\latobold\large}%
 \setsubsubsecheadstyle{\normalfont\lato\large}%
-\setparaheadstyle{\normalfont\lato\bfseries\large}%
+\setparaheadstyle{\normalfont\latosemibold\large}%
 \setsubparaheadstyle{\normalfont\lato\large}%
 
 % customization of page styles cf. memoir
@@ -237,11 +250,21 @@ Ligatures = TeX
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
 \RenewDocumentCommand{\sidebarform}{}{}
 
+\NewDocumentCommand{\FXLayoutMyInline}{+m +m +m}
+{\@fxuseface{inline}[#2]}
+
+% customization of FiXme labels
+\FXRegisterLayout{myinline}{\FXLayoutMyInline}
+
+\fxsetup{
+  layout=myinline
+}
+
 % customization of itemize and enumerate environments cf. enumitem
 \setlist{
   noitemsep,
   nosep,
-  font=\normalfont\lato\bfseries
+  font=\normalfont\latobold
 }
 
 \setlist[itemize]{
@@ -250,31 +273,31 @@ Ligatures = TeX
 
 \newlist{alphenum}{enumerate}{4}
 \setlist*[alphenum]{
-  label=\alph*)
+  label=(\alph*)
 }
 
 \newlist{Alphenum}{enumerate}{4}
 \setlist*[Alphenum]{
-  label=\Alph*)
+  label=(\Alph*)
 }
 
 \newlist{romanenum}{enumerate}{4}
 \setlist*[romanenum]{
-  label=\roman*)
+  label=(\roman*)
 }
 
 \newlist{Romanenum}{enumerate}{4}
 \setlist*[Romanenum]{
-  label=\Roman*)
+  label=(\Roman*)
 }
 
 \newlist{arabicenum}{enumerate}{4}
 \setlist*[arabicenum]{
-  label= \arabic*.
+  label=\arabic*.
 }
 
 % customization of tabu environments
-\global\tabulinesep=4pt
+\global\tabulinesep=2pt
 
 % redefine FiXme labels to have brackets
 %\renewcommand*\FXLayoutInline[3]{%
@@ -283,17 +306,17 @@ Ligatures = TeX
 \RenewDocumentCommand{\fixmelogo}{}{}
 
 % Cleveref counter names
-\crefname{thm}{thm.}{thms.}
-\crefname{lem}{lem.}{lems.}
-\crefname{prop}{prop.}{props.}
-\crefname{cor}{cor.}{cors.}
-\crefname{defn}{defn.}{defns.}
-\crefname{rem}{rem.}{rems.}
-\crefname{exmp}{exmp.}{exmps.}
-\crefname{xca}{exerc.}{exercs.}
-\crefname{step}{step}{steps}
-\crefname{add}{add.}{adds.}
-\crefname{prf}{proof}{proofs}
+\crefname{thm}{Theorem}{Theorems}
+\crefname{lem}{Lemma}{Lemmas}
+\crefname{prop}{Proposition}{Propositions}
+\crefname{cor}{Corollary}{Corollaries}
+\crefname{defn}{Definition}{Definitions}
+\crefname{rem}{Remark}{Remarks}
+\crefname{exmp}{Example}{Examples}
+\crefname{xca}{Exercise}{Exercises}
+\crefname{step}{Step}{Steps}
+\crefname{add}{Addendum}{Addenda}
+\crefname{prf}{Proof}{Proofs}
 \Crefname{thm}{Theorem}{Theorems}
 \Crefname{lem}{Lemma}{Lemmata}
 \Crefname{prop}{Proposition}{Propositions}
@@ -309,11 +332,11 @@ Ligatures = TeX
 % format shorthand
 \NewDocumentCommand{\sbar}{o m}{\IfNoValueTF{#1}%
   {\sidebar{#2}}%
-  {\sidebar{{\lato\textbf{#1}} #2}}%
+  {\sidebar{{\latosemibold{}#1} #2}}%
 }
 \NewDocumentCommand{\sbart}{o m}{\IfNoValueTF{#1}%
   {\sidebar{\textit{#2}}}%
-  {\sidebar{{\lato\textbf{#1}} \textit{#2}}}%
+  {\sidebar{{\latosemibold{}#1} \textit{#2}}}%
 }
 
 % math shorthand
@@ -356,7 +379,7 @@ Ligatures = TeX
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\eH}{H}
-\DeclareMathOperator{\eb}{ep}
+\DeclareMathOperator{\eb}{eb}
 \DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
 \DeclareMathOperator{\glb}{glb}
@@ -400,6 +423,16 @@ Ligatures = TeX
 \NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
 \NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
 
+\NewDocumentCommand{\CD}{}{\symrm{D}}
+\NewDocumentCommand{\Cd}{}{\symrm{d}}
+\NewDocumentCommand{\CE}{}{\symrm{E}}
+\NewDocumentCommand{\Ce}{}{\symrm{e}}
+\NewDocumentCommand{\CH}{}{\symrm{H}}
+\NewDocumentCommand{\CI}{}{\symrm{I}}
+\NewDocumentCommand{\Ci}{}{\symrm{i}}
+\NewDocumentCommand{\CN}{}{\symrm{N}}
+\NewDocumentCommand{\Ctau}{}{\symrm{\tau}}
+\NewDocumentCommand{\Cpi}{}{\symrm{\pi}}
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
 \NewDocumentCommand{\bbC}{}{\symbb{C}}
 \NewDocumentCommand{\bbE}{}{\symbb{E}}
@@ -620,12 +653,19 @@ Ligatures = TeX
 
 % text shorthand
 
+\newlength{\marginwidth}
+\newlength{\widetextwidth}
+\setlength{\marginwidth}{\marginparwidth}
+\addtolength{\marginwidth}{\marginparsep}
+\setlength{\widetextwidth}{\textwidth}
+\addtolength{\widetextwidth}{\marginwidth}
+
 \NewDocumentCommand{\nt}{m}{\textbf{#1}} % semantic markup: "new term"
 \NewDocumentCommand{\ts}{m}{\textsc{#1}} % text symbol
 
 \NewDocumentCommand{\todo}{O{} g}{\IfNoValueTF{#2}%
-  {\fxnote[#1]{\textbf{TODO}}}%
-  {\fxnote[#1]{\textbf{TODO:} #2}}
+  {\fxnote[#1]{\textcolor{re}{TODO}}}%
+  {\fxnote[#1]{\textcolor{re}{TODO: #2}}}
 }
 \NewDocumentCommand{\wontfix}{O{} g}{\IfNoValueTF{#2}%
   {\fxnote[#1]{\textbf{WON'T FIX}}}%
