@@ -500,10 +500,12 @@ Ligatures = TeX
 \NewDocumentCommand{\slt}{}{\subsetneq}
 \NewDocumentCommand{\sgt}{}{\supsetneq}
 
-% limit shorthand
+% limit, sum and sequence shorthand
 \NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
 \NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
 \NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
+\NewDocumentCommand{\sumn}{O{n} O{\Zp}}{\sum_{#1\in#2}}
+\NewDocumentCommand{\seqn}{O{n} O{\Zp} m}{\p{#3}_{#1\in#2}}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
