@@ -23,7 +23,7 @@ if [[ -x /usr/libexec/path_helper ]]; then
   eval $(/usr/libexec/path_helper -s)
 fi
 
-export PATH="${HOME}/bin:/usr/local/sbin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/sbin:${PATH}"
 
 # add code to source all script files in .zshenv.d
 if [[ -d "${HOME}/.zshenv.d" ]]
@@ -33,6 +33,9 @@ then
     source "${file}"
   done
 fi
+
+# define X envvars that are somehow not defined
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # workaround for /etc/profile resetting paths
 export ZSHENV_SET_PATH="$PATH"
