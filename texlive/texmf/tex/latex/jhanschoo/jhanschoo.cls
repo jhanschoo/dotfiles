@@ -62,7 +62,15 @@
 
 \RequirePackage[ruled,lined,linesnumbered]{algorithm2e}
 
-\RequirePackage[colorlinks,unicode,final]{hyperref}
+\RequirePackage[
+colorlinks,
+unicode,
+final,
+linkcolor=re,
+citecolor=gr,
+filecolor=bl,
+menucolor=re,
+urlcolor=re]{hyperref}
 
 \RequirePackage{cleveref}
 
@@ -356,6 +364,10 @@ Ligatures = TeX
 
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
+% fcase
+\NewDocumentCommand{\fcase}{m}{\mleft\{\begin{aligned}#1\end{aligned}\mright\}}
+\NewDocumentCommand{\IF}{}{&\gets}
+
 % math operators
 
 \DeclareMathOperator{\Aut}{Aut} % automorphism
@@ -505,7 +517,9 @@ Ligatures = TeX
 \NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
 \NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
 \NewDocumentCommand{\sumn}{O{n} O{\Zp}}{\sum_{#1\in#2}}
+\NewDocumentCommand{\sumno}{O{n} O{\Zop}}{\sum_{#1\in#2}}
 \NewDocumentCommand{\seqn}{O{n} O{\Zp} m}{\p{#3}_{#1\in#2}}
+\NewDocumentCommand{\seqno}{O{n} O{\Zop} m}{\p{#3}_{#1\in#2}}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
