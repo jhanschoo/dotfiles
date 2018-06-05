@@ -144,8 +144,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         base16-tomorrow
                          base16-tomorrow-night
+                         base16-tomorrow
                          base16-mexico-light
                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
