@@ -366,7 +366,8 @@ Ligatures = TeX
 
 % fcase
 \NewDocumentCommand{\fcase}{m}{\mleft\{\begin{aligned}#1\end{aligned}\mright\}}
-\NewDocumentCommand{\IF}{}{&\gets}
+\NewDocumentCommand{\THEN}{}{&}
+\NewDocumentCommand{\IF}{}{&&\gets}
 
 % math operators
 
@@ -595,6 +596,7 @@ Ligatures = TeX
 \NewDocumentCommand{\Knn}{}{K^{n\times{}n}}
 \NewDocumentCommand{\LV}{m}{\Lambda^{#1}\p{V}}
 \NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
+\NewDocumentCommand{\Rk}{}{\bbR^{k}}
 \NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
 \NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
 
