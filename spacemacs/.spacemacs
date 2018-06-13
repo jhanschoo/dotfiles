@@ -41,6 +41,7 @@ values."
      better-defaults
      bibtex
      c-c++
+     coq
      docker
      emacs-lisp
      emoji

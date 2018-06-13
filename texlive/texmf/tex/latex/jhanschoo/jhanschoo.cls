@@ -320,6 +320,7 @@ Ligatures = TeX
 \crefname{cor}{Corollary}{Corollaries}
 \crefname{defn}{Definition}{Definitions}
 \crefname{rem}{Remark}{Remarks}
+\crefname{equation}{Equation}{Equations}
 \crefname{exmp}{Example}{Examples}
 \crefname{xca}{Exercise}{Exercises}
 \crefname{step}{Step}{Steps}
@@ -331,6 +332,7 @@ Ligatures = TeX
 \Crefname{cor}{Corollary}{Corollaries}
 \Crefname{defn}{Definition}{Definitions}
 \Crefname{rem}{Remark}{Remarks}
+\Crefname{equation}{Equation}{Equations}
 \Crefname{exmp}{Example}{Examples}
 \Crefname{xca}{Exercise}{Exercises}
 \Crefname{step}{Step}{Steps}
@@ -385,6 +387,7 @@ Ligatures = TeX
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\columnrank}{column\ rank}
+\DeclareMathOperator{\D}{D}
 \DeclareMathOperator{\df}{df}
 \DeclareMathOperator{\DFT}{DFT}
 \DeclareMathOperator{\diag}{diag}
@@ -400,6 +403,7 @@ Ligatures = TeX
 \DeclareMathOperator{\I}{I}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\idf}{idf}
 \DeclareMathOperator{\KL}{KL}
 \DeclareMathOperator{\Laplace}{Laplace}
@@ -436,14 +440,16 @@ Ligatures = TeX
 \NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
 \NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
 
-\NewDocumentCommand{\CD}{}{\symrm{D}}
 \NewDocumentCommand{\Cd}{}{\symrm{d}}
+\NewDocumentCommand{\CDelta}{}{\symrm{\Delta}}
 \NewDocumentCommand{\CE}{}{\symrm{E}}
 \NewDocumentCommand{\Ce}{}{\symrm{e}}
 \NewDocumentCommand{\CH}{}{\symrm{H}}
 \NewDocumentCommand{\CI}{}{\symrm{I}}
 \NewDocumentCommand{\Ci}{}{\symrm{i}}
+\NewDocumentCommand{\CL}{}{\symrm{L}}
 \NewDocumentCommand{\CN}{}{\symrm{N}}
+\NewDocumentCommand{\CU}{}{\symrm{U}}
 \NewDocumentCommand{\Ctau}{}{\symrm{\tau}}
 \NewDocumentCommand{\Cpi}{}{\symrm{\pi}}
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
@@ -513,14 +519,26 @@ Ligatures = TeX
 \NewDocumentCommand{\slt}{}{\subsetneq}
 \NewDocumentCommand{\sgt}{}{\supsetneq}
 
-% limit, sum and sequence shorthand
+% limit, sum, sequence and integral shorthand
+\NewDocumentCommand{\lims}{}{\lim_{<\infty}}
+\NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
+\NewDocumentCommand{\limr}{m}{\lim_{> #1}}
+\NewDocumentCommand{\liml}{m}{\lim_{< #1}}
+\NewDocumentCommand{\limsups}{}{\limsup_{<\infty}}
+\NewDocumentCommand{\liminfs}{}{\liminf_{<\infty}}
+\NewDocumentCommand{\limfr}{m m}{\lim_{#1\searrow #2}}
+\NewDocumentCommand{\limfl}{m m}{\lim_{#1\nearrow #2}}
 \NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
 \NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
 \NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
-\NewDocumentCommand{\sumn}{O{n} O{\Zp}}{\sum_{#1\in#2}}
-\NewDocumentCommand{\sumno}{O{n} O{\Zop}}{\sum_{#1\in#2}}
-\NewDocumentCommand{\seqn}{O{n} O{\Zp} m}{\p{#3}_{#1\in#2}}
-\NewDocumentCommand{\seqno}{O{n} O{\Zop} m}{\p{#3}_{#1\in#2}}
+\NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3\in #1} #2}
+\NewDocumentCommand{\sumn}{m O{n}}{\sum_{<\infty}\seqn{#1}[#2]}
+\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
+\NewDocumentCommand{\seqn}{m O{n}}{\p{#1}_{#2}}
+\NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3\in#1}}
+\NewDocumentCommand{\intu}{m}{\int_{\searrow #1}}
+\NewDocumentCommand{\intl}{m}{\int_{\nearrow #1}}
+\NewDocumentCommand{\intd}{m}{\int_{#1}}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
@@ -635,9 +653,7 @@ Ligatures = TeX
 % inverse
 \NewDocumentCommand{\inv}{}{^{-1}}
 
-% Differentiation operator
-\NewDocumentCommand{\D}{}{D}
-
+\NewDocumentCommand{\dif}{}{\:\symrm{d}}
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
 
