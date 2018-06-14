@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jhanschoo}[2018/03/11 Johannes Choo's Class]
+\ProvidesClass{vermillion}[2018/03/11 Vermillion Class]
 
 \DeclareOption{draft}{
   \PassOptionsToClass{\CurrentOption}{memoir}
@@ -68,17 +68,29 @@ unicode,
 final,
 linkcolor=re,
 citecolor=gr,
-filecolor=bl,
+filecolor=aq,
 menucolor=re,
-urlcolor=re]{hyperref}
+urlcolor=pu]{hyperref}
 
 \RequirePackage{cleveref}
 
 % color support
-\definecolor{re}{HTML}{AF270B}
-\definecolor{bl}{HTML}{0B536E}
-\definecolor{gr}{HTML}{5FA00A}
-\definecolor{wh}{HTML}{FFFFFF}
+\definecolor{bg}{HTML}{2E3440}
+\definecolor{fg}{HTML}{D8DEE9}
+\definecolor{re}{HTML}{BF616A}
+\definecolor{bl}{HTML}{81A1C1}
+\definecolor{gr}{HTML}{A3BE8C}
+\definecolor{aq}{HTML}{88C0D0}
+\definecolor{pu}{HTML}{B48EAD}
+
+\pagecolor{bg}
+\color{fg}
+
+%\definecolor{re}{HTML}{AF270B}
+%\definecolor{bl}{HTML}{0B536E}
+%\definecolor{gr}{HTML}{5FA00A}
+%\definecolor{wh}{HTML}{FFFFFF}
+
 
 % define augmented matrices
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -719,6 +731,3 @@ Ligatures = TeX
 
 \SetKw{Error}{error}
 \SetKw{Print}{print}
-
-
-
