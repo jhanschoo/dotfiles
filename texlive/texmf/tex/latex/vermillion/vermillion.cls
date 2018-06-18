@@ -163,13 +163,27 @@ BoldItalicFont = *-BlackItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latolight{Lato}[
+\newfontfamily\latoblack{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Black,
+ItalicFont = *-BlackItalic,
+Numbers = OldStyle,
+Ligatures = TeX
+]
+\newfontfamily\latothin{Lato}[
 Extension = .ttf,
 Scale = MatchUppercase,
 UprightFont = *-Thin,
 ItalicFont = *-ThinItalic,
-BoldFont = *-Light,
-BoldItalicFont = *-LightItalic,
+Numbers = OldStyle,
+Ligatures = TeX
+]
+\newfontfamily\latolight{Lato}[
+Extension = .ttf,
+Scale = MatchUppercase,
+UprightFont = *-Light,
+ItalicFont = *-LightItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
@@ -231,18 +245,18 @@ Ligatures = TeX
 
 \RenewDocumentCommand{\beforepartskip}{}{\null\vskip 50pt}
 \RenewDocumentCommand{\afterpartskip}{}{\vskip 40pt}
-\RenewDocumentCommand{\partnamefont}{}{\normalfont\latolight\Huge}
-\RenewDocumentCommand{\partnumfont}{}{\normalfont\latolight\Huge}
-\RenewDocumentCommand{\parttitlefont}{}{\normalfont\latobold\bfseries\HUGE}
+\RenewDocumentCommand{\partnamefont}{}{\normalfont\latothin\Huge}
+\RenewDocumentCommand{\partnumfont}{}{\normalfont\latothin\Huge}
+\RenewDocumentCommand{\parttitlefont}{}{\normalfont\latoblack\HUGE}
 \nopartblankpage{}
 
 \chapterstyle{default}
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\latolight\huge\bfseries}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\latolight\huge\bfseries}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\latobold\Huge\bfseries}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\latolight\huge}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\latolight\huge}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\latoblack\Huge}
 
 \setsecheadstyle{\normalfont\latobold\Large}%
 \setsubsecheadstyle{\normalfont\latobold\large}%
@@ -263,8 +277,8 @@ Ligatures = TeX
 \makeoddhead{plain}{}{}{\rightmark}
 \makeevenhead{plain}{\leftmark}{}{}
 
-\makeoddfoot{plain}{}{}{\lato\thepage}
-\makeevenfoot{plain}{\lato\thepage}{}{}
+\makeoddfoot{plain}{}{\latolight DO NOT DISTRIBUTE}{\lato\thepage}
+\makeevenfoot{plain}{\lato\thepage}{\latolight DO NOT DISTRIBUTE}{}
 
 % customization of page notes cf. memoir
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
