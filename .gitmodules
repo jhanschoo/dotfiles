@@ -1,33 +1,44 @@
 [submodule "oh-my-zsh/.oh-my-zsh"]
+	branch = master
 	path = oh-my-zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "zsh-syntax-highlighting/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	branch = master
 	path = zsh-syntax-highlighting/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "asdf/.asdf"]
+	branch = master
 	path = asdf/.asdf
 	url = https://github.com/asdf-vm/asdf.git
 [submodule "asdf-plugins/.asdf/repository"]
+	branch = master
 	path = asdf-plugins/.asdf/repository
 	url = https://github.com/asdf-vm/asdf-plugins.git
 [submodule "asdf-minikube/.asdf/plugins/minikube"]
+	branch = master
 	path = asdf-minikube/.asdf/plugins/minikube
 	url = https://github.com/alvarobp/asdf-minikube.git
 [submodule "asdf-nodejs/.asdf/plugins/nodejs"]
+	branch = master
 	path = asdf-nodejs/.asdf/plugins/nodejs
 	url = https://github.com/asdf-vm/asdf-nodejs.git
 [submodule "asdf-ruby/.asdf/plugins/ruby"]
+	branch = master
 	path = asdf-ruby/.asdf/plugins/ruby
 	url = https://github.com/asdf-vm/asdf-ruby.git
 [submodule "spacemacs/.emacs.d"]
+	branch = master
 	path = spacemacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 [submodule "SpaceVim/.SpaceVim"]
+	branch = master
 	path = SpaceVim/.SpaceVim
 	url = https://github.com/SpaceVim/SpaceVim.git
 [submodule "SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim"]
+	branch = master
 	path = SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim
 	url = https://github.com/Shougo/dein.vim.git
 [submodule "z/.zdir"]
+	branch = master
 	path = z/.zdir
 	url = https://github.com/rupa/z.git
