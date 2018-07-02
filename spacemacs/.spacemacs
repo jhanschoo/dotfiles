@@ -334,9 +334,33 @@ you should place your code here."
   (setq case-fold-search nil)
   (setq case-replace nil)
 
-  (add-hook 'LaTeX-mode-hook (lambda ()
-                               (setq TeX-view-program-selection
-                                     '((output-pdf "Okular")))))
+  (add-hook
+   'LaTeX-mode-hook
+   (lambda ()
+     (setq
+      TeX-view-predicate-list
+      '((output-pdf-evince
+         (and (string-match "pdf" (TeX-output-extension))
+              (executable-find "evince")))
+        (output-pdf-okular
+         (and (string-match "pdf" (TeX-output-extension))
+              (executable-find "okular")))
+        (output-pdf-skim
+         (and (string-match "pdf" (TeX-output-extension))
+              (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
+     (setq
+      TeX-view-program-list
+      '(("Evince" "evince %o" "evince")
+        ("Okular" "okular %o" "okular")
+        ("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"
+         "/Applications/Skim.app/Contents/SharedSupport/displayline")))
+     (add-to-list 'TeX-view-program-selection
+                  '(output-pdf-skim "Skim"))
+     (add-to-list 'TeX-view-program-selection
+                  '(output-pdf-evince "Evince"))
+     (add-to-list 'TeX-view-program-selection
+                  '(output-pdf-okular "Okular"))
+     ))
 
   (add-to-list 'default-frame-alist '(width . 100))
 
