@@ -387,8 +387,10 @@ Ligatures = TeX
 \NewDocumentCommand{\B}{m}{\mleft\{{#1}\mright\}}
 \NewDocumentCommand{\s}{m}{\mleft[{#1}\mright]}
 \NewDocumentCommand{\Div}{m m}{\mleft.{#1}\middle/{#2}\mright.}
-\NewDocumentCommand{\SP}{m}{\mleft[{#1}\mright)}
-\NewDocumentCommand{\PS}{m}{\mleft({#1}\mright]}
+\NewDocumentCommand{\pp}{m m}{\mleft({#1};{#2}\mright)}
+\NewDocumentCommand{\bp}{m m}{\mleft[{#1};{#2}\mright)}
+\NewDocumentCommand{\pb}{m m}{\mleft({#1};{#2}\mright]}
+\NewDocumentCommand{\bb}{m m}{\mleft[{#1};{#2}\mright]}
 
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
@@ -536,8 +538,8 @@ Ligatures = TeX
 \NewDocumentCommand{\sm}{}{\smallsetminus}
 \NewDocumentCommand{\sand}{}{\cap}
 \NewDocumentCommand{\sor}{}{\cup}
-\NewDocumentCommand{\bigsand}{}{\bigcap}
-\NewDocumentCommand{\bigsor}{}{\bigcup}
+\NewDocumentCommand{\bigsand}{O{} m O{}}{\bigcap_{#3}^{#1}{#2}}
+\NewDocumentCommand{\bigsor}{O{} m O{}}{\bigcup_{#3}^{#1}{#2}}
 \NewDocumentCommand{\sle}{}{\subseteq}
 \NewDocumentCommand{\nsle}{}{\nsubseteq}
 \NewDocumentCommand{\sge}{}{\supseteq}
@@ -557,11 +559,13 @@ Ligatures = TeX
 \NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
 \NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
 \NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
-\NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3\in #1} #2}
-\NewDocumentCommand{\sumn}{m O{n}}{\sum_{<\infty}\seqn{#1}[#2]}
+\NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
+\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{<\infty}\seqn[#1]{#2}[#3]}
 \NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
-\NewDocumentCommand{\seqn}{m O{n}}{\p{#1}_{#2}}
-\NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3\in#1}}
+\NewDocumentCommand{\seqn}{O{} m O{n}}{\p{#2}_{#3}^{#1}}
+\NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
+\NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
+\NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
 \NewDocumentCommand{\intu}{m}{\int_{\searrow #1}}
 \NewDocumentCommand{\intl}{m}{\int_{\nearrow #1}}
 \NewDocumentCommand{\intd}{m}{\int_{#1}}
