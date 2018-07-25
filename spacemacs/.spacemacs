@@ -152,7 +152,6 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Iosevka"
-                               :size 20
                                :powerline-scale 2)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
@@ -367,7 +366,7 @@ you should place your code here."
 
   (setq evil-move-beyond-eol t)
 
-  (setq fill-column 72)
+  (setq-default fill-column 72)
 
   (setq powerline-default-separator nil)
 
