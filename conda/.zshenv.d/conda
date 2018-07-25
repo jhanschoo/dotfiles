@@ -1,3 +1,8 @@
 # added by Anaconda3 installer
 export PATH="${HOME}/miniconda3/bin:${PATH}"
 
+# activate default environment if available
+if [[ -d "${HOME}/miniconda3/envs/default" ]]; then
+  source activate default
+fi
+
