@@ -478,6 +478,8 @@ Ligatures = TeX
 \NewDocumentCommand{\CL}{}{\symrm{L}}
 \NewDocumentCommand{\CN}{}{\symrm{N}}
 \NewDocumentCommand{\CU}{}{\symrm{U}}
+\NewDocumentCommand{\CX}{}{\symrm{X}}
+\NewDocumentCommand{\Cx}{}{\symrm{x}}
 \NewDocumentCommand{\Ctau}{}{\symrm{\tau}}
 \NewDocumentCommand{\Cpi}{}{\symrm{\pi}}
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
@@ -570,6 +572,12 @@ Ligatures = TeX
 \NewDocumentCommand{\intl}{m}{\int_{\nearrow #1}}
 \NewDocumentCommand{\intd}{m}{\int_{#1}}
 
+% function
+\NewDocumentCommand{\f}{}{\symsf{f}}
+
+% Iversonian
+\NewDocumentCommand{\iver}{m}{\sfi\s{#1}}
+
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
 \NewDocumentCommand{\bigcp}{}{\prod}
@@ -593,6 +601,9 @@ Ligatures = TeX
 
 % complement
 \NewDocumentCommand{\cpl}{}{\complement}
+
+% completion
+\NewDocumentCommand{\cpltn}{s m}{\IfBooleanTF{#1}{\widetilde{#2}}{\tilde{#2}}}
 
 % row-equivalence with reduced row echelon form
 \NewDocumentCommand{\rref}{}{\xrightarrow{\mathup{rref}}}
@@ -684,6 +695,7 @@ Ligatures = TeX
 \NewDocumentCommand{\inv}{}{^{-1}}
 
 \NewDocumentCommand{\dif}{}{\:\symrm{d}}
+\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{} #1}\p{#2}}
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
 
