@@ -378,19 +378,19 @@ Ligatures = TeX
 % math shorthand
 
 % delimiters
-\NewDocumentCommand{\abs}{m}{\mleft\lvert{#1}\mright\rvert}
-\NewDocumentCommand{\norm}{m}{\mleft\lVert{#1}\mright\rVert}
-\NewDocumentCommand{\fl}{m}{\mleft\lfloor{#1}\mright\rfloor}
-\NewDocumentCommand{\ce}{m}{\mleft\lceil{#1}\mright\rceil}
-\NewDocumentCommand{\p}{m}{\mleft({#1}\mright)}
-\NewDocumentCommand{\ad}{m}{\mleft\langle{#1}\mright\rangle}
-\NewDocumentCommand{\B}{m}{\mleft\{{#1}\mright\}}
-\NewDocumentCommand{\s}{m}{\mleft[{#1}\mright]}
-\NewDocumentCommand{\Div}{m m}{\mleft.{#1}\middle/{#2}\mright.}
-\NewDocumentCommand{\pp}{m m}{\mleft({#1};{#2}\mright)}
-\NewDocumentCommand{\bp}{m m}{\mleft[{#1};{#2}\mright)}
-\NewDocumentCommand{\pb}{m m}{\mleft({#1};{#2}\mright]}
-\NewDocumentCommand{\bb}{m m}{\mleft[{#1};{#2}\mright]}
+\NewDocumentCommand{\abs}{m}{\mleft\lvert #1 \mright\rvert}
+\NewDocumentCommand{\norm}{m}{\mleft\lVert #1 \mright\rVert}
+\NewDocumentCommand{\fl}{m}{\mleft\lfloor #1 \mright\rfloor}
+\NewDocumentCommand{\ce}{m}{\mleft\lceil #1 \mright\rceil}
+\NewDocumentCommand{\p}{m}{\mleft( #1 \mright)}
+\NewDocumentCommand{\ad}{m}{\mleft\langle #1 \mright\rangle}
+\NewDocumentCommand{\B}{m}{\mleft\{ #1 \mright\}}
+\NewDocumentCommand{\s}{m}{\mleft[ #1 \mright]}
+\NewDocumentCommand{\Div}{m m}{\mleft. #1 \middle/ #2 \mright.}
+\NewDocumentCommand{\pp}{m m}{\mleft( #1 ; #2 \mright)}
+\NewDocumentCommand{\bp}{m m}{\mleft[ #1 ; #2 \mright)}
+\NewDocumentCommand{\pb}{m m}{\mleft( #1 ; #2 \mright]}
+\NewDocumentCommand{\bb}{m m}{\mleft[ #1 ; #2 \mright]}
 
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
@@ -568,12 +568,12 @@ Ligatures = TeX
 \NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
 \NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
 \NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
-\NewDocumentCommand{\intu}{m}{\int_{\searrow #1}}
-\NewDocumentCommand{\intl}{m}{\int_{\nearrow #1}}
-\NewDocumentCommand{\intd}{m}{\int_{#1}}
+\NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
+\NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
+\NewDocumentCommand{\intd}{m}{\int^{#1}}
 
 % function
-\NewDocumentCommand{\f}{}{\symsf{f}}
+\NewDocumentCommand{\f}{}{_{\symsf{f}}}
 
 % Iversonian
 \NewDocumentCommand{\iver}{m}{\sfi\s{#1}}
@@ -681,7 +681,7 @@ Ligatures = TeX
 
 
 % given
-\NewDocumentCommand{\giv}{}{\mid}
+\NewDocumentCommand{\giv}{}{\middle|}
 \NewDocumentCommand{\indep}{}{\bot}
 
 % measured as in KL divergence
