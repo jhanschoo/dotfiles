@@ -391,6 +391,8 @@ Ligatures = TeX
 \NewDocumentCommand{\bp}{m m}{\mleft[ #1 ; #2 \mright)}
 \NewDocumentCommand{\pb}{m m}{\mleft( #1 ; #2 \mright]}
 \NewDocumentCommand{\bb}{m m}{\mleft[ #1 ; #2 \mright]}
+\NewDocumentCommand{\na}{m m}{\mleft\{ #1 ; #2 \mright\rangle}
+\NewDocumentCommand{\an}{m m}{\mleft\langle #1 ; #2 \mright\}}
 
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
@@ -476,8 +478,10 @@ Ligatures = TeX
 \NewDocumentCommand{\CI}{}{\symrm{I}}
 \NewDocumentCommand{\Ci}{}{\symrm{i}}
 \NewDocumentCommand{\CL}{}{\symrm{L}}
+\NewDocumentCommand{\CLambda}{}{\symrm{\Lambda}}
 \NewDocumentCommand{\CN}{}{\symrm{N}}
 \NewDocumentCommand{\CU}{}{\symrm{U}}
+\NewDocumentCommand{\Cu}{}{\symrm{u}}
 \NewDocumentCommand{\CX}{}{\symrm{X}}
 \NewDocumentCommand{\Cx}{}{\symrm{x}}
 \NewDocumentCommand{\Ctau}{}{\symrm{\tau}}
@@ -565,9 +569,9 @@ Ligatures = TeX
 \NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{<\infty}\seqn[#1]{#2}[#3]}
 \NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
 \NewDocumentCommand{\seqn}{O{} m O{n}}{\p{#2}_{#3}^{#1}}
-\NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
 \NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
-\NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
+\NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
+\NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\B{#2}_{#3}^{#1}}
 \NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
 \NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
 \NewDocumentCommand{\intd}{m}{\int^{#1}}
@@ -623,6 +627,7 @@ Ligatures = TeX
 \NewDocumentCommand{\wb}{}{\w{b}}
 \NewDocumentCommand{\wc}{}{\w{c}}
 \NewDocumentCommand{\we}{}{\w{\epsilon}}
+\NewDocumentCommand{\wg}{}{\w{\gamma}}
 \NewDocumentCommand{\wrh}{}{\w{\rho}}
 \NewDocumentCommand{\wi}{}{\w{i}}
 \NewDocumentCommand{\wj}{}{\w{j}}
@@ -695,7 +700,7 @@ Ligatures = TeX
 \NewDocumentCommand{\inv}{}{^{-1}}
 
 \NewDocumentCommand{\dif}{}{\:\symrm{d}}
-\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{} #1}\p{#2}}
+\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{#1} #2}\p{#3}}
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
 
