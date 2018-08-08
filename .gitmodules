@@ -27,7 +27,7 @@
 	path = asdf-ruby/.asdf/plugins/ruby
 	url = https://github.com/asdf-vm/asdf-ruby.git
 [submodule "spacemacs/.emacs.d"]
-	branch = master
+	branch = develop
 	path = spacemacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
 [submodule "SpaceVim/.SpaceVim"]
