@@ -83,8 +83,8 @@ urlcolor=pu]{hyperref}
 \definecolor{aq}{HTML}{88C0D0}
 \definecolor{pu}{HTML}{B48EAD}
 
-\pagecolor{bg}
-\color{fg}
+%\pagecolor{bg}
+%\color{fg}
 
 %\definecolor{re}{HTML}{AF270B}
 %\definecolor{bl}{HTML}{0B536E}
@@ -474,11 +474,15 @@ Ligatures = TeX
 \NewDocumentCommand{\CDelta}{}{\symrm{\Delta}}
 \NewDocumentCommand{\CE}{}{\symrm{E}}
 \NewDocumentCommand{\Ce}{}{\symrm{e}}
+\NewDocumentCommand{\Cepsilon}{}{\symrm{\epsilon}}
 \NewDocumentCommand{\CH}{}{\symrm{H}}
 \NewDocumentCommand{\CI}{}{\symrm{I}}
 \NewDocumentCommand{\Ci}{}{\symrm{i}}
 \NewDocumentCommand{\CL}{}{\symrm{L}}
 \NewDocumentCommand{\CLambda}{}{\symrm{\Lambda}}
+\NewDocumentCommand{\Clambda}{}{\symrm{\lambda}}
+\NewDocumentCommand{\Cm}{}{\symrm{m}}
+\NewDocumentCommand{\Cmu}{}{\symrm{\mu}}
 \NewDocumentCommand{\CN}{}{\symrm{N}}
 \NewDocumentCommand{\CU}{}{\symrm{U}}
 \NewDocumentCommand{\Cu}{}{\symrm{u}}
@@ -540,7 +544,7 @@ Ligatures = TeX
 \NewDocumentCommand{\EQUIV}{}{\Leftrightarrow}
 
 % set algebra
-\NewDocumentCommand{\symdif}{}{\triangle}
+\NewDocumentCommand{\ssd}{}{\triangle} % set symmetric difference
 \NewDocumentCommand{\sm}{}{\smallsetminus}
 \NewDocumentCommand{\sand}{}{\cap}
 \NewDocumentCommand{\sor}{}{\cup}
@@ -619,6 +623,15 @@ Ligatures = TeX
 
 % category
 \NewDocumentCommand{\ca}{m}{\mathbf{#1}}
+\NewDocumentCommand{\cav}{m}{\mathbfit{#1}}
+\NewDocumentCommand{\caC}{}{\cav{C}}
+\NewDocumentCommand{\cop}{}{^{\mathup{op}}}
+\NewDocumentCommand{\obj}{}{_{0}}
+\NewDocumentCommand{\mor}{}{_{1}}
+\NewDocumentCommand{\cto}{}{^{\to}}
+
+\NewDocumentCommand{\into}{}{\hookrightarrow}
+\NewDocumentCommand{\onto}{}{\twoheadrightarrow}
 
 % vector shorthand
 % (w as a commonly used vector variable character)
@@ -661,6 +674,7 @@ Ligatures = TeX
 \NewDocumentCommand{\LV}{m}{\Lambda^{#1}\p{V}}
 \NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
 \NewDocumentCommand{\Rk}{}{\bbR^{k}}
+\NewDocumentCommand{\bbRp}{}{\bbR^{p}}
 \NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
 \NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
 
