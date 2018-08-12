@@ -70,9 +70,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(
-                                      greek-polytonic
-                                      )
+    dotspacemacs-additional-packages '(exec-path-from-shell
+                                        )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -145,8 +144,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(nord
-                         gruvbox-dark
-                         gruvbox-light
+                         ;gruvbox-dark
+                         ;gruvbox-light
                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -326,6 +325,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (require 'exec-path-from-shell)
   (exec-path-from-shell-initialize)
   (setq auto-save-interval 20)
   (setq auto-save-timeout 2)
@@ -376,8 +376,6 @@ you should place your code here."
 
   (setq font-latex-fontify-script 'multi-level)
   (setq font-latex-script-display '((raise -0.25) raise 0.25))
-
-  (require 'greek-polytonic)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
