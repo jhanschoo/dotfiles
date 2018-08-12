@@ -698,6 +698,8 @@ Ligatures = TeX
 \NewDocumentCommand{\RwY}{}{\Rw{Y}}
 \NewDocumentCommand{\RwZ}{}{\Rw{Z}}
 
+% type theory
+\NewDocumentCommand{\inh}{}{\colon}
 
 % given
 \NewDocumentCommand{\giv}{}{\middle|}
