@@ -13,13 +13,21 @@
   \PassOptionsToPackage{\CurrentOption}{fixme}
 }
 
+\DeclareOption{oneside}{
+  \PassOptionsToClass{\CurrentOption}{memoir}
+}
+
+\DeclareOption{twoside}{
+  \PassOptionsToClass{\CurrentOption}{memoir}
+}
+
 \DeclareOption*{
   \ClassWarning{jhanschoo}{Unknown Option `\CurrentOption'}
 }
 
 \ProcessOptions\relax
 
-\LoadClass[a4paper,12pt,twoside,onecolumn,article]{memoir}
+\LoadClass[a4paper,12pt,onecolumn,article]{memoir}
 
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
@@ -437,6 +445,7 @@ Ligatures = TeX
 \DeclareMathOperator{\idf}{idf}
 \DeclareMathOperator{\KL}{KL}
 \DeclareMathOperator{\Laplace}{Laplace}
+\DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\lub}{lub}
 \DeclareMathOperator{\ML}{ML}
 \DeclareMathOperator{\netscore}{net-score}
@@ -699,7 +708,9 @@ Ligatures = TeX
 \NewDocumentCommand{\RwZ}{}{\Rw{Z}}
 
 % type theory
-\NewDocumentCommand{\inh}{}{\colon}
+\NewDocumentCommand{\inh}{}{\colon} % inhabits
+\NewDocumentCommand{\eqd}{}{:\equiv} % defined to be judgmentally equiv.
+\NewDocumentCommand{\eqj}{}{\equiv} % judgmentally equiv.
 
 % given
 \NewDocumentCommand{\giv}{}{\middle|}
