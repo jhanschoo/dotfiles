@@ -69,7 +69,6 @@ plugins=(
   bundler
   compose
   cp
-  debian
   extract
   gem
   git
