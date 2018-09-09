@@ -35,6 +35,7 @@
 \RequirePackage{rotating}
 
 \RequirePackage{multicol}
+\RequirePackage{blindtext}
 
 \RequirePackage[table]{xcolor}
 
@@ -285,8 +286,10 @@ Ligatures = TeX
 \makeoddhead{plain}{}{}{\rightmark}
 \makeevenhead{plain}{\leftmark}{}{}
 
-\makeoddfoot{plain}{}{\latolight DO NOT DISTRIBUTE}{\lato\thepage}
-\makeevenfoot{plain}{\lato\thepage}{\latolight DO NOT DISTRIBUTE}{}
+%\makeoddfoot{plain}{}{\latolight DO NOT DISTRIBUTE}{\lato\thepage}
+%\makeevenfoot{plain}{\lato\thepage}{\latolight DO NOT DISTRIBUTE}{}
+\makeoddfoot{plain}{}{}{\lato\thepage}
+\makeevenfoot{plain}{\lato\thepage}{}{}
 
 % customization of page notes cf. memoir
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
@@ -348,6 +351,8 @@ Ligatures = TeX
 \RenewDocumentCommand{\fixmelogo}{}{}
 
 % Cleveref counter names
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{Section}{Sections}
 \crefname{thm}{Theorem}{Theorems}
 \crefname{lem}{Lemma}{Lemmas}
 \crefname{prop}{Proposition}{Propositions}
@@ -395,14 +400,17 @@ Ligatures = TeX
 \NewDocumentCommand{\B}{m}{\mleft\{ #1 \mright\}}
 \NewDocumentCommand{\s}{m}{\mleft[ #1 \mright]}
 \NewDocumentCommand{\Div}{m m}{\mleft. #1 \middle/ #2 \mright.}
-\NewDocumentCommand{\pp}{m m}{\mleft( #1 ; #2 \mright)}
-\NewDocumentCommand{\bp}{m m}{\mleft[ #1 ; #2 \mright)}
-\NewDocumentCommand{\pb}{m m}{\mleft( #1 ; #2 \mright]}
-\NewDocumentCommand{\bb}{m m}{\mleft[ #1 ; #2 \mright]}
-\NewDocumentCommand{\na}{m m}{\mleft\{ #1 ; #2 \mright\rangle}
-\NewDocumentCommand{\an}{m m}{\mleft\langle #1 ; #2 \mright\}}
+\NewDocumentCommand{\pp}{m m}{\mleft( #1 .. #2 \mright)}
+\NewDocumentCommand{\bp}{m m}{\mleft[ #1 .. #2 \mright)}
+\NewDocumentCommand{\pb}{m m}{\mleft( #1 .. #2 \mright]}
+\NewDocumentCommand{\bb}{m m}{\mleft[ #1 .. #2 \mright]}
+\NewDocumentCommand{\na}{m m}{\mleft\{ #1 .. #2 \mright\rangle}
+\NewDocumentCommand{\an}{m m}{\mleft\langle #1 .. #2 \mright\}}
 
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
+
+\NewDocumentCommand{\pinfty}{}{{+\infty}}
+\NewDocumentCommand{\minfty}{}{{-\infty}}
 
 % fcase
 \NewDocumentCommand{\fcase}{m}{\mleft\{\begin{aligned}#1\end{aligned}\mright\}}
@@ -431,7 +439,9 @@ Ligatures = TeX
 \DeclareMathOperator{\diag}{diag}
 \DeclareMathOperator*{\diam}{diam}
 \DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\dsep}{d-sep}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Eclose}{Eclose}
 \DeclareMathOperator{\eH}{H}
 \DeclareMathOperator{\eb}{eb}
 \DeclareMathOperator{\epig}{epigraph}
@@ -449,10 +459,12 @@ Ligatures = TeX
 \DeclareMathOperator{\lub}{lub}
 \DeclareMathOperator{\ML}{ML}
 \DeclareMathOperator{\netscore}{net-score}
+\DeclareMathOperator{\NonDescendants}{NonDescendants}
 \DeclareMathOperator{\nul}{null}
 \DeclareMathOperator{\nullity}{nullity}
 \DeclareMathOperator{\ntf}{ntf}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Pa}{Pa}
 \DeclareMathOperator*{\plim}{plim}
 \DeclareMathOperator{\range}{range}
 \DeclareMathOperator{\rk}{rk}
@@ -460,6 +472,7 @@ Ligatures = TeX
 \DeclareMathOperator{\SE}{SE}
 \DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\softmax}{softmax}
 \DeclareMathOperator{\supp}{supp}
@@ -524,6 +537,7 @@ Ligatures = TeX
 \NewDocumentCommand{\calH}{}{\symcal{H}}
 \NewDocumentCommand{\calI}{}{\symcal{I}}
 \NewDocumentCommand{\calJ}{}{\symcal{J}}
+\NewDocumentCommand{\calK}{}{\symcal{K}}
 \NewDocumentCommand{\calL}{}{\symcal{L}}
 \NewDocumentCommand{\calM}{}{\symcal{M}}
 \NewDocumentCommand{\calN}{}{\symcal{N}}
@@ -588,6 +602,9 @@ Ligatures = TeX
 \NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
 \NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
 \NewDocumentCommand{\intd}{m}{\int^{#1}}
+
+% structure generated
+\NewDocumentCommand{\ggen}{O{} m O{}}{\ad{#2}_{#3}^{#1}}
 
 % function
 \NewDocumentCommand{\f}{}{_{\symsf{f}}}
@@ -677,12 +694,13 @@ Ligatures = TeX
 \NewDocumentCommand{\Fmo}{}{F^{n\times{}1}}
 \NewDocumentCommand{\Fnn}{}{F^{n\times{}n}}
 \NewDocumentCommand{\Fno}{}{F^{n\times{}1}}
-\NewDocumentCommand{\Fx}{}{F\s{x}}
+\NewDocumentCommand{\Fx}{}{F\s{X}}
 \NewDocumentCommand{\Kmn}{}{K^{m\times{}n}}
 \NewDocumentCommand{\Knn}{}{K^{n\times{}n}}
 \NewDocumentCommand{\LV}{m}{\Lambda^{#1}\p{V}}
 \NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
 \NewDocumentCommand{\Rk}{}{\bbR^{k}}
+\NewDocumentCommand{\Rx}{}{\bbR\s{X}}
 \NewDocumentCommand{\bbRp}{}{\bbR^{p}}
 \NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
 \NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
@@ -713,7 +731,7 @@ Ligatures = TeX
 \NewDocumentCommand{\eqj}{}{\equiv} % judgmentally equiv.
 
 % given
-\NewDocumentCommand{\giv}{}{\middle|}
+\NewDocumentCommand{\giv}{}{\, \middle| \,}
 \NewDocumentCommand{\indep}{}{\bot}
 
 % measured as in KL divergence
@@ -738,7 +756,7 @@ Ligatures = TeX
 \NewDocumentCommand{\ep}{}{\wedge}
 
 % inner product
-\NewDocumentCommand{\ip}{m m}{\ad{#1,#2}}
+\NewDocumentCommand{\ip}{m m}{\ad{{#1}\middle|{#2}}}
 
 % Hadamard product
 \NewDocumentCommand{\Hp}{}{\odot}
@@ -750,7 +768,7 @@ Ligatures = TeX
 % Complex conjugate
 \NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
 
-\NewDocumentCommand{\n}{O{1} m}{\B{#1\mathbin{;}#2}}
+\NewDocumentCommand{\n}{O{1} m}{\B{{#1} .. {#2}}}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
