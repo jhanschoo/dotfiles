@@ -246,7 +246,7 @@ Ligatures = TeX
 \DontPrintSemicolon
 
 % Customize equation numbering, cf. amsmath
-\numberwithin{equation}{chapter}
+\counterwithin{equation}{chapter}
 
 % customization of section headers cf. memoir
 
@@ -427,6 +427,8 @@ Ligatures = TeX
 \DeclareMathOperator{\upBeta}{Beta}
 \DeclareMathOperator{\Bin}{Bin}
 \DeclareMathOperator{\bias}{bias}
+\DeclareMathOperator{\Cont}{C}
+\DeclareMathOperator{\characteristic}{char}
 \DeclareMathOperator{\cf}{cf}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\cossim}{cossim}
@@ -446,6 +448,7 @@ Ligatures = TeX
 \DeclareMathOperator{\eb}{eb}
 \DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
+\DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\glb}{glb}
 \DeclareMathOperator{\Hom}{Hom} % homomorphism
 \DeclareMathOperator{\I}{I}
@@ -453,6 +456,7 @@ Ligatures = TeX
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\idf}{idf}
+\DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\KL}{KL}
 \DeclareMathOperator{\Laplace}{Laplace}
 \DeclareMathOperator{\lcm}{lcm}
@@ -472,6 +476,7 @@ Ligatures = TeX
 \DeclareMathOperator{\SE}{SE}
 \DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\softmax}{softmax}
@@ -661,7 +666,7 @@ Ligatures = TeX
 
 % vector shorthand
 % (w as a commonly used vector variable character)
-\NewDocumentCommand{\w}{m}{\symbfit{#1}}
+\NewDocumentCommand{\w}{m}{{#1}}
 \NewDocumentCommand{\wa}{}{\w{a}}
 \NewDocumentCommand{\wb}{}{\w{b}}
 \NewDocumentCommand{\wc}{}{\w{c}}
@@ -673,11 +678,12 @@ Ligatures = TeX
 \NewDocumentCommand{\ws}{}{\w{s}}
 \NewDocumentCommand{\wu}{}{\w{u}}
 \NewDocumentCommand{\wv}{}{\w{v}}
+\NewDocumentCommand{\wW}{}{\w{W}}
 \NewDocumentCommand{\ww}{}{\w{w}}
 \NewDocumentCommand{\wx}{}{\w{x}}
 \NewDocumentCommand{\wy}{}{\w{y}}
 \NewDocumentCommand{\wz}{}{\w{z}}
-\NewDocumentCommand{\wo}{}{\symbfup{0}}
+\NewDocumentCommand{\wo}{}{{0}}
 \NewDocumentCommand{\wA}{}{\w{A}}
 \NewDocumentCommand{\wB}{}{\w{B}}
 \NewDocumentCommand{\wC}{}{\w{C}}
@@ -703,6 +709,7 @@ Ligatures = TeX
 \NewDocumentCommand{\Rx}{}{\bbR\s{X}}
 \NewDocumentCommand{\bbRp}{}{\bbR^{p}}
 \NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
+\NewDocumentCommand{\Rn}{}{\bbR^n}
 \NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
 
 
@@ -741,6 +748,9 @@ Ligatures = TeX
 \NewDocumentCommand{\di}{}{\mid}
 \NewDocumentCommand{\ndi}{}{\nmid}
 
+% coset
+\NewDocumentCommand{\coset}{m O{}}{\s{#1}_{#2}}
+
 % inverse
 \NewDocumentCommand{\inv}{}{^{-1}}
 
@@ -776,6 +786,8 @@ Ligatures = TeX
 \NewDocumentCommand{\ttrain}{}{\text{train}}
 \NewDocumentCommand{\ttest}{}{\text{test}}
 \NewDocumentCommand{\tensemble}{}{\text{ensemble}}
+
+\NewDocumentCommand{\NP}{}{\mathrm{NP}}
 
 % text shorthand
 
