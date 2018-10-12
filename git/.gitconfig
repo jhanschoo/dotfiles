@@ -9,22 +9,78 @@
 [push]
 	default = simple
 [alias]
-	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
-	co = checkout
-	br = branch
-	c = commit
-	st = status
-	unstage = reset HEAD --
-	last = log -1 HEAD
-	visual = !gitk
-	stash-unapply = !git stash show -p | git apply -R
-	cob = checkout -b
-	cam = commit -am
-	s = status -s
-	d = diff
 	a = add
-	A = add -A
-	cm = commit -m
+	aa = add --all
+	apa = add --patch
+	au = add --update
+	av = add --verbose
+	ap = apply
+
+	bs = bisect
+	bsb = bisect bad
+	bsg = bisect good
+	bsr = bisect reset
+	bss = bisect start
+
+	bl = blame -b -w
+
+	b = branch
+	ba = branch --all
+	bd = branch --delete
+	bD = branch --delete --force
+  bda = !git branch --merged | command grep --invert-match --extended-regexp \"^(\\*|\\s*(master|develop|dev)\\s*$)\" | command xargs --max-args=1 | git branch --delete
+	bnm = branch --no-merged
+	br = branch --remote
+
+	co = checkout
+	cb = checkout -b
+	cm = checkout master
+	cd = checkout develop
+
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+
+	clean = clean --force -d
+
+	cl = clone --recurse-submodules
+
+	c = commit --verbose
+  c1 = commit --verbose --amend
+  cn1 = commit --verbose --no-edit --amend
+  ca = commit --verbose --all
+  ca1 = commit --verbose --all --amend
+  can1 = commit --verbose --all --no-edit --amend
+  cans1 = commit --verbose --all --signoff --no-edit --amend
+  cam = commit --all -m
+  csm = commit --signoff -m
+  cmsg = commit -m
+	cs = commit -S
+
+	cf = config --list
+
+  dct = !git describe --tags $(git rev-list --tags --max-count=1)
+
+	d = diff
+	ds = diff --staged
+	dsa = diff --staged
+	dsw = diff --staged --word-diff
+	dw = diff --word-diff
+
+	dt = diff-tree --no-commit-id --name-only -r
+
+	f = fetch
+	fa = fetch --all --prune
+	fo = fetch origin
+
+	g = gui citool
+	ga = gui citool --amend
+
+	hh = help
+
+	pristine = !git reset --hard && git clean --force -dx
+
+  count = shortlog --numbered --summary
 [commit]
 	gpgsign = true
 [url "https://aur.archlinux.org/"]
