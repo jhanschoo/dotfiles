@@ -453,6 +453,7 @@ Ligatures = TeX
 \DeclareMathOperator{\Hom}{Hom} % homomorphism
 \DeclareMathOperator{\I}{I}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Int}{Int}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\idf}{idf}
@@ -562,6 +563,11 @@ Ligatures = TeX
 \NewDocumentCommand{\upB}{}{\symup{B}}
 \NewDocumentCommand{\upZ}{}{\symup{Z}}
 
+% matrices
+\NewDocumentCommand{\pmat}{m}{\begin{pmatrix}#1\end{pmatrix}}
+\NewDocumentCommand{\vmat}{m}{\begin{vmatrix}#1\end{vmatrix}}
+\NewDocumentCommand{\smmat}{m}{\begin{smallmatrix}#1\end{smallmatrix}}
+
 % logical
 \NewDocumentCommand{\AND}{}{\wedge}
 \NewDocumentCommand{\OR}{}{\vee}
@@ -570,6 +576,9 @@ Ligatures = TeX
 \NewDocumentCommand{\IMP}{}{\Rightarrow}
 \NewDocumentCommand{\IMPD}{}{\Leftarrow}
 \NewDocumentCommand{\EQUIV}{}{\Leftrightarrow}
+
+% group
+\NewDocumentCommand{\nsg}{}{\triangleleft}
 
 % set algebra
 \NewDocumentCommand{\ssd}{}{\triangle} % set symmetric difference
