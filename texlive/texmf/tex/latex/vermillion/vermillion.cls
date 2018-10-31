@@ -478,11 +478,13 @@ Ligatures = TeX
 \DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\softmax}{softmax}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\Spec}{Spec}
-\DeclareMathOperator{\softmax}{softmax}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator*{\st}{s.t.}
+\DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\tf}{tf}
 \DeclareMathOperator{\tfidf}{tf-idf}
 \DeclareMathOperator{\tr}{tr}
@@ -783,6 +785,9 @@ Ligatures = TeX
 % tensor
 \NewDocumentCommand{\te}{m}{\symbfsfup{#1}}
 \NewDocumentCommand{\tei}{m}{\symsfit{#1}}
+
+\NewDocumentCommand{\ten}{}{\otimes}
+\NewDocumentCommand{\bigten}{}{\bigotimes}
 
 % Complex conjugate
 \NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
