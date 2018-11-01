@@ -80,6 +80,7 @@ plugins=(
   osx
   pip
   svn
+  tmux
   zsh-syntax-highlighting
 )
 
