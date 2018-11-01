@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "Iosevka, 'Sarasa Mono CL Regular'",
+  "editor.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "all",
@@ -21,6 +21,6 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": false,
   "workbench.colorTheme": "Nord",
-  "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular'",
+  "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "editor.cursorBlinking": "solid",
 }
