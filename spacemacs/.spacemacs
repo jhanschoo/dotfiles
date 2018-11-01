@@ -327,6 +327,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require 'exec-path-from-shell)
+  ; set exec-path-from-shell to execute a normal shell, not an interactive login shell
+  (setq exec-path-from-shell-arguments '())
   (exec-path-from-shell-initialize)
   (setq auto-save-interval 20)
   (setq auto-save-timeout 2)
