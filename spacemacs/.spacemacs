@@ -339,6 +339,10 @@ you should place your code here."
   ;; coq-layer workaround
   (setq coq-mode-abbrev-table '())
 
+  ;; passthrough for MacOS dead key
+  (if (eq system-type 'darwin)
+    (setq ns-right-alternate-modifier 'none))
+
   (add-hook
    'LaTeX-mode-hook
    (lambda ()
