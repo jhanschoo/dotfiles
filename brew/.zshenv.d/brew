@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ $(which brew) && -d "$(brew --prefix)/etc/bash_completion.d" ]]; then
+if type brew > /dev/null && [[ -d "$(brew --prefix)/etc/bash_completion.d" ]]; then
   autoload -U +X compinit && compinit
   autoload -U +X bashcompinit && bashcompinit
   for file in "$(brew --prefix)/etc/bash_completion.d/"*; do
