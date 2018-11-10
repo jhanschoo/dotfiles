@@ -349,9 +349,7 @@ you should place your code here."
   (add-hook
    'LaTeX-mode-hook
    (lambda ()
-     (setq
-      TeX-view-predicate-list
-      '((output-pdf-evince
+     (setq TeX-view-predicate-list '((output-pdf-evince
          (and (string-match "pdf" (TeX-output-extension))
               (executable-find "evince")))
         (output-pdf-okular
@@ -360,19 +358,20 @@ you should place your code here."
         (output-pdf-skim
          (and (string-match "pdf" (TeX-output-extension))
               (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
-     (setq
-      TeX-view-program-list
-      '(("Evince" "evince %o" "evince")
-        ("Okular" "okular %o" "okular")
-        ("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"
+     (setq TeX-view-program-list '(
+                                    ;("Evince"
+                                    ;TeX-evince-sync-viewevince")
+        ;("Okular" "okular --unique
+        ;%o (mode-io-correlate "#src:%n%a")" "okular")
+        ("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline
+        %n %o %b"
          "/Applications/Skim.app/Contents/SharedSupport/displayline")))
      (add-to-list 'TeX-view-program-selection
-                  '(output-pdf-skim "Skim"))
+       '(output-pdf-skim "Skim"))
      (add-to-list 'TeX-view-program-selection
-                  '(output-pdf-evince "Evince"))
+       '(output-pdf-okular "Okular"))
      (add-to-list 'TeX-view-program-selection
-                  '(output-pdf-okular "Okular"))
-     ))
+       '(output-pdf-evince "Evince"))))
 
   (add-to-list 'default-frame-alist '(width . 100))
 
