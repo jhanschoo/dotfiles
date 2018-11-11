@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# oh-my-zsh tmux plugin configuration (hence no export)
+if [[ $- == *i* && $- != *l* ]]
+then
+  ZSH_TMUX_AUTOSTART=true
+fi
+
+if [[ -n ${ITERM_PROFILE} ]]
+then
+  #ZSH_TMUX_ITERM2=true
+fi
