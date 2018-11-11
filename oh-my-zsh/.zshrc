@@ -79,8 +79,8 @@ plugins=(
   npm
   osx
   pip
+  screen
   svn
-  tmux
   zsh-syntax-highlighting
 )
 
