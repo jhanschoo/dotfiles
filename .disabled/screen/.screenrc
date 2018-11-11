@@ -1,0 +1,7 @@
+escape ``
+
+startup_message off
+
+defscrollback 1048576
+
+truecolor on

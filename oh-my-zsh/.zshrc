@@ -116,3 +116,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if type screen > /dev/null && [[ -z $STY && $- == *i* && $- != *l* ]]
+then
+  echo "[launching screen -xRR]"
+  screen -xRR
+fi
+
