@@ -23,4 +23,6 @@
   "workbench.colorTheme": "Nord",
   "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "editor.cursorBlinking": "solid",
+  "git.alwaysSignOff": true,
+  "git.enableCommitSigning": true,
 }
