@@ -118,7 +118,7 @@ urlcolor=pu]{hyperref}
 
 % Using Lato for display text, Cochineal for body, and Pagella for
 % math c.f. fontspec and unicode-math
-\setmainfont{Cochineal}[Ligatures = TeX]
+\setmainfont{Coelacanth}[Ligatures = TeX]
 %\setmainfont{LinLibertine}[
 %Extension = .otf,
 %UprightFont = *_R,
@@ -419,23 +419,27 @@ Ligatures = TeX
 
 % math operators
 
-\DeclareMathOperator{\Aut}{Aut} % automorphism
 \DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\Ancestors}{Ancestors}
 \DeclareMathOperator*{\argmin}{arg\ min}
 \DeclareMathOperator*{\argmax}{arg\ max}
+\DeclareMathOperator{\Aut}{Aut} % automorphism
 \DeclareMathOperator{\Bern}{Bern}
 \DeclareMathOperator{\upBeta}{Beta}
 \DeclareMathOperator{\Bin}{Bin}
 \DeclareMathOperator{\bias}{bias}
+\DeclareMathOperator{\Boundary}{Boundary}
 \DeclareMathOperator{\Cont}{C}
 \DeclareMathOperator{\characteristic}{char}
 \DeclareMathOperator{\cf}{cf}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\cossim}{cossim}
+\DeclareMathOperator{\Ch}{Ch}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\columnrank}{column\ rank}
 \DeclareMathOperator{\D}{D}
+\DeclareMathOperator{\Descendants}{Descendants}
 \DeclareMathOperator{\df}{df}
 \DeclareMathOperator{\DFT}{DFT}
 \DeclareMathOperator{\diag}{diag}
@@ -462,7 +466,10 @@ Ligatures = TeX
 \DeclareMathOperator{\Laplace}{Laplace}
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\lub}{lub}
+\DeclareMathOperator{\MAP}{MAP}
+\DeclareMathOperator{\MB}{MB}
 \DeclareMathOperator{\ML}{ML}
+\DeclareMathOperator{\Nb}{Nb}
 \DeclareMathOperator{\netscore}{net-score}
 \DeclareMathOperator{\NonDescendants}{NonDescendants}
 \DeclareMathOperator{\nul}{null}
@@ -474,7 +481,9 @@ Ligatures = TeX
 \DeclareMathOperator{\range}{range}
 \DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\rowrank}{row\ rank}
+\DeclareMathOperator{\Scope}{Scope}
 \DeclareMathOperator{\SE}{SE}
+\DeclareMathOperator{\sep}{sep}
 \DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\SL}{SL}
@@ -489,6 +498,7 @@ Ligatures = TeX
 \DeclareMathOperator{\tfidf}{tf-idf}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\unif}{U}
+\DeclareMathOperator{\Val}{Val}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\VCdim}{VCdim}
 \DeclareMathOperator{\wf}{wf}
@@ -578,6 +588,9 @@ Ligatures = TeX
 \NewDocumentCommand{\IMP}{}{\Rightarrow}
 \NewDocumentCommand{\IMPD}{}{\Leftarrow}
 \NewDocumentCommand{\EQUIV}{}{\Leftrightarrow}
+
+% neighbors in path of graph
+\NewDocumentCommand{\pn}{}{\dotsminusdots}
 
 % group
 \NewDocumentCommand{\nsg}{}{\triangleleft}
@@ -750,7 +763,9 @@ Ligatures = TeX
 
 % given
 \NewDocumentCommand{\giv}{}{\, \middle| \,}
-\NewDocumentCommand{\indep}{}{\bot}
+\NewDocumentCommand{\indep}{}{\perp}
+\NewDocumentCommand{\sat}{}{\vDash}
+\NewDocumentCommand{\nsat}{}{\nvDash}
 
 % measured as in KL divergence
 \NewDocumentCommand{\measuredas}{}{\parallel}
