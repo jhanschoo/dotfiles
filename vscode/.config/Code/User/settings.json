@@ -1,4 +1,5 @@
 {
+  "editor.cursorBlinking": "solid",
   "editor.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "relative",
@@ -14,15 +15,17 @@
     "javascriptreact",
     "vue",
   ],
+  "git.alwaysSignOff": true,
+  "git.enableCommitSigning": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "tslint.packageManager": "yarn",
   "vim.leader": " ",
   "vim.overrideCopy": false,
   "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": false,
   "workbench.colorTheme": "Nord",
-  "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
-  "editor.cursorBlinking": "solid",
-  "git.alwaysSignOff": true,
-  "git.enableCommitSigning": true,
+  "window.titleBarStyle": "custom",
+  "tslint.trace.server": "verbose",
+  "editor.smoothScrolling": true,
+  "editor.mouseWheelScrollSensitivity": 0.25
 }
