@@ -84,22 +84,23 @@ urlcolor=pu]{hyperref}
 \RequirePackage{cleveref}
 
 % color support
-\definecolor{bg}{HTML}{2E3440}
-\definecolor{fg}{HTML}{D8DEE9}
-\definecolor{re}{HTML}{BF616A}
-\definecolor{bl}{HTML}{81A1C1}
-\definecolor{gr}{HTML}{A3BE8C}
-\definecolor{aq}{HTML}{88C0D0}
-\definecolor{pu}{HTML}{B48EAD}
+%\definecolor{bg}{HTML}{2E3440}
+%\definecolor{fg}{HTML}{D8DEE9}
+%\definecolor{re}{HTML}{BF616A}
+%\definecolor{bl}{HTML}{81A1C1}
+%\definecolor{gr}{HTML}{A3BE8C}
+%\definecolor{aq}{HTML}{88C0D0}
+%\definecolor{pu}{HTML}{B48EAD}
+\definecolor{bg}{HTML}{FFFFFF}
+\definecolor{fg}{HTML}{000000}
+\definecolor{re}{HTML}{800000}
+\definecolor{bl}{HTML}{000080}
+\definecolor{gr}{HTML}{008000}
+\definecolor{aq}{HTML}{008080}
+\definecolor{pu}{HTML}{800080}
 
 %\pagecolor{bg}
 %\color{fg}
-
-%\definecolor{re}{HTML}{AF270B}
-%\definecolor{bl}{HTML}{0B536E}
-%\definecolor{gr}{HTML}{5FA00A}
-%\definecolor{wh}{HTML}{FFFFFF}
-
 
 % define augmented matrices
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
@@ -142,7 +143,7 @@ urlcolor=pu]{hyperref}
 \setmathfontface\mathup{TeXGyrePagella-Regular}[Scale=MatchLowercase]
 \setmathfontface\mathit{TeXGyrePagella-Italic}[Scale=MatchLowercase]
 \setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
-\setmathfontface\mathsf{Lato}[Scale=MatchUppercase]
+\setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
 
 \newfontfamily\lato{Lato}[
 Extension = .ttf,
