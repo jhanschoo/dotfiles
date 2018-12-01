@@ -119,7 +119,14 @@ urlcolor=pu]{hyperref}
 
 % Using Lato for display text, Cochineal for body, and Pagella for
 % math c.f. fontspec and unicode-math
-\setmainfont{Coelacanth}[Ligatures = TeX]
+\setmainfont{EB Garamond}[
+%Extension = .otf,
+%UprightFont = *-Regular,
+%ItalicFont = *-Italic,
+%BoldFont = *-Bold,
+%BoldItalicFont = *-BoldItalic,
+Ligatures = TeX
+]
 %\setmainfont{LinLibertine}[
 %Extension = .otf,
 %UprightFont = *_R,
@@ -147,7 +154,7 @@ urlcolor=pu]{hyperref}
 
 \newfontfamily\lato{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Regular,
 ItalicFont = *-Italic,
 BoldFont = *-Bold,
@@ -157,7 +164,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latosemibold{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Semibold,
 ItalicFont = *-SemiboldItalic,
 Numbers = OldStyle,
@@ -165,7 +172,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latobold{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Bold,
 ItalicFont = *-BoldItalic,
 BoldFont = *-Black,
@@ -175,7 +182,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latoblack{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Black,
 ItalicFont = *-BlackItalic,
 Numbers = OldStyle,
@@ -183,7 +190,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latothin{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Thin,
 ItalicFont = *-ThinItalic,
 Numbers = OldStyle,
@@ -191,7 +198,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latolight{Lato}[
 Extension = .ttf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Light,
 ItalicFont = *-LightItalic,
 Numbers = OldStyle,
