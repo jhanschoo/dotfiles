@@ -13,19 +13,14 @@
     "html",
     "javascript",
     "javascriptreact",
-    "vue",
+    "vue"
   ],
   "git.alwaysSignOff": true,
   "git.enableCommitSigning": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
-  "tslint.packageManager": "yarn",
-  "vim.leader": " ",
-  "vim.overrideCopy": false,
-  "vim.useSystemClipboard": true,
   "workbench.colorTheme": "Nord",
   "window.titleBarStyle": "custom",
-  "tslint.trace.server": "verbose",
   "editor.smoothScrolling": true,
   "editor.mouseWheelScrollSensitivity": 0.25
 }
