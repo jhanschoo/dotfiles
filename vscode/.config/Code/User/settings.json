@@ -22,5 +22,8 @@
   "workbench.colorTheme": "Nord",
   "window.titleBarStyle": "custom",
   "editor.smoothScrolling": true,
-  "editor.mouseWheelScrollSensitivity": 0.25
+  "editor.mouseWheelScrollSensitivity": 0.25,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.statusBar.feedback.visible": false,
+  "git.autofetch": true
 }
