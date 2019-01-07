@@ -74,6 +74,7 @@ plugins=(
   git
   gitignore
   github
+  kubectl
   laravel
   node
   npm
