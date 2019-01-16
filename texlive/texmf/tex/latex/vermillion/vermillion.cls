@@ -144,12 +144,12 @@ Ligatures = TeX
 %\setmathfontface\mathit{TeXGyreTermes-Italic}[Scale=MatchLowercase]
 %\setmathfontface\mathbf{TeXGyreTermes-Bold}[Scale=MatchLowercase]
 %\setmathfontface\mathsf{TeXGyreHeros-Regular}[Scale=MatchLowercase]
-\setmathfont{TeXGyrePagellaMath}[Scale=MatchLowercase]
-\setmathfontface\mathrm{TeXGyrePagella-Regular}[Scale=MatchLowercase]
-\let\mathup\undefined
-\setmathfontface\mathup{TeXGyrePagella-Regular}[Scale=MatchLowercase]
-\setmathfontface\mathit{TeXGyrePagella-Italic}[Scale=MatchLowercase]
-\setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
+\setmathfont{Garamond-Math}%[Scale=MatchLowercase]
+%\setmathfontface\mathrm{TeXGyrePagella-Regular}[Scale=MatchLowercase]
+%\let\mathup\undefined
+%\setmathfontface\mathup{TeXGyrePagella-Regular}[Scale=MatchLowercase]
+%\setmathfontface\mathit{TeXGyrePagella-Italic}[Scale=MatchLowercase]
+%\setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
 \setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
 
 \newfontfamily\lato{Lato}[
@@ -433,16 +433,18 @@ Ligatures = TeX
 \DeclareMathOperator*{\argmax}{arg\ max}
 \DeclareMathOperator{\Aut}{Aut} % automorphism
 \DeclareMathOperator{\Bern}{Bern}
-\DeclareMathOperator{\upBeta}{Beta}
-\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\Bet}{Beta}
+\DeclareMathOperator{\Bino}{Bino}
 \DeclareMathOperator{\bias}{bias}
 \DeclareMathOperator{\Boundary}{Boundary}
+\DeclareMathOperator{\Cate}{Cate}
 \DeclareMathOperator{\Cont}{C}
 \DeclareMathOperator{\characteristic}{char}
 \DeclareMathOperator{\cf}{cf}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\cossim}{cossim}
 \DeclareMathOperator{\Ch}{Ch}
+\DeclareMathOperator{\chisq}{\symrm{\chi}^2}
 \DeclareMathOperator{\Cl}{Cl}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\columnrank}{column\ rank}
@@ -458,8 +460,14 @@ Ligatures = TeX
 \DeclareMathOperator{\Eclose}{Eclose}
 \DeclareMathOperator{\eH}{H}
 \DeclareMathOperator{\eb}{eb}
+\DeclareMathOperator{\emp}{emp}
 \DeclareMathOperator{\epig}{epigraph}
 \DeclareMathOperator{\ERM}{ERM}
+\DeclareMathOperator{\erf}{erf}
+\DeclareMathOperator{\Erla}{Erla}
+\DeclareMathOperator{\err}{err}
+\DeclareMathOperator{\Expo}{Expo}
+\DeclareMathOperator{\Gamm}{Gamm}
 \DeclareMathOperator{\GL}{GL}
 \DeclareMathOperator{\glb}{glb}
 \DeclareMathOperator{\Hom}{Hom} % homomorphism
@@ -467,16 +475,18 @@ Ligatures = TeX
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\InvGamm}{InvGamm}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\idf}{idf}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\KL}{KL}
-\DeclareMathOperator{\Laplace}{Laplace}
+\DeclareMathOperator{\Lapl}{Lapl}
 \DeclareMathOperator{\lcm}{lcm}
 \DeclareMathOperator{\lub}{lub}
 \DeclareMathOperator{\MAP}{MAP}
 \DeclareMathOperator{\MB}{MB}
 \DeclareMathOperator{\ML}{ML}
+\DeclareMathOperator{\Mult}{Mult}
 \DeclareMathOperator{\Nb}{Nb}
 \DeclareMathOperator{\netscore}{net-score}
 \DeclareMathOperator{\NonDescendants}{NonDescendants}
@@ -485,6 +495,10 @@ Ligatures = TeX
 \DeclareMathOperator{\ntf}{ntf}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\Pa}{Pa}
+\DeclareMathOperator{\Pare}{Pare}
+\DeclareMathOperator{\Pois}{Pois}
+\DeclareMathOperator{\pr}{p}
+\DeclareMathOperator{\PR}{P}
 \DeclareMathOperator*{\plim}{plim}
 \DeclareMathOperator{\range}{range}
 \DeclareMathOperator{\rk}{rk}
@@ -494,6 +508,7 @@ Ligatures = TeX
 \DeclareMathOperator{\sep}{sep}
 \DeclareMathOperator{\Seq}{Seq}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sigm}{sigm}
 \DeclareMathOperator{\SL}{SL}
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\softmax}{softmax}
@@ -505,9 +520,8 @@ Ligatures = TeX
 \DeclareMathOperator{\tf}{tf}
 \DeclareMathOperator{\tfidf}{tf-idf}
 \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\unif}{U}
+\DeclareMathOperator{\Unif}{Unif}
 \DeclareMathOperator{\Val}{Val}
-\DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\VCdim}{VCdim}
 \DeclareMathOperator{\wf}{wf}
 \DeclareMathOperator{\wfidf}{wf-idf}
@@ -515,29 +529,40 @@ Ligatures = TeX
 
 % probability operator shorthands
 \NewDocumentCommand{\Es}{O{} m}{\E_{#1}\s{#2}}
+\NewDocumentCommand{\Var}{}{\symup{V}}
 \NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
 \NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
+\NewDocumentCommand{\std}{}{\symup{\sigma}}
+\NewDocumentCommand{\Cor}{}{\symup{\rho}}
+\NewDocumentCommand{\rv}{m}{#1}
+\NewDocumentCommand{\rw}{m}{#1}
 
-\NewDocumentCommand{\Cd}{}{\symrm{d}}
-\NewDocumentCommand{\CDelta}{}{\symrm{\Delta}}
-\NewDocumentCommand{\CE}{}{\symrm{E}}
-\NewDocumentCommand{\Ce}{}{\symrm{e}}
-\NewDocumentCommand{\Cepsilon}{}{\symrm{\epsilon}}
-\NewDocumentCommand{\CH}{}{\symrm{H}}
-\NewDocumentCommand{\CI}{}{\symrm{I}}
-\NewDocumentCommand{\Ci}{}{\symrm{i}}
-\NewDocumentCommand{\CL}{}{\symrm{L}}
-\NewDocumentCommand{\CLambda}{}{\symrm{\Lambda}}
-\NewDocumentCommand{\Clambda}{}{\symrm{\lambda}}
-\NewDocumentCommand{\Cm}{}{\symrm{m}}
-\NewDocumentCommand{\Cmu}{}{\symrm{\mu}}
-\NewDocumentCommand{\CN}{}{\symrm{N}}
-\NewDocumentCommand{\CU}{}{\symrm{U}}
-\NewDocumentCommand{\Cu}{}{\symrm{u}}
-\NewDocumentCommand{\CX}{}{\symrm{X}}
-\NewDocumentCommand{\Cx}{}{\symrm{x}}
-\NewDocumentCommand{\Ctau}{}{\symrm{\tau}}
-\NewDocumentCommand{\Cpi}{}{\symrm{\pi}}
+\NewDocumentCommand{\Cb}{}{\symup{b}}
+\NewDocumentCommand{\CB}{}{\symup{B}}
+\NewDocumentCommand{\CBeta}{}{\symup{\Beta}}
+\NewDocumentCommand{\Cd}{}{\symup{d}}
+\NewDocumentCommand{\Cdelta}{}{\symup{\delta}}
+\NewDocumentCommand{\CDelta}{}{\symup{\Delta}}
+\NewDocumentCommand{\CE}{}{\symup{E}}
+\NewDocumentCommand{\Ce}{}{\symup{e}}
+\NewDocumentCommand{\Cepsilon}{}{\symup{\epsilon}}
+\NewDocumentCommand{\CGamma}{}{\symup{\Gamma}}
+\NewDocumentCommand{\CH}{}{\symup{H}}
+\NewDocumentCommand{\CI}{}{\symup{I}}
+\NewDocumentCommand{\Ci}{}{\symup{i}}
+\NewDocumentCommand{\CL}{}{\symup{L}}
+\NewDocumentCommand{\CLambda}{}{\symup{\Lambda}}
+\NewDocumentCommand{\Clambda}{}{\symup{\lambda}}
+\NewDocumentCommand{\Cm}{}{\symup{m}}
+\NewDocumentCommand{\Cmu}{}{\symup{\mu}}
+\NewDocumentCommand{\CN}{}{\symup{N}}
+\NewDocumentCommand{\CU}{}{\symup{U}}
+\NewDocumentCommand{\Cu}{}{\symup{u}}
+\NewDocumentCommand{\CX}{}{\symup{X}}
+\NewDocumentCommand{\Cx}{}{\symup{x}}
+\NewDocumentCommand{\CZ}{}{\symup{Z}}
+\NewDocumentCommand{\Ctau}{}{\symup{\tau}}
+\NewDocumentCommand{\Cpi}{}{\symup{\pi}}
 \NewDocumentCommand{\bbA}{}{\symbb{A}}
 \NewDocumentCommand{\bbC}{}{\symbb{C}}
 \NewDocumentCommand{\bbE}{}{\symbb{E}}
@@ -579,9 +604,6 @@ Ligatures = TeX
 \NewDocumentCommand{\calZ}{}{\symcal{Z}}
 \NewDocumentCommand{\sft}{}{\symsf{t}}
 \NewDocumentCommand{\sfx}{}{\symsf{x}}
-\NewDocumentCommand{\upb}{}{\symup{b}}
-\NewDocumentCommand{\upB}{}{\symup{B}}
-\NewDocumentCommand{\upZ}{}{\symup{Z}}
 
 % matrices
 \NewDocumentCommand{\pmat}{m}{\begin{pmatrix}#1\end{pmatrix}}
@@ -647,7 +669,7 @@ Ligatures = TeX
 \NewDocumentCommand{\f}{}{_{\symsf{f}}}
 
 % Iversonian
-\NewDocumentCommand{\iver}{m}{\sfi\s{#1}}
+\NewDocumentCommand{\iver}{m}{\sfupI\s{#1}}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
@@ -749,7 +771,7 @@ Ligatures = TeX
 \NewDocumentCommand{\DKL}{}{D_{\M{KL}}}
 
 % Iversonian
-\NewDocumentCommand{\sfi}{}{\symsf{1}}
+\NewDocumentCommand{\sfupI}{}{\symsfup{I}}
 
 % random variables
 \NewDocumentCommand{\R}{m}{\symup{#1}}
@@ -788,7 +810,7 @@ Ligatures = TeX
 % inverse
 \NewDocumentCommand{\inv}{}{^{-1}}
 
-\NewDocumentCommand{\dif}{}{\:\symrm{d}}
+\NewDocumentCommand{\dif}{}{\:\symup{d}}
 \NewDocumentCommand{\pD}{O{} m m}{\p{\D^{#1} #2}\p{#3}}
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
@@ -806,8 +828,8 @@ Ligatures = TeX
 \NewDocumentCommand{\Hp}{}{\odot}
 
 % tensor
-\NewDocumentCommand{\te}{m}{\symbfsfup{#1}}
-\NewDocumentCommand{\tei}{m}{\symsfit{#1}}
+\NewDocumentCommand{\te}{m}{#1}
+\NewDocumentCommand{\tei}{m}{#1}
 
 \NewDocumentCommand{\ten}{}{\otimes}
 \NewDocumentCommand{\bigten}{}{\bigotimes}
