@@ -1,0 +1,8 @@
+% what is this?
+%\NewDocumentCommand{\bnd}{m}{\bar{#1}}
+% closure
+\NewDocumentCommand{\cl}{m}{#1^{-}}
+% interipr
+\NewDocumentCommand{\inte}{m}{#1^\circ}
+% completion
+\NewDocumentCommand{\cpltn}{s m}{\IfBooleanTF{#1}{\widetilde{#2}}{\tilde{#2}}}
