@@ -1,0 +1,18 @@
+\NewDocumentCommand{\ssd}{}{\triangle} % set symmetric difference
+\NewDocumentCommand{\sm}{}{\smallsetminus}
+\NewDocumentCommand{\sand}{}{\cap}
+\NewDocumentCommand{\sor}{}{\cup}
+\NewDocumentCommand{\bigsand}{O{} m O{}}{\bigcap_{#3}^{#1}{#2}}
+\NewDocumentCommand{\bigsor}{O{} m O{}}{\bigcup_{#3}^{#1}{#2}}
+\NewDocumentCommand{\sle}{}{\subseteq}
+\NewDocumentCommand{\nsle}{}{\nsubseteq}
+\NewDocumentCommand{\sge}{}{\supseteq}
+\NewDocumentCommand{\nsge}{}{\nsupseteq}
+\NewDocumentCommand{\slt}{}{\subsetneq}
+\NewDocumentCommand{\sgt}{}{\supsetneq}
+
+% power set
+\NewDocumentCommand{\pow}{m}{\symcal{P}\p{#1}}
+
+% complement
+\NewDocumentCommand{\cpl}{}{\complement}

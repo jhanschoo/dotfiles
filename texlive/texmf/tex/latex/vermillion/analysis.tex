@@ -1,0 +1,34 @@
+% sequential limits
+\NewDocumentCommand{\lims}{}{\lim_{<\infty}}
+\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
+
+% limits superior and inferior
+\NewDocumentCommand{\limsups}{}{\limsup_{<\infty}}
+\NewDocumentCommand{\liminfs}{}{\liminf_{<\infty}}
+\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
+\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
+
+% functional limits
+\NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
+\NewDocumentCommand{\limr}{m}{\lim_{> #1}}
+\NewDocumentCommand{\liml}{m}{\lim_{< #1}}
+\NewDocumentCommand{\limfr}{m m}{\lim_{#1\searrow #2}}
+\NewDocumentCommand{\limfl}{m m}{\lim_{#1\nearrow #2}}
+
+% series
+\NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
+\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{<\infty}\seqn[#1]{#2}[#3]}
+%\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
+
+% integrals
+\NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
+\NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
+\NewDocumentCommand{\intd}{m}{\int^{#1}}
+
+% integrator
+\NewDocumentCommand{\dif}{}{\:\symup{d}}
+
+% shorthand for evaluating a differential at a point
+\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{#1} #2}\p{#3}}
+% antidifferential
+\NewDocumentCommand{\adif}{}{\D\inv}

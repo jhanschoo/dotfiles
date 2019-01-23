@@ -1,0 +1,32 @@
+% sequences
+\NewDocumentCommand{\seqn}{O{} m O{n}}{\p{#2}_{#3}^{#1}}
+\NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
+
+% sets
+\NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
+\NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\B{#2}_{#3}^{#1}}
+
+% Iversonian
+\NewDocumentCommand{\iver}{m}{\sfupI\s{#1}}
+
+% cartesian product
+\NewDocumentCommand{\cp}{}{\times}
+\NewDocumentCommand{\bigcp}{}{\prod}
+
+% inverse
+\NewDocumentCommand{\inv}{}{^{-1}}
+
+% Complex conjugate
+\NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
+
+% finite set of integers
+\NewDocumentCommand{\n}{O{1} m}{\B{{#1} .. {#2}}}
+
+% operators of functions
+\NewDocumentCommand{\cps}{}{\circ}
+\NewDocumentCommand{\res}{m}{_{\upharpoonright #1}}
+% deprecated
+%\NewDocumentCommand{\restr}{}{\upharpoonright}
+
+% given
+\NewDocumentCommand{\giv}{}{\, \middle| \,}

@@ -66,6 +66,7 @@
 \RequirePackage{longtable}
 \RequirePackage{tabu}
 \RequirePackage{float}
+\RequirePackage[final]{listings}
 
 \RequirePackage[nomargin]{fixme}
 
@@ -127,34 +128,20 @@ urlcolor=pu]{hyperref}
 %BoldItalicFont = *-BoldItalic,
 Ligatures = TeX
 ]
-%\setmainfont{LinLibertine}[
-%Extension = .otf,
-%UprightFont = *_R,
-%ItalicFont = *_RI,
-%BoldFont = *_RB,
-%BoldItalicFont = *_RBI,
-%Ligatures = TeX
-%]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-%\setmathfont{TeXGyreTermesMath}[Scale=MatchLowercase]
-%\setmathfontface\mathrm{TeXGyreTermes-Regular}[Scale=MatchLowercase]
-%\let\mathup\undefined
-%\setmathfontface\mathup{TeXGyreTermes-Regular}[Scale=MatchLowercase]
-%\setmathfontface\mathit{TeXGyreTermes-Italic}[Scale=MatchLowercase]
-%\setmathfontface\mathbf{TeXGyreTermes-Bold}[Scale=MatchLowercase]
-%\setmathfontface\mathsf{TeXGyreHeros-Regular}[Scale=MatchLowercase]
 \setmathfont{Garamond-Math}%[Scale=MatchLowercase]
-%\setmathfontface\mathrm{TeXGyrePagella-Regular}[Scale=MatchLowercase]
-%\let\mathup\undefined
-%\setmathfontface\mathup{TeXGyrePagella-Regular}[Scale=MatchLowercase]
-%\setmathfontface\mathit{TeXGyrePagella-Italic}[Scale=MatchLowercase]
-%\setmathfontface\mathbf{TeXGyrePagella-Bold}[Scale=MatchLowercase]
-\setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
+\setmathfontface\mathrm{EBGaramond-Regular}[Scale=MatchLowercase]
+\let\mathup\undefined
+\setmathfontface\mathup{EBGaramond-Regular}[Scale=MatchLowercase]
+\setmathfontface\mathit{EBGaramond-Italic}[Scale=MatchLowercase]
+\setmathfontface\mathbf{EBGaramond-Bold}[Scale=MatchLowercase]
+\setmathfontface\mathsf{libertinussans-regular}[Scale=MatchLowercase]
+%\setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
 
 \newfontfamily\lato{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Regular,
 ItalicFont = *-Italic,
 BoldFont = *-Bold,
@@ -164,7 +151,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latosemibold{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Semibold,
 ItalicFont = *-SemiboldItalic,
 Numbers = OldStyle,
@@ -172,7 +159,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latobold{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Bold,
 ItalicFont = *-BoldItalic,
 BoldFont = *-Black,
@@ -182,7 +169,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latoblack{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Black,
 ItalicFont = *-BlackItalic,
 Numbers = OldStyle,
@@ -190,7 +177,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latothin{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Thin,
 ItalicFont = *-ThinItalic,
 Numbers = OldStyle,
@@ -198,7 +185,7 @@ Ligatures = TeX
 ]
 \newfontfamily\latolight{Lato}[
 Extension = .ttf,
-Scale = MatchLowercase,
+Scale = MatchUppercase,
 UprightFont = *-Light,
 ItalicFont = *-LightItalic,
 Numbers = OldStyle,
@@ -313,6 +300,16 @@ Ligatures = TeX
   layout=myinline
 }
 
+\lstset{
+  basicstyle=\ttfamily,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  numberstyle=\small,
+  escapeinside={(*@}{@*)}
+}
+
+\NewDocumentCommand{\lst}{}{\lstinline}
+
 % customization of itemize and enumerate environments cf. enumitem
 \setlist{
   noitemsep,
@@ -362,6 +359,7 @@ Ligatures = TeX
 \crefname{chapter}{Chapter}{Chapters}
 \crefname{section}{Section}{Sections}
 \crefname{thm}{Theorem}{Theorems}
+\crefname{cla}{Claim}{Claims}
 \crefname{lem}{Lemma}{Lemmas}
 \crefname{prop}{Proposition}{Propositions}
 \crefname{cor}{Corollary}{Corollaries}
@@ -374,6 +372,7 @@ Ligatures = TeX
 \crefname{add}{Addendum}{Addenda}
 \crefname{prf}{Proof}{Proofs}
 \Crefname{thm}{Theorem}{Theorems}
+\Crefname{cla}{Claim}{Claims}
 \Crefname{lem}{Lemma}{Lemmata}
 \Crefname{prop}{Proposition}{Propositions}
 \Crefname{cor}{Corollary}{Corollaries}
@@ -398,446 +397,43 @@ Ligatures = TeX
 
 % math shorthand
 
-% delimiters
-\NewDocumentCommand{\abs}{m}{\mleft\lvert #1 \mright\rvert}
-\NewDocumentCommand{\norm}{m}{\mleft\lVert #1 \mright\rVert}
-\NewDocumentCommand{\fl}{m}{\mleft\lfloor #1 \mright\rfloor}
-\NewDocumentCommand{\ce}{m}{\mleft\lceil #1 \mright\rceil}
-\NewDocumentCommand{\p}{m}{\mleft( #1 \mright)}
-\NewDocumentCommand{\ad}{m}{\mleft\langle #1 \mright\rangle}
-\NewDocumentCommand{\B}{m}{\mleft\{ #1 \mright\}}
-\NewDocumentCommand{\s}{m}{\mleft[ #1 \mright]}
-\NewDocumentCommand{\Div}{m m}{\mleft. #1 \middle/ #2 \mright.}
-\NewDocumentCommand{\pp}{m m}{\mleft( #1 .. #2 \mright)}
-\NewDocumentCommand{\bp}{m m}{\mleft[ #1 .. #2 \mright)}
-\NewDocumentCommand{\pb}{m m}{\mleft( #1 .. #2 \mright]}
-\NewDocumentCommand{\bb}{m m}{\mleft[ #1 .. #2 \mright]}
-\NewDocumentCommand{\na}{m m}{\mleft\{ #1 .. #2 \mright\rangle}
-\NewDocumentCommand{\an}{m m}{\mleft\langle #1 .. #2 \mright\}}
-
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
 \NewDocumentCommand{\pinfty}{}{{+\infty}}
 \NewDocumentCommand{\minfty}{}{{-\infty}}
-
-% fcase
-\NewDocumentCommand{\fcase}{m}{\mleft\{\begin{aligned}#1\end{aligned}\mright\}}
-\NewDocumentCommand{\THEN}{}{&}
-\NewDocumentCommand{\IF}{}{&&\gets}
-
-% math operators
-
-\DeclareMathOperator{\adj}{adj}
-\DeclareMathOperator{\Ancestors}{Ancestors}
-\DeclareMathOperator*{\argmin}{arg\ min}
-\DeclareMathOperator*{\argmax}{arg\ max}
-\DeclareMathOperator{\Aut}{Aut} % automorphism
-\DeclareMathOperator{\Bern}{Bern}
-\DeclareMathOperator{\Bet}{Beta}
-\DeclareMathOperator{\Bino}{Bino}
-\DeclareMathOperator{\bias}{bias}
-\DeclareMathOperator{\Boundary}{Boundary}
-\DeclareMathOperator{\Cate}{Cate}
-\DeclareMathOperator{\Cont}{C}
-\DeclareMathOperator{\characteristic}{char}
-\DeclareMathOperator{\cf}{cf}
-\DeclareMathOperator{\cod}{cod}
-\DeclareMathOperator{\cossim}{cossim}
-\DeclareMathOperator{\Ch}{Ch}
-\DeclareMathOperator{\chisq}{\symrm{\chi}^2}
-\DeclareMathOperator{\Cl}{Cl}
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\columnrank}{column\ rank}
-\DeclareMathOperator{\D}{D}
-\DeclareMathOperator{\Descendants}{Descendants}
-\DeclareMathOperator{\df}{df}
-\DeclareMathOperator{\DFT}{DFT}
-\DeclareMathOperator{\diag}{diag}
-\DeclareMathOperator*{\diam}{diam}
-\DeclareMathOperator{\dom}{dom}
-\DeclareMathOperator{\dsep}{d-sep}
-\DeclareMathOperator{\E}{E}
-\DeclareMathOperator{\Eclose}{Eclose}
-\DeclareMathOperator{\eH}{H}
-\DeclareMathOperator{\eb}{eb}
-\DeclareMathOperator{\emp}{emp}
-\DeclareMathOperator{\epig}{epigraph}
-\DeclareMathOperator{\ERM}{ERM}
-\DeclareMathOperator{\erf}{erf}
-\DeclareMathOperator{\Erla}{Erla}
-\DeclareMathOperator{\err}{err}
-\DeclareMathOperator{\Expo}{Expo}
-\DeclareMathOperator{\Gamm}{Gamm}
-\DeclareMathOperator{\GL}{GL}
-\DeclareMathOperator{\glb}{glb}
-\DeclareMathOperator{\Hom}{Hom} % homomorphism
-\DeclareMathOperator{\I}{I}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\Img}{Im}
-\DeclareMathOperator{\Int}{Int}
-\DeclareMathOperator{\InvGamm}{InvGamm}
-\DeclareMathOperator{\id}{id}
-\DeclareMathOperator{\idf}{idf}
-\DeclareMathOperator{\Ker}{Ker}
-\DeclareMathOperator{\KL}{KL}
-\DeclareMathOperator{\Lapl}{Lapl}
-\DeclareMathOperator{\lcm}{lcm}
-\DeclareMathOperator{\lub}{lub}
-\DeclareMathOperator{\MAP}{MAP}
-\DeclareMathOperator{\MB}{MB}
-\DeclareMathOperator{\ML}{ML}
-\DeclareMathOperator{\Mult}{Mult}
-\DeclareMathOperator{\Nb}{Nb}
-\DeclareMathOperator{\netscore}{net-score}
-\DeclareMathOperator{\NonDescendants}{NonDescendants}
-\DeclareMathOperator{\nul}{null}
-\DeclareMathOperator{\nullity}{nullity}
-\DeclareMathOperator{\ntf}{ntf}
-\DeclareMathOperator{\ord}{ord}
-\DeclareMathOperator{\Pa}{Pa}
-\DeclareMathOperator{\Pare}{Pare}
-\DeclareMathOperator{\Pois}{Pois}
-\DeclareMathOperator{\pr}{p}
-\DeclareMathOperator{\PR}{P}
-\DeclareMathOperator*{\plim}{plim}
-\DeclareMathOperator{\range}{range}
-\DeclareMathOperator{\rk}{rk}
-\DeclareMathOperator{\rowrank}{row\ rank}
-\DeclareMathOperator{\Scope}{Scope}
-\DeclareMathOperator{\SE}{SE}
-\DeclareMathOperator{\sep}{sep}
-\DeclareMathOperator{\Seq}{Seq}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\sigm}{sigm}
-\DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\SO}{SO}
-\DeclareMathOperator{\softmax}{softmax}
-\DeclareMathOperator{\spn}{span}
-\DeclareMathOperator{\Spec}{Spec}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator*{\st}{s.t.}
-\DeclareMathOperator{\Sym}{Sym}
-\DeclareMathOperator{\tf}{tf}
-\DeclareMathOperator{\tfidf}{tf-idf}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\Unif}{Unif}
-\DeclareMathOperator{\Val}{Val}
-\DeclareMathOperator{\VCdim}{VCdim}
-\DeclareMathOperator{\wf}{wf}
-\DeclareMathOperator{\wfidf}{wf-idf}
-\DeclareMathOperator{\wop}{w}
-
-% probability operator shorthands
-\NewDocumentCommand{\Es}{O{} m}{\E_{#1}\s{#2}}
-\NewDocumentCommand{\Var}{}{\symup{V}}
-\NewDocumentCommand{\Vars}{O{} m}{\Var_{#1}\s{#2}}
-\NewDocumentCommand{\Covs}{O{} m}{\Cov_{#1}\s{#2}}
-\NewDocumentCommand{\std}{}{\symup{\sigma}}
-\NewDocumentCommand{\Cor}{}{\symup{\rho}}
-\NewDocumentCommand{\rv}{m}{#1}
-\NewDocumentCommand{\rw}{m}{#1}
-
-\NewDocumentCommand{\Cb}{}{\symup{b}}
-\NewDocumentCommand{\CB}{}{\symup{B}}
-\NewDocumentCommand{\CBeta}{}{\symup{\Beta}}
-\NewDocumentCommand{\Cd}{}{\symup{d}}
-\NewDocumentCommand{\Cdelta}{}{\symup{\delta}}
-\NewDocumentCommand{\CDelta}{}{\symup{\Delta}}
-\NewDocumentCommand{\CE}{}{\symup{E}}
-\NewDocumentCommand{\Ce}{}{\symup{e}}
-\NewDocumentCommand{\Cepsilon}{}{\symup{\epsilon}}
-\NewDocumentCommand{\CGamma}{}{\symup{\Gamma}}
-\NewDocumentCommand{\CH}{}{\symup{H}}
-\NewDocumentCommand{\CI}{}{\symup{I}}
-\NewDocumentCommand{\Ci}{}{\symup{i}}
-\NewDocumentCommand{\CL}{}{\symup{L}}
-\NewDocumentCommand{\CLambda}{}{\symup{\Lambda}}
-\NewDocumentCommand{\Clambda}{}{\symup{\lambda}}
-\NewDocumentCommand{\Cm}{}{\symup{m}}
-\NewDocumentCommand{\Cmu}{}{\symup{\mu}}
-\NewDocumentCommand{\CN}{}{\symup{N}}
-\NewDocumentCommand{\CU}{}{\symup{U}}
-\NewDocumentCommand{\Cu}{}{\symup{u}}
-\NewDocumentCommand{\CX}{}{\symup{X}}
-\NewDocumentCommand{\Cx}{}{\symup{x}}
-\NewDocumentCommand{\CZ}{}{\symup{Z}}
-\NewDocumentCommand{\Ctau}{}{\symup{\tau}}
-\NewDocumentCommand{\Cpi}{}{\symup{\pi}}
-\NewDocumentCommand{\bbA}{}{\symbb{A}}
-\NewDocumentCommand{\bbC}{}{\symbb{C}}
-\NewDocumentCommand{\bbE}{}{\symbb{E}}
-\NewDocumentCommand{\bbF}{}{\symbb{F}}
-\NewDocumentCommand{\bbQ}{}{\symbb{Q}}
-\NewDocumentCommand{\bbR}{}{\symbb{R}}
-\NewDocumentCommand{\bbS}{}{\symbb{S}}
-\NewDocumentCommand{\bbX}{}{\symbb{X}}
-\NewDocumentCommand{\bbZ}{}{\symbb{Z}}
-\NewDocumentCommand{\Qop}{}{\bbQ_{\geq0}}
-\NewDocumentCommand{\Qp}{}{\bbQ_{>0}}
-\NewDocumentCommand{\Rop}{}{\bbR_{\geq0}}
-\NewDocumentCommand{\Rp}{}{\bbR_{>0}}
-\NewDocumentCommand{\Zop}{}{\bbZ_{\geq0}}
-\NewDocumentCommand{\Zp}{}{\bbZ_{>0}}
-\NewDocumentCommand{\calA}{}{\symcal{A}}
-\NewDocumentCommand{\calB}{}{\symcal{B}}
-\NewDocumentCommand{\calC}{}{\symcal{C}}
-\NewDocumentCommand{\calD}{}{\symcal{D}}
-\NewDocumentCommand{\calE}{}{\symcal{E}}
-\NewDocumentCommand{\calF}{}{\symcal{F}}
-\NewDocumentCommand{\calG}{}{\symcal{G}}
-\NewDocumentCommand{\calH}{}{\symcal{H}}
-\NewDocumentCommand{\calI}{}{\symcal{I}}
-\NewDocumentCommand{\calJ}{}{\symcal{J}}
-\NewDocumentCommand{\calK}{}{\symcal{K}}
-\NewDocumentCommand{\calL}{}{\symcal{L}}
-\NewDocumentCommand{\calM}{}{\symcal{M}}
-\NewDocumentCommand{\calN}{}{\symcal{N}}
-\NewDocumentCommand{\calO}{}{\symcal{O}}
-\NewDocumentCommand{\calP}{}{\symcal{P}}
-\NewDocumentCommand{\calR}{}{\symcal{R}}
-\NewDocumentCommand{\calS}{}{\symcal{S}}
-\NewDocumentCommand{\calT}{}{\symcal{T}}
-\NewDocumentCommand{\calU}{}{\symcal{U}}
-\NewDocumentCommand{\calW}{}{\symcal{W}}
-\NewDocumentCommand{\calX}{}{\symcal{X}}
-\NewDocumentCommand{\calY}{}{\symcal{Y}}
-\NewDocumentCommand{\calZ}{}{\symcal{Z}}
-\NewDocumentCommand{\sft}{}{\symsf{t}}
-\NewDocumentCommand{\sfx}{}{\symsf{x}}
-
-% matrices
-\NewDocumentCommand{\pmat}{m}{\begin{pmatrix}#1\end{pmatrix}}
-\NewDocumentCommand{\vmat}{m}{\begin{vmatrix}#1\end{vmatrix}}
-\NewDocumentCommand{\smmat}{m}{\begin{smallmatrix}#1\end{smallmatrix}}
-
-% logical
-\NewDocumentCommand{\AND}{}{\wedge}
-\NewDocumentCommand{\OR}{}{\vee}
-\NewDocumentCommand{\bigAND}{}{\bigwedge}
-\NewDocumentCommand{\bigOR}{}{\bigvee}
-\NewDocumentCommand{\IMP}{}{\Rightarrow}
-\NewDocumentCommand{\IMPD}{}{\Leftarrow}
-\NewDocumentCommand{\EQUIV}{}{\Leftrightarrow}
-
-% neighbors in path of graph
-\NewDocumentCommand{\pn}{}{\dotsminusdots}
-
-% group
-\NewDocumentCommand{\nsg}{}{\triangleleft}
-
-% set algebra
-\NewDocumentCommand{\ssd}{}{\triangle} % set symmetric difference
-\NewDocumentCommand{\sm}{}{\smallsetminus}
-\NewDocumentCommand{\sand}{}{\cap}
-\NewDocumentCommand{\sor}{}{\cup}
-\NewDocumentCommand{\bigsand}{O{} m O{}}{\bigcap_{#3}^{#1}{#2}}
-\NewDocumentCommand{\bigsor}{O{} m O{}}{\bigcup_{#3}^{#1}{#2}}
-\NewDocumentCommand{\sle}{}{\subseteq}
-\NewDocumentCommand{\nsle}{}{\nsubseteq}
-\NewDocumentCommand{\sge}{}{\supseteq}
-\NewDocumentCommand{\nsge}{}{\nsupseteq}
-\NewDocumentCommand{\slt}{}{\subsetneq}
-\NewDocumentCommand{\sgt}{}{\supsetneq}
-
-% limit, sum, sequence and integral shorthand
-\NewDocumentCommand{\lims}{}{\lim_{<\infty}}
-\NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
-\NewDocumentCommand{\limr}{m}{\lim_{> #1}}
-\NewDocumentCommand{\liml}{m}{\lim_{< #1}}
-\NewDocumentCommand{\limsups}{}{\limsup_{<\infty}}
-\NewDocumentCommand{\liminfs}{}{\liminf_{<\infty}}
-\NewDocumentCommand{\limfr}{m m}{\lim_{#1\searrow #2}}
-\NewDocumentCommand{\limfl}{m m}{\lim_{#1\nearrow #2}}
-\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
-\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
-\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
-\NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
-\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{<\infty}\seqn[#1]{#2}[#3]}
-\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
-\NewDocumentCommand{\seqn}{O{} m O{n}}{\p{#2}_{#3}^{#1}}
-\NewDocumentCommand{\seqno}{O{\Zop} m O{n}}{\p{#2}_{#3}^{#1}}
-\NewDocumentCommand{\setn}{O{} m O{n}}{\B{#2}_{#3}^{#1}}
-\NewDocumentCommand{\setno}{O{\Zop} m O{n}}{\B{#2}_{#3}^{#1}}
-\NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
-\NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
-\NewDocumentCommand{\intd}{m}{\int^{#1}}
-
-% structure generated
-\NewDocumentCommand{\ggen}{O{} m O{}}{\ad{#2}_{#3}^{#1}}
-
-% function
-\NewDocumentCommand{\f}{}{_{\symsf{f}}}
-
-% Iversonian
-\NewDocumentCommand{\iver}{m}{\sfupI\s{#1}}
-
-% cartesian product
-\NewDocumentCommand{\cp}{}{\times}
-\NewDocumentCommand{\bigcp}{}{\prod}
-
-% direct sum
-\NewDocumentCommand{\ds}{}{\oplus}
-\NewDocumentCommand{\bigds}{}{\bigoplus}
-
-% topology
-\NewDocumentCommand{\bnd}{m}{\bar{#1}}
-\NewDocumentCommand{\cl}{m}{#1^{-}}
-\NewDocumentCommand{\inte}{m}{#1^\circ}
-
-% operators of functions
-\NewDocumentCommand{\cps}{}{\circ}
-\NewDocumentCommand{\restr}{}{\upharpoonright}
-\NewDocumentCommand{\res}{m}{_{\upharpoonright #1}}
-
-% power set
-\NewDocumentCommand{\pow}{m}{\symcal{P}\p{#1}}
-
-% complement
-\NewDocumentCommand{\cpl}{}{\complement}
-
-% completion
-\NewDocumentCommand{\cpltn}{s m}{\IfBooleanTF{#1}{\widetilde{#2}}{\tilde{#2}}}
-
-% row-equivalence with reduced row echelon form
-\NewDocumentCommand{\rref}{}{\xrightarrow{\mathup{rref}}}
 
 % Use \m to typeset math variables that take up multiple symbols.
 \NewDocumentCommand{\m}{m}{\mathit{#1}}
 \NewDocumentCommand{\M}{m}{\mathup{#1}}
 \NewDocumentCommand{\q}{m}{\text{\texttt{#1}}}
 
-% category
-\NewDocumentCommand{\ca}{m}{\mathbf{#1}}
-\NewDocumentCommand{\cav}{m}{\mathbfit{#1}}
-\NewDocumentCommand{\caC}{}{\cav{C}}
-\NewDocumentCommand{\cop}{}{^{\mathup{op}}}
-\NewDocumentCommand{\obj}{}{_{0}}
-\NewDocumentCommand{\mor}{}{_{1}}
-\NewDocumentCommand{\cto}{}{^{\to}}
-
-\NewDocumentCommand{\into}{}{\hookrightarrow}
-\NewDocumentCommand{\onto}{}{\twoheadrightarrow}
-
-% vector shorthand
-% (w as a commonly used vector variable character)
-\NewDocumentCommand{\w}{m}{{#1}}
-\NewDocumentCommand{\wa}{}{\w{a}}
-\NewDocumentCommand{\wb}{}{\w{b}}
-\NewDocumentCommand{\wc}{}{\w{c}}
-\NewDocumentCommand{\we}{}{\w{\epsilon}}
-\NewDocumentCommand{\wg}{}{\w{\gamma}}
-\NewDocumentCommand{\wrh}{}{\w{\rho}}
-\NewDocumentCommand{\wi}{}{\w{i}}
-\NewDocumentCommand{\wj}{}{\w{j}}
-\NewDocumentCommand{\ws}{}{\w{s}}
-\NewDocumentCommand{\wu}{}{\w{u}}
-\NewDocumentCommand{\wv}{}{\w{v}}
-\NewDocumentCommand{\wW}{}{\w{W}}
-\NewDocumentCommand{\ww}{}{\w{w}}
-\NewDocumentCommand{\wx}{}{\w{x}}
-\NewDocumentCommand{\wy}{}{\w{y}}
-\NewDocumentCommand{\wz}{}{\w{z}}
-\NewDocumentCommand{\wo}{}{{0}}
-\NewDocumentCommand{\wA}{}{\w{A}}
-\NewDocumentCommand{\wB}{}{\w{B}}
-\NewDocumentCommand{\wC}{}{\w{C}}
-\NewDocumentCommand{\wD}{}{\w{D}}
-\NewDocumentCommand{\wE}{}{\w{E}}
-\NewDocumentCommand{\wI}{}{\w{I}}
-\NewDocumentCommand{\wP}{}{\w{P}}
-\NewDocumentCommand{\wR}{}{\w{R}}
-\NewDocumentCommand{\wX}{}{\w{X}}
-\NewDocumentCommand{\wY}{}{\w{Y}}
-\NewDocumentCommand{\wZ}{}{\w{Z}}
-\NewDocumentCommand{\Fmn}{}{F^{m\times{}n}}
-\NewDocumentCommand{\Fmm}{}{F^{m\times{}m}}
-\NewDocumentCommand{\Fmo}{}{F^{n\times{}1}}
-\NewDocumentCommand{\Fnn}{}{F^{n\times{}n}}
-\NewDocumentCommand{\Fno}{}{F^{n\times{}1}}
-\NewDocumentCommand{\Fx}{}{F\s{X}}
-\NewDocumentCommand{\Kmn}{}{K^{m\times{}n}}
-\NewDocumentCommand{\Knn}{}{K^{n\times{}n}}
-\NewDocumentCommand{\LV}{m}{\Lambda^{#1}\p{V}}
-\NewDocumentCommand{\MV}{m}{M^{#1}\p{V}}
-\NewDocumentCommand{\Rk}{}{\bbR^{k}}
-\NewDocumentCommand{\Rx}{}{\bbR\s{X}}
-\NewDocumentCommand{\bbRp}{}{\bbR^{p}}
-\NewDocumentCommand{\Rmn}{}{\bbR^{m\times n}}
-\NewDocumentCommand{\Rn}{}{\bbR^n}
-\NewDocumentCommand{\Rnn}{}{\bbR^{n\times n}}
-
-
-% kullback-leibler divergence
-\NewDocumentCommand{\DKL}{}{D_{\M{KL}}}
-
-% Iversonian
-\NewDocumentCommand{\sfupI}{}{\symsfup{I}}
-
-% random variables
-\NewDocumentCommand{\R}{m}{\symup{#1}}
-\NewDocumentCommand{\RW}{}{\R{W}}
-\NewDocumentCommand{\RX}{}{\R{X}}
-\NewDocumentCommand{\RY}{}{\R{Y}}
-\NewDocumentCommand{\RZ}{}{\R{Z}}
-
-\NewDocumentCommand{\Rw}{m}{\symbfup{#1}}
-\NewDocumentCommand{\RwW}{}{\Rw{W}}
-\NewDocumentCommand{\RwX}{}{\Rw{X}}
-\NewDocumentCommand{\RwY}{}{\Rw{Y}}
-\NewDocumentCommand{\RwZ}{}{\Rw{Z}}
-
-% type theory
-\NewDocumentCommand{\inh}{}{\colon} % inhabits
-\NewDocumentCommand{\eqd}{}{:\equiv} % defined to be judgmentally equiv.
-\NewDocumentCommand{\eqj}{}{\equiv} % judgmentally equiv.
-
-% given
-\NewDocumentCommand{\giv}{}{\, \middle| \,}
-\NewDocumentCommand{\indep}{}{\perp}
-\NewDocumentCommand{\sat}{}{\vDash}
-\NewDocumentCommand{\nsat}{}{\nvDash}
-
-% measured as in KL divergence
-\NewDocumentCommand{\measuredas}{}{\parallel}
-
-% divides |
-\NewDocumentCommand{\di}{}{\mid}
-\NewDocumentCommand{\ndi}{}{\nmid}
-
-% coset
-\NewDocumentCommand{\coset}{m O{}}{\s{#1}_{#2}}
-
-% inverse
-\NewDocumentCommand{\inv}{}{^{-1}}
-
-\NewDocumentCommand{\dif}{}{\:\symup{d}}
-\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{#1} #2}\p{#3}}
-% antidifferential
-\NewDocumentCommand{\adif}{}{\D\inv}
-
-% transpose
-\NewDocumentCommand{\T}{}{\intercal}
-
-% exterior product
-\NewDocumentCommand{\ep}{}{\wedge}
-
-% inner product
-\NewDocumentCommand{\ip}{m m}{\ad{{#1}\middle|{#2}}}
-
-% Hadamard product
-\NewDocumentCommand{\Hp}{}{\odot}
-
-% tensor
-\NewDocumentCommand{\te}{m}{#1}
-\NewDocumentCommand{\tei}{m}{#1}
-
-\NewDocumentCommand{\ten}{}{\otimes}
-\NewDocumentCommand{\bigten}{}{\bigotimes}
-
-% Complex conjugate
-\NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
-
-\NewDocumentCommand{\n}{O{1} m}{\B{{#1} .. {#2}}}
+% delimiters
+\input{delimiters}
+%\input{fcasedeprecated}
+\input{mathoperators}
+\input{constants}
+\input{mathfoundational}
+\input{numbertheory}
+\input{analysis}
+\input{abstractalg}
+\input{linalg}
+\input{topology}
+\input{probability}
+%\input{probabilitydeprecated}
+\input{numbersystems}
+\input{matrices}
+\input{logic}
+\input{graph}
+\input{setalg}
+\input{categorytheory}
+\input{computability}
+\input{complexity}
+%\input{vectordeprecated}
+\input{vector}
+\input{typetheory}
+%\input{rvdeprecated}
+% deprecated constant function notation
+%\NewDocumentCommand{\f}{}{_{\symsf{f}}}
 
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
@@ -845,8 +441,6 @@ Ligatures = TeX
 \NewDocumentCommand{\ttrain}{}{\text{train}}
 \NewDocumentCommand{\ttest}{}{\text{test}}
 \NewDocumentCommand{\tensemble}{}{\text{ensemble}}
-
-\NewDocumentCommand{\NP}{}{\mathrm{NP}}
 
 % text shorthand
 
@@ -869,16 +463,4 @@ Ligatures = TeX
   {\fxnote[#1]{\textbf{WON'T FIX:} #2}}
 }
 
-% algorithm definitions
-\SetKwProg{Fn}{function}{}{end}
-
-\SetKwFunction{True}{true}
-\SetKwFunction{False}{false}
-\SetKwFunction{Nil}{nil}
-
-\SetKwInput{KwParam}{Parameter}
-\SetKwInOut{Require}{Require}
-\SetKwInOut{Ensure}{Ensure}
-
-\SetKw{Error}{error}
-\SetKw{Print}{print}
+\input{algorithms}
