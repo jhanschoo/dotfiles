@@ -118,25 +118,20 @@ urlcolor=pu]{hyperref}
 %\vfuzz \hfuzz
 \raggedbottom
 
-% Using Lato for display text, Cochineal for body, and Pagella for
+% Using Lato for display text, EB Garamond for body, and Garamond Math for
 % math c.f. fontspec and unicode-math
 \setmainfont{EB Garamond}[
-%Extension = .otf,
-%UprightFont = *-Regular,
-%ItalicFont = *-Italic,
-%BoldFont = *-Bold,
-%BoldItalicFont = *-BoldItalic,
-Ligatures = TeX
+%Ligatures = Rare
 ]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-\setmathfont{Garamond-Math}%[Scale=MatchLowercase]
+\setmathfont{Garamond-Math}[StylisticSet={1,7}]
 \setmathfontface\mathrm{EBGaramond-Regular}[Scale=MatchLowercase]
 \let\mathup\undefined
 \setmathfontface\mathup{EBGaramond-Regular}[Scale=MatchLowercase]
 \setmathfontface\mathit{EBGaramond-Italic}[Scale=MatchLowercase]
 \setmathfontface\mathbf{EBGaramond-Bold}[Scale=MatchLowercase]
-\setmathfontface\mathsf{libertinussans-regular}[Scale=MatchLowercase]
+\setmathfontface\mathsf{LibertinusSans}[Scale=MatchLowercase]
 %\setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
 
 \newfontfamily\lato{Lato}[
