@@ -1,0 +1,25 @@
+name garamond-math
+category Package
+revision 49835
+shortdesc An OTF math font matching EB Garamond
+longdesc This is an open type math font matching EB Garamond (Octavio
+longdesc Pardo) and EB Garamond (Georg Mayr-Duffner). Many mathematical
+longdesc symbols are derived from other fonts, others are made from
+longdesc scratch. The metric is generated with a python script. The font
+longdesc is best used with XeTeX and the unicode-math package. This font
+longdesc is still under development, do not expect it to be free of
+longdesc bugs. Any component might be updated at any time. Issues, bug
+longdesc reports, forks, and other contributions are welcome.
+containersize 448920
+containerchecksum 7fc968b369b52bacf8c2bc5270f39af59e3b0913b9c7a3fad944e3681c0b155708085d360dfca1bcf4cfffccdc23ba68b3ff27ea97e9c51dbeee2e6d7ea6efc5
+doccontainersize 294124
+doccontainerchecksum 9fef07a64f3ce445bd5d83702c86d3e80aa997352a74ba36e443a8da5ac1411c53798c43a4ed67b374f4ce01f22ed8de670df92fc5f9670955676c94b6589c4c
+runfiles size=225
+ fonts/opentype/public/garamond-math/Garamond-Math.otf
+catalogue-contact-bugs https://github.com/YuanshengZhao/Garamond-Math/issues
+catalogue-contact-repository https://github.com/YuanshengZhao/Garamond-Math
+catalogue-ctan /fonts/garamond-math
+catalogue-date 2019-01-27 10:55:20 +0100
+catalogue-license ofl
+catalogue-topics font font-otf font-maths font-serif font-sans font-bbd
+catalogue-version 0.3
