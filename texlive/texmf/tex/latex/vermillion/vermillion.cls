@@ -39,7 +39,6 @@
 
 \RequirePackage[table]{xcolor}
 
-\let\mathrm\undefined
 \RequirePackage{amsmath,amssymb}
 \RequirePackage[amsmath,hyperref,thmmarks]{ntheorem}
 
@@ -121,21 +120,33 @@ urlcolor=pu]{hyperref}
 % Using Lato for display text, EB Garamond for body, and Garamond Math for
 % math c.f. fontspec and unicode-math
 \setmainfont{EB Garamond}[
-%Ligatures = Rare
+Numbers = OldStyle,
+Ligatures = TeX
 ]
+%\setmainfont{EBGaramond}[
+%Extension = .otf,
+%UprightFont = *-Regular,
+%ItalicFont = *-Italic,
+%BoldFont = *-Bold,
+%BoldItalicFont = *-BoldItalic,
+%Numbers = OldStyle,
+%Ligatures = TeX
+%]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-\setmathfont{Garamond-Math}[StylisticSet={1,7}]
-\setmathfontface\mathrm{EBGaramond-Regular}[Scale=MatchLowercase]
+\setmathfont{Garamond-Math}[
+StylisticSet={8}
+]
+\setmathfontface\mathrm{EBGaramond-Regular.otf}[Scale=MatchLowercase]
 \let\mathup\undefined
-\setmathfontface\mathup{EBGaramond-Regular}[Scale=MatchLowercase]
-\setmathfontface\mathit{EBGaramond-Italic}[Scale=MatchLowercase]
-\setmathfontface\mathbf{EBGaramond-Bold}[Scale=MatchLowercase]
-\setmathfontface\mathsf{LibertinusSans}[Scale=MatchLowercase]
-%\setmathfontface\mathsf{Lato}[Scale=MatchLowercase]
+\setmathfontface\mathup{EBGaramond-Regular.otf}[Scale=MatchLowercase]
+\setmathfontface\mathit{EBGaramond-Italic.otf}[Scale=MatchLowercase]
+\setmathfontface\mathbf{EBGaramond-Bold.otf}[Scale=MatchLowercase]
+\setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
 
-\newfontfamily\lato{Lato}[
-Extension = .ttf,
+\setoperatorfont\mathrm
+\newfontfamily\alegreyasans{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Regular,
 ItalicFont = *-Italic,
@@ -144,42 +155,40 @@ BoldItalicFont = *-BoldItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latosemibold{Lato}[
-Extension = .ttf,
+\newfontfamily\alegreyasansmedium{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
-UprightFont = *-Semibold,
-ItalicFont = *-SemiboldItalic,
+UprightFont = *-Medium,
+ItalicFont = *-MediumItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latobold{Lato}[
-Extension = .ttf,
+\newfontfamily\alegreyasansextrabold{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
-UprightFont = *-Bold,
-ItalicFont = *-BoldItalic,
-BoldFont = *-Black,
-BoldItalicFont = *-BlackItalic,
+UprightFont = *-ExtraBold,
+ItalicFont = *-ExtraBoldItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latoblack{Lato}[
-Extension = .ttf,
+\newfontfamily\alegreyasansblack{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Black,
 ItalicFont = *-BlackItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latothin{Lato}[
-Extension = .ttf,
+\newfontfamily\alegreyasansthin{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Thin,
 ItalicFont = *-ThinItalic,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\latolight{Lato}[
-Extension = .ttf,
+\newfontfamily\alegreyasanslight{AlegreyaSans}[
+Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Light,
 ItalicFont = *-LightItalic,
@@ -244,30 +253,30 @@ Ligatures = TeX
 
 \RenewDocumentCommand{\beforepartskip}{}{\null\vskip 50pt}
 \RenewDocumentCommand{\afterpartskip}{}{\vskip 40pt}
-\RenewDocumentCommand{\partnamefont}{}{\normalfont\latothin\Huge}
-\RenewDocumentCommand{\partnumfont}{}{\normalfont\latothin\Huge}
-\RenewDocumentCommand{\parttitlefont}{}{\normalfont\latoblack\HUGE}
+\RenewDocumentCommand{\partnamefont}{}{\normalfont\alegreyasansthin\Huge}
+\RenewDocumentCommand{\partnumfont}{}{\normalfont\alegreyasansthin\Huge}
+\RenewDocumentCommand{\parttitlefont}{}{\normalfont\alegreyasansblack\HUGE}
 \nopartblankpage{}
 
 \chapterstyle{default}
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\latolight\huge}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\latolight\huge}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\latoblack\Huge}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\alegreyasanslight\huge}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\alegreyasanslight\huge}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\alegreyasansblack\Huge}
 
-\setsecheadstyle{\normalfont\latobold\Large}%
-\setsubsecheadstyle{\normalfont\latobold\large}%
-\setsubsubsecheadstyle{\normalfont\lato\large}%
-\setparaheadstyle{\normalfont\latosemibold\large}%
-\setsubparaheadstyle{\normalfont\lato\large}%
+\setsecheadstyle{\normalfont\alegreyasansextrabold\Large}%
+\setsubsecheadstyle{\normalfont\alegreyasansextrabold\large}%
+\setsubsubsecheadstyle{\normalfont\alegreyasans\large}%
+\setparaheadstyle{\normalfont\alegreyasansmedium\large}%
+\setsubparaheadstyle{\normalfont\alegreyasans\large}%
 
 % customization of page styles cf. memoir
 \createmark{chapter}{left}{shownumber}
-{\normalfont\latobold\small\@chapapp\ }{\ \tiny}
+{\normalfont\alegreyasans\bfseries\small\@chapapp\ }{\ \tiny}
 \createmark{section}{right}{shownumber}
-{\normalfont\latobold\small}{\ \tiny}
+{\normalfont\alegreyasans\bfseries\small}{\ \tiny}
 
 \nouppercaseheads
 
@@ -276,10 +285,10 @@ Ligatures = TeX
 \makeoddhead{plain}{}{}{\rightmark}
 \makeevenhead{plain}{\leftmark}{}{}
 
-%\makeoddfoot{plain}{}{\latolight DO NOT DISTRIBUTE}{\lato\thepage}
-%\makeevenfoot{plain}{\lato\thepage}{\latolight DO NOT DISTRIBUTE}{}
-\makeoddfoot{plain}{}{}{\lato\thepage}
-\makeevenfoot{plain}{\lato\thepage}{}{}
+%\makeoddfoot{plain}{}{\alegreyasanslight DO NOT DISTRIBUTE}{\alegreyasans\thepage}
+%\makeevenfoot{plain}{\alegreyasans\thepage}{\alegreyasanslight DO NOT DISTRIBUTE}{}
+\makeoddfoot{plain}{}{}{\alegreyasans\thepage}
+\makeevenfoot{plain}{\alegreyasans\thepage}{}{}
 
 % customization of page notes cf. memoir
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
@@ -309,7 +318,7 @@ Ligatures = TeX
 \setlist{
   noitemsep,
   nosep,
-  font=\normalfont\latobold
+  font=\normalfont\alegreyasans\bfseries
 }
 
 \setlist[itemize]{
@@ -383,11 +392,11 @@ Ligatures = TeX
 % format shorthand
 \NewDocumentCommand{\sbar}{o m}{\IfNoValueTF{#1}%
   {\sidebar{#2}}%
-  {\sidebar{{\latosemibold{}#1} #2}}%
+  {\sidebar{{\alegreyasansmedium{}#1} #2}}%
 }
 \NewDocumentCommand{\sbart}{o m}{\IfNoValueTF{#1}%
   {\sidebar{\textit{#2}}}%
-  {\sidebar{{\latosemibold{}#1} \textit{#2}}}%
+  {\sidebar{{\alegreyasansmedium{}#1} \textit{#2}}}%
 }
 
 % math shorthand
