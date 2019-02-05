@@ -6,4 +6,7 @@ if type brew > /dev/null && [[ -d "$(brew --prefix)/etc/bash_completion.d" ]]; t
   for file in "$(brew --prefix)/etc/bash_completion.d/"*; do
     #source "${file}"
   done
+  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
+
+
