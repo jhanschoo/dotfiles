@@ -44,4 +44,5 @@
 	url = https://github.com/rupa/z.git
 [submodule "nvm/.nvm"]
 	path = nvm/.nvm
+  update = none
 	url = https://github.com/creationix/nvm.git
