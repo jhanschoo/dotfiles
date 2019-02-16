@@ -1,4 +1,5 @@
 % complexity classes
+\NewDocumentCommand{\caAP}{}{\ca{AP}}
 \NewDocumentCommand{\cacoNP}{}{\ca{coNP}}
 \NewDocumentCommand{\cacoNPcomplete}{}{\ca{coNP}\text{-complete}}
 \NewDocumentCommand{\caDTIME}{}{\ca{DTIME}}
@@ -8,6 +9,7 @@
 \NewDocumentCommand{\caNEXP}{}{\ca{NEXP}}
 \NewDocumentCommand{\caNL}{}{\ca{NL}}
 \NewDocumentCommand{\caNLcomplete}{}{\ca{NL}\text{-complete}}
+\NewDocumentCommand{\caNLhard}{}{\ca{NL}\text{-hard}}
 \NewDocumentCommand{\caNP}{}{\ca{NP}}
 \NewDocumentCommand{\caNPhard}{}{\ca{NP}\text{-hard}}
 \NewDocumentCommand{\caNPcomplete}{}{\ca{NP}\text{-complete}}
@@ -15,23 +17,28 @@
 \NewDocumentCommand{\caNSPACE}{}{\ca{NSPACE}}
 \NewDocumentCommand{\caNTIME}{}{\ca{NTIME}}
 \NewDocumentCommand{\caP}{}{\ca{P}}
-\NewDocumentCommand{\caPdivpoly}{}{\ca{P}/\m{poly}}
+\NewDocumentCommand{\caPdivpoly}{}{\ca{P}/\Zp\s{\Zp}}
+\NewDocumentCommand{\caPH}{}{\ca{PH}}
+\NewDocumentCommand{\caPi}{}{\symbfup{\Pi}}
 \NewDocumentCommand{\caPSPACE}{}{\ca{PSPACE}}
 \NewDocumentCommand{\caPSPACEhard}{}{\ca{PSPACE}\text{-hard}}
 \NewDocumentCommand{\caPSPACEcomplete}{}{\ca{PSPACE}\text{-complete}}
+\NewDocumentCommand{\caSigma}{}{\symbfup{\Sigma}}
+\NewDocumentCommand{\caSIZE}{}{\ca{SIZE}}
 \NewDocumentCommand{\caSPACE}{}{\ca{SPACE}}
 
 % computational problems
-\NewDocumentCommand{\binIPROG}{}{\mathup{IPROG}_{01}}
-\NewDocumentCommand{\dHAMPATH}{}{\mathup{dHAMPATH}}
-\NewDocumentCommand{\EXPCOM}{}{\mathup{EXPCOM}}
-\NewDocumentCommand{\INDSET}{}{\mathup{INDSET}}
-\NewDocumentCommand{\MINEQDNF}{}{\mathup{MINEQDNF}}
-\NewDocumentCommand{\SAT}{}{\mathup{SAT}}
-\NewDocumentCommand{\TAUTOLOGY}{}{\mathup{TAUTOLOGY}}
-\NewDocumentCommand{\threeSAT}{}{\mathup{3SAT}}
-\NewDocumentCommand{\TMSAT}{}{\mathup{TMSAT}}
-\NewDocumentCommand{\TQBF}{}{\mathup{TQBF}}
+\NewDocumentCommand{\binIPROG}{}{\M{IPROG}_{01}}
+\NewDocumentCommand{\CKTSAT}{}{\M{CKTSAT}}
+\NewDocumentCommand{\dHAMPATH}{}{\M{dHAMPATH}}
+\NewDocumentCommand{\EXPCOM}{}{\M{EXPCOM}}
+\NewDocumentCommand{\INDSET}{}{\M{INDSET}}
+\NewDocumentCommand{\MINEQDNF}{}{\M{MINEQDNF}}
+\NewDocumentCommand{\SAT}{}{\M{SAT}}
+\NewDocumentCommand{\TAUTOLOGY}{}{\M{TAUTOLOGY}}
+\NewDocumentCommand{\threeSAT}{}{\M{3SAT}}
+\NewDocumentCommand{\TMSAT}{}{\M{TMSAT}}
+\NewDocumentCommand{\TQBF}{}{\M{TQBF}}
 
 % reductions
 \NewDocumentCommand{\leqp}{}{\leq_{\Cp}}
