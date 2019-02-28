@@ -75,6 +75,7 @@ values."
     dotspacemacs-additional-packages '(exec-path-from-shell
                                         package-lint
                                         flycheck-package
+                                        greek-polytonic
                                         )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
