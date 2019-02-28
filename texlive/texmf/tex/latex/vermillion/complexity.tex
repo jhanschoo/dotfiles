@@ -1,12 +1,17 @@
 % complexity classes
+\NewDocumentCommand{\caAM}{}{\ca{AM}}
 \NewDocumentCommand{\caAP}{}{\ca{AP}}
 \NewDocumentCommand{\caBPP}{}{\ca{BPP}}
 \NewDocumentCommand{\cacoNP}{}{\ca{coNP}}
 \NewDocumentCommand{\cacoNPcomplete}{}{\ca{coNP}\text{-complete}}
 \NewDocumentCommand{\cacoRP}{}{\ca{coRP}}
+\NewDocumentCommand{\cadIP}{}{\ca{dIP}}
 \NewDocumentCommand{\caDTIME}{}{\ca{DTIME}}
 \NewDocumentCommand{\caE}{}{\ca{E}}
 \NewDocumentCommand{\caEXP}{}{\ca{EXP}}
+\NewDocumentCommand{\caGI}{}{\ca{GI}}
+\NewDocumentCommand{\caGNI}{}{\ca{GNI}}
+\NewDocumentCommand{\caIP}{}{\ca{IP}}
 \NewDocumentCommand{\caL}{}{\ca{L}}
 \NewDocumentCommand{\caNEXP}{}{\ca{NEXP}}
 \NewDocumentCommand{\caNL}{}{\ca{NL}}
@@ -18,8 +23,10 @@
 \NewDocumentCommand{\caNPSPACE}{}{\ca{NPSPACE}}
 \NewDocumentCommand{\caNSPACE}{}{\ca{NSPACE}}
 \NewDocumentCommand{\caNTIME}{}{\ca{NTIME}}
+\NewDocumentCommand{\canumP}{}{\ca{\#P}}
 \NewDocumentCommand{\caP}{}{\ca{P}}
-\NewDocumentCommand{\caPdivpoly}{}{\ca{P}/\Zp\s{\Zp}}
+%\NewDocumentCommand{\caPdivpoly}{}{\ca{P}/\Zp\s{\Zp}}
+\NewDocumentCommand{\caPdivpoly}{}{\ca{P}/\poly}
 \NewDocumentCommand{\caPH}{}{\ca{PH}}
 \NewDocumentCommand{\caPi}{}{\symbfup{\Pi}}
 \NewDocumentCommand{\caPSPACE}{}{\ca{PSPACE}}
@@ -31,6 +38,8 @@
 \NewDocumentCommand{\caSPACE}{}{\ca{SPACE}}
 \NewDocumentCommand{\caZPP}{}{\ca{ZPP}}
 
+\NewDocumentCommand{\poly}{}{\m{poly}}
+
 % computational problems
 \NewDocumentCommand{\binIPROG}{}{\M{IPROG}_{01}}
 \NewDocumentCommand{\CKTSAT}{}{\M{CKTSAT}}
@@ -38,6 +47,7 @@
 \NewDocumentCommand{\EXPCOM}{}{\M{EXPCOM}}
 \NewDocumentCommand{\INDSET}{}{\M{INDSET}}
 \NewDocumentCommand{\MINEQDNF}{}{\M{MINEQDNF}}
+\NewDocumentCommand{\numSAT}{}{\M{\#SAT}}
 \NewDocumentCommand{\SAT}{}{\M{SAT}}
 \NewDocumentCommand{\TAUTOLOGY}{}{\M{TAUTOLOGY}}
 \NewDocumentCommand{\threeSAT}{}{\M{3SAT}}
