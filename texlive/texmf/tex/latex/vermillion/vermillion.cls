@@ -79,7 +79,8 @@ linkcolor=re,
 citecolor=gr,
 filecolor=aq,
 menucolor=re,
-urlcolor=pu]{hyperref}
+urlcolor=pu
+]{hyperref}
 
 \RequirePackage{cleveref}
 
@@ -91,6 +92,11 @@ urlcolor=pu]{hyperref}
 %\definecolor{gr}{HTML}{A3BE8C}
 %\definecolor{aq}{HTML}{88C0D0}
 %\definecolor{pu}{HTML}{B48EAD}
+
+% note tabu-xcolor incompatibility
+% https://github.com/tabu-fixed/tabu/issues/1
+% current workaround is to use older packages
+% mentioned in the thread
 \definecolor{bg}{HTML}{FFFFFF}
 \definecolor{fg}{HTML}{000000}
 \definecolor{re}{HTML}{800000}
@@ -98,6 +104,7 @@ urlcolor=pu]{hyperref}
 \definecolor{gr}{HTML}{008000}
 \definecolor{aq}{HTML}{008080}
 \definecolor{pu}{HTML}{800080}
+%\NewDocumentCommand{\textcolor}{m m}{#2}
 
 %\pagecolor{bg}
 %\color{fg}
