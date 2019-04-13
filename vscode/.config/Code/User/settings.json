@@ -28,5 +28,6 @@
   "git.autofetch": true,
   "window.restoreWindows": "none",
   "python.pythonPath": "/home/jhanschoo/miniconda3/envs/jhanschoo/bin/python",
-  "python.linting.mypyEnabled": true
+  "python.linting.mypyEnabled": true,
+  "python.jediEnabled": false
 }
