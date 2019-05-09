@@ -68,6 +68,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
   bundler
   cp
+  docker
+  docker-compose
   extract
   gem
   git

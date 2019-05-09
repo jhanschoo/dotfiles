@@ -29,5 +29,9 @@
   "window.restoreWindows": "none",
   "python.pythonPath": "/home/jhanschoo/miniconda3/envs/jhanschoo/bin/python",
   "python.linting.mypyEnabled": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.zoomLevel": 0,
+  "extensions.ignoreRecommendations": true
 }
