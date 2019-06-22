@@ -1,2 +1,4 @@
 # reason: ocaml-jupyter requires the following
 libzmq3-dev
+# reason: ocaml-top
+libgtksourceview2.0-dev
