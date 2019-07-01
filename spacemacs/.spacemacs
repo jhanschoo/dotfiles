@@ -350,7 +350,10 @@ you should place your code here."
   (setq projectile-enable-caching t)
 
   ;; coq-layer workaround
+  (setq evil-want-abbrev-expand-on-insert-exit nil)
   (setq coq-mode-abbrev-table '())
+
+  (setq coq-compile-before-require t)
 
   ;; passthrough for MacOS dead key
   (if (eq system-type 'darwin)
