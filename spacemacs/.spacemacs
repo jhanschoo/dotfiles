@@ -322,6 +322,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq evil-want-abbrev-expand-on-insert-exit nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -350,8 +351,6 @@ you should place your code here."
   (setq projectile-enable-caching t)
 
   ;; coq-layer workaround
-  (setq evil-want-abbrev-expand-on-insert-exit nil)
-  (setq coq-mode-abbrev-table '())
 
   (setq coq-compile-before-require t)
 
