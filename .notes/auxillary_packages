@@ -2,3 +2,5 @@
 libzmq3-dev
 # reason: ocaml-top
 libgtksourceview2.0-dev
+# reason: build openvpn
+liblz4-dev liblzo2-dev libpam0g-dev libpkcs11-helper1-dev libsystemd-dev
