@@ -30,14 +30,6 @@
 	branch = develop
 	path = spacemacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
-[submodule "SpaceVim/.SpaceVim"]
-	branch = master
-	path = SpaceVim/.SpaceVim
-	url = https://github.com/SpaceVim/SpaceVim.git
-[submodule "SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim"]
-	branch = master
-	path = SpaceVim/.cache/vimfiles/repos/github.com/Shougo/dein.vim
-	url = https://github.com/Shougo/dein.vim.git
 [submodule "z/.zdir"]
 	branch = master
 	path = z/.zdir
