@@ -141,9 +141,10 @@ Ligatures = TeX
 %]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-\setmathfont{Garamond-Math}[
-StylisticSet={8}
-]
+%\setmathfont{Garamond-Math}[
+%StylisticSet={8}
+%]
+\setmathfont{texgyrepagella-math.otf}[Scale=MatchLowercase]
 \setmathfontface\mathrm{EBGaramond-Regular.otf}[Scale=MatchLowercase]
 \let\mathup\undefined
 \setmathfontface\mathup{EBGaramond-Regular.otf}[Scale=MatchLowercase]
