@@ -1,4 +1,0 @@
-if [[ $(command -pv nvim) ]]; then
-  export EDITOR="nvim -e"
-  export VISUAL="nvim"
-fi
