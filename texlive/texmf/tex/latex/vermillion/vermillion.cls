@@ -153,53 +153,53 @@ Ligatures = TeX
 \setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
 
 \setoperatorfont\mathrm
-\newfontfamily\alegreyasans{AlegreyaSans}[
+\newfontfamily\alegreyasans{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Regular,
-ItalicFont = *-Italic,
+ItalicFont = *-RegularIt,
 BoldFont = *-Bold,
-BoldItalicFont = *-BoldItalic,
+BoldItalicFont = *-BoldIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansmedium{AlegreyaSans}[
+\newfontfamily\alegreyasansmedium{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
-UprightFont = *-Medium,
-ItalicFont = *-MediumItalic,
+UprightFont = *-Semibold,
+ItalicFont = *-SemiboldIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansextrabold{AlegreyaSans}[
-Extension = .otf,
-Scale = MatchUppercase,
-UprightFont = *-ExtraBold,
-ItalicFont = *-ExtraBoldItalic,
-Numbers = OldStyle,
-Ligatures = TeX
-]
-\newfontfamily\alegreyasansblack{AlegreyaSans}[
+\newfontfamily\alegreyasansextrabold{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Black,
-ItalicFont = *-BlackItalic,
+ItalicFont = *-BlackIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansthin{AlegreyaSans}[
+\newfontfamily\alegreyasansblack{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
-UprightFont = *-Thin,
-ItalicFont = *-ThinItalic,
+UprightFont = *-Black,
+ItalicFont = *-BlackIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasanslight{AlegreyaSans}[
+\newfontfamily\alegreyasansthin{SourceSansPro}[
+Extension = .otf,
+Scale = MatchUppercase,
+UprightFont = *-ExtraLight,
+ItalicFont = *-ExtraLightIt,
+Numbers = OldStyle,
+Ligatures = TeX
+]
+\newfontfamily\alegreyasanslight{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Light,
-ItalicFont = *-LightItalic,
+ItalicFont = *-LightIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
