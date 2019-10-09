@@ -333,10 +333,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require 'greek-polytonic)
-  (require 'exec-path-from-shell)
+  (message "environment" (string-join process-environment ", "))
+  ;;(require 'exec-path-from-shell)
   ; set exec-path-from-shell to execute a normal shell, not an interactive login shell
-  (setq exec-path-from-shell-arguments '())
-  (exec-path-from-shell-initialize)
+  ;;(setq exec-path-from-shell-arguments '())
+  ;;(exec-path-from-shell-initialize)
   (setq auto-save-interval 20)
   (setq auto-save-timeout 2)
 
@@ -370,14 +371,15 @@ you should place your code here."
         (output-pdf-skim
          (and (string-match "pdf" (TeX-output-extension))
               (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
-     (setq TeX-view-program-list '(
-                                    ;("Evince"
-                                    ;TeX-evince-sync-viewevince")
-        ;("Okular" "okular --unique
-        ;%o (mode-io-correlate "#src:%n%a")" "okular")
-        ("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline
-        %n %o %b"
-         "/Applications/Skim.app/Contents/SharedSupport/displayline")))
+     (setq TeX-view-program-list
+       '(
+          ;;("Evince"
+          ;;TeX-evince-sync-viewevince")
+          ;;("Okular" "okular --unique
+          ;;%o (mode-io-correlate "#src:%n%a")" "okular")
+          ("Skim"
+            "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"
+            "/Applications/Skim.app/Contents/SharedSupport/displayline")))
      (add-to-list 'TeX-view-program-selection
        '(output-pdf-skim "Skim"))
      (add-to-list 'TeX-view-program-selection
