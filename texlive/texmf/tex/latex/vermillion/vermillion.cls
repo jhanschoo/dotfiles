@@ -153,7 +153,7 @@ Ligatures = TeX
 \setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
 
 \setoperatorfont\mathrm
-\newfontfamily\alegreyasans{SourceSansPro}[
+\newfontfamily\sourcesanspro{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Regular,
@@ -163,7 +163,7 @@ BoldItalicFont = *-BoldIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansmedium{SourceSansPro}[
+\newfontfamily\sourcesanspromedium{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Semibold,
@@ -171,7 +171,7 @@ ItalicFont = *-SemiboldIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansextrabold{SourceSansPro}[
+\newfontfamily\sourcesansproextrabold{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Black,
@@ -179,7 +179,7 @@ ItalicFont = *-BlackIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansblack{SourceSansPro}[
+\newfontfamily\sourcesansproblack{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Black,
@@ -187,7 +187,7 @@ ItalicFont = *-BlackIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasansthin{SourceSansPro}[
+\newfontfamily\sourcesansprothin{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-ExtraLight,
@@ -195,7 +195,7 @@ ItalicFont = *-ExtraLightIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
-\newfontfamily\alegreyasanslight{SourceSansPro}[
+\newfontfamily\sourcesansprolight{SourceSansPro}[
 Extension = .otf,
 Scale = MatchUppercase,
 UprightFont = *-Light,
@@ -261,30 +261,30 @@ Ligatures = TeX
 
 \RenewDocumentCommand{\beforepartskip}{}{\null\vskip 50pt}
 \RenewDocumentCommand{\afterpartskip}{}{\vskip 40pt}
-\RenewDocumentCommand{\partnamefont}{}{\normalfont\alegreyasansthin\Huge}
-\RenewDocumentCommand{\partnumfont}{}{\normalfont\alegreyasansthin\Huge}
-\RenewDocumentCommand{\parttitlefont}{}{\normalfont\alegreyasansblack\HUGE}
+\RenewDocumentCommand{\partnamefont}{}{\normalfont\sourcesansprothin\Huge}
+\RenewDocumentCommand{\partnumfont}{}{\normalfont\sourcesansprothin\Huge}
+\RenewDocumentCommand{\parttitlefont}{}{\normalfont\sourcesansproblack\HUGE}
 \nopartblankpage{}
 
 \chapterstyle{default}
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\alegreyasanslight\huge}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\alegreyasanslight\huge}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\alegreyasansblack\Huge}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\sourcesansprolight\huge}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\sourcesansprolight\huge}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\sourcesansproblack\Huge}
 
-\setsecheadstyle{\normalfont\alegreyasansextrabold\Large}%
-\setsubsecheadstyle{\normalfont\alegreyasansextrabold\large}%
-\setsubsubsecheadstyle{\normalfont\alegreyasans\large}%
-\setparaheadstyle{\normalfont\alegreyasansmedium\large}%
-\setsubparaheadstyle{\normalfont\alegreyasans\large}%
+\setsecheadstyle{\normalfont\sourcesansproextrabold\Large}%
+\setsubsecheadstyle{\normalfont\sourcesansproextrabold\large}%
+\setsubsubsecheadstyle{\normalfont\sourcesanspro\large}%
+\setparaheadstyle{\normalfont\sourcesanspromedium\large}%
+\setsubparaheadstyle{\normalfont\sourcesanspro\large}%
 
 % customization of page styles cf. memoir
 \createmark{chapter}{left}{shownumber}
-{\normalfont\alegreyasans\bfseries\small\@chapapp\ }{\ \tiny}
+{\normalfont\sourcesanspro\bfseries\small\@chapapp\ }{\ \tiny}
 \createmark{section}{right}{shownumber}
-{\normalfont\alegreyasans\bfseries\small}{\ \tiny}
+{\normalfont\sourcesanspro\bfseries\small}{\ \tiny}
 
 \nouppercaseheads
 
@@ -293,10 +293,10 @@ Ligatures = TeX
 \makeoddhead{plain}{}{}{\rightmark}
 \makeevenhead{plain}{\leftmark}{}{}
 
-%\makeoddfoot{plain}{}{\alegreyasanslight DO NOT DISTRIBUTE}{\alegreyasans\thepage}
-%\makeevenfoot{plain}{\alegreyasans\thepage}{\alegreyasanslight DO NOT DISTRIBUTE}{}
-\makeoddfoot{plain}{}{}{\alegreyasans\thepage}
-\makeevenfoot{plain}{\alegreyasans\thepage}{}{}
+%\makeoddfoot{plain}{}{\sourcesansprolight DO NOT DISTRIBUTE}{\sourcesanspro\thepage}
+%\makeevenfoot{plain}{\sourcesanspro\thepage}{\sourcesansprolight DO NOT DISTRIBUTE}{}
+\makeoddfoot{plain}{}{}{\sourcesanspro\thepage}
+\makeevenfoot{plain}{\sourcesanspro\thepage}{}{}
 
 % customization of page notes cf. memoir
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
@@ -326,7 +326,7 @@ Ligatures = TeX
 \setlist{
   noitemsep,
   nosep,
-  font=\normalfont\alegreyasans\bfseries
+  font=\normalfont\sourcesanspro\bfseries
 }
 
 \setlist[itemize]{
@@ -400,11 +400,11 @@ Ligatures = TeX
 % format shorthand
 \NewDocumentCommand{\sbar}{o m}{\IfNoValueTF{#1}%
   {\sidebar{#2}}%
-  {\sidebar{{\alegreyasansmedium{}#1} #2}}%
+  {\sidebar{{\sourcesanspromedium{}#1} #2}}%
 }
 \NewDocumentCommand{\sbart}{o m}{\IfNoValueTF{#1}%
   {\sidebar{\textit{#2}}}%
-  {\sidebar{{\alegreyasansmedium{}#1} \textit{#2}}}%
+  {\sidebar{{\sourcesanspromedium{}#1} \textit{#2}}}%
 }
 
 % math shorthand
