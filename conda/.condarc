@@ -1,2 +1,3 @@
+auto_update_conda: False
 create_default_packages:
   - pip

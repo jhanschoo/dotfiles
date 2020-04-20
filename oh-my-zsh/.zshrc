@@ -130,3 +130,5 @@ then
   screen -xRR
 fi
 
+conda activate jhanschoo || true
+
