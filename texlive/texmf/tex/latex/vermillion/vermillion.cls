@@ -1,6 +1,16 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{vermillion}[2018/03/11 Vermillion Class]
 
+\RequirePackage{expl3,l3keys2e}
+
+\ExplSyntaxOn
+\keys_define:nn{vermillion/pkgopts}{
+  defaultlang .tl_set:N = \l_vermillion_defaultlang_tl
+}
+\keys_set:nn{vermillion / pkgopts}{defaultlang=english}
+\ProcessKeysOptions{vermillion/pkgopts}
+\ExplSyntaxOff
+
 \DeclareOption{draft}{
   \PassOptionsToClass{\CurrentOption}{memoir}
 %  \PassOptionsToPackage{\CurrentOption}{hyperref}
@@ -31,11 +41,11 @@
 
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
-\RequirePackage{graphicx}
-\RequirePackage{rotating}
+% \RequirePackage{graphicx}
+% \RequirePackage{rotating}
 
-\RequirePackage{multicol}
-\RequirePackage{blindtext}
+% \RequirePackage{multicol}
+% \RequirePackage{blindtext}
 
 \RequirePackage[table]{xcolor}
 
@@ -45,26 +55,24 @@
 % hack for name conflict
 \let\greek\undefined
 
-% workaround for missing hyphenation in LuaLaTeX, see https://github.com/reutenauer/polyglossia/issues/129
-\usepackage[base]{babel}
-\usepackage{polyglossia}
+\RequirePackage{polyglossia}
+\ExplSyntaxOn
+\setdefaultlanguage{\tl_use:N \l_vermillion_defaultlang_tl}
+\ExplSyntaxOff
 
 % Additional markup
-
-%\RequirePackage[binary-units]{siunitx}
-
 \RequirePackage{mleftright}
 
 \RequirePackage{fontspec}
 \RequirePackage{realscripts}
 \RequirePackage[math-style=ISO]{unicode-math}
-\RequirePackage{microtype}
+% \RequirePackage{microtype}
 
 \RequirePackage[inline]{enumitem}
 
 \RequirePackage{longtable}
-\RequirePackage{tabu}
-\RequirePackage{float}
+\RequirePackage{tabulary}
+% \RequirePackage{float}
 \RequirePackage[final]{listings}
 
 \RequirePackage[nomargin]{fixme}
@@ -93,10 +101,6 @@ urlcolor=pu
 %\definecolor{aq}{HTML}{88C0D0}
 %\definecolor{pu}{HTML}{B48EAD}
 
-% note tabu-xcolor incompatibility
-% https://github.com/tabu-fixed/tabu/issues/1
-% current workaround is to use older packages
-% mentioned in the thread
 \definecolor{bg}{HTML}{FFFFFF}
 \definecolor{fg}{HTML}{000000}
 \definecolor{re}{HTML}{800000}
@@ -155,7 +159,7 @@ Ligatures = TeX
 \setoperatorfont\mathrm
 \newfontfamily\sourcesanspro{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Regular,
 ItalicFont = *-RegularIt,
 BoldFont = *-Bold,
@@ -165,7 +169,7 @@ Ligatures = TeX
 ]
 \newfontfamily\sourcesanspromedium{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Semibold,
 ItalicFont = *-SemiboldIt,
 Numbers = OldStyle,
@@ -173,7 +177,7 @@ Ligatures = TeX
 ]
 \newfontfamily\sourcesansproextrabold{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Black,
 ItalicFont = *-BlackIt,
 Numbers = OldStyle,
@@ -181,7 +185,7 @@ Ligatures = TeX
 ]
 \newfontfamily\sourcesansproblack{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Black,
 ItalicFont = *-BlackIt,
 Numbers = OldStyle,
@@ -189,7 +193,7 @@ Ligatures = TeX
 ]
 \newfontfamily\sourcesansprothin{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-ExtraLight,
 ItalicFont = *-ExtraLightIt,
 Numbers = OldStyle,
@@ -197,38 +201,38 @@ Ligatures = TeX
 ]
 \newfontfamily\sourcesansprolight{SourceSansPro}[
 Extension = .otf,
-Scale = MatchUppercase,
+Scale = MatchLowercase,
 UprightFont = *-Light,
 ItalicFont = *-LightIt,
 Numbers = OldStyle,
 Ligatures = TeX
 ]
 
-% microtype compatibility workaround
-% c.f. https://tex.stackexchange.com/questions/373594/microtype-producing-dozens-of-unknown-slot-number-warnings
-\def\MT@is@composite#1#2\relax{%
-  \ifx\\#2\\\else
-    \expandafter\def\expandafter\MT@char\expandafter{\csname\expandafter
-                    \string\csname\MT@encoding\endcsname
-                    \MT@detokenize@n{#1}-\MT@detokenize@n{#2}\endcsname}%
-    % 3 lines added:
-    \ifx\UnicodeEncodingName\@undefined\else
-      \expandafter\expandafter\expandafter\MT@is@uni@comp\MT@char\iffontchar\else\fi\relax
-    \fi
-    \expandafter\expandafter\expandafter\MT@is@letter\MT@char\relax\relax
-    \ifnum\MT@char@ < \z@
-      \ifMT@xunicode
-        \edef\MT@char{\MT@exp@two@c\MT@strip@prefix\meaning\MT@char>\relax}%
-          \expandafter\MT@exp@two@c\expandafter\MT@is@charx\expandafter
-            \MT@char\MT@charxstring\relax\relax\relax\relax\relax
-      \fi
-    \fi
-  \fi
-}
-% new:
-\def\MT@is@uni@comp#1\iffontchar#2\else#3\fi\relax{%
-  \ifx\\#2\\\else\edef\MT@char{\iffontchar#2\fi}\fi
-}
+% % microtype compatibility workaround
+% % c.f. https://tex.stackexchange.com/questions/373594/microtype-producing-dozens-of-unknown-slot-number-warnings
+% \def\MT@is@composite#1#2\relax{%
+%   \ifx\\#2\\\else
+%     \expandafter\def\expandafter\MT@char\expandafter{\csname\expandafter
+%                     \string\csname\MT@encoding\endcsname
+%                     \MT@detokenize@n{#1}-\MT@detokenize@n{#2}\endcsname}%
+%     % 3 lines added:
+%     \ifx\UnicodeEncodingName\@undefined\else
+%       \expandafter\expandafter\expandafter\MT@is@uni@comp\MT@char\iffontchar\else\fi\relax
+%     \fi
+%     \expandafter\expandafter\expandafter\MT@is@letter\MT@char\relax\relax
+%     \ifnum\MT@char@ < \z@
+%       \ifMT@xunicode
+%         \edef\MT@char{\MT@exp@two@c\MT@strip@prefix\meaning\MT@char>\relax}%
+%           \expandafter\MT@exp@two@c\expandafter\MT@is@charx\expandafter
+%             \MT@char\MT@charxstring\relax\relax\relax\relax\relax
+%       \fi
+%     \fi
+%   \fi
+% }
+% % new:
+% \def\MT@is@uni@comp#1\iffontchar#2\else#3\fi\relax{%
+%   \ifx\\#2\\\else\edef\MT@char{\iffontchar#2\fi}\fi
+% }
 
 
 % definition of theorem environments, cf. ntheorem
@@ -302,15 +306,15 @@ Ligatures = TeX
 \RenewDocumentCommand{\sidebarfont}{}{\normalfont\footnotesize}
 \RenewDocumentCommand{\sidebarform}{}{}
 
+% customization of FiXme labels
 \NewDocumentCommand{\FXLayoutMyInline}{+m +m +m}
 {\@fxuseface{inline}[#2]}
-
-% customization of FiXme labels
 \FXRegisterLayout{myinline}{\FXLayoutMyInline}
-
 \fxsetup{
   layout=myinline
 }
+\RenewDocumentCommand{\fixmelogo}{}{}
+
 
 \lstset{
   basicstyle=\ttfamily,
@@ -327,6 +331,11 @@ Ligatures = TeX
   noitemsep,
   nosep,
   font=\normalfont\sourcesanspro\bfseries
+}
+
+\newlist{nlitemize}{itemize}{4}
+\setlist*[nlitemize]{
+  label={}
 }
 
 \setlist[itemize]{
@@ -357,15 +366,6 @@ Ligatures = TeX
 \setlist*[arabicenum]{
   label=\arabic*.
 }
-
-% customization of tabu environments
-\global\tabulinesep=2pt
-
-% redefine FiXme labels to have brackets
-%\renewcommand*\FXLayoutInline[3]{%
-%  {\@fxuseface{inline} (\fxnotename{#1}: \textnormal{#2})}%
-%}
-\RenewDocumentCommand{\fixmelogo}{}{}
 
 % Cleveref counter names
 \crefname{chapter}{Chapter}{Chapters}
@@ -447,6 +447,10 @@ Ligatures = TeX
 % deprecated constant function notation
 %\NewDocumentCommand{\f}{}{_{\symsf{f}}}
 
+% algorithms shorthand
+
+\input{algorithms}
+
 % text-in-equations
 \NewDocumentCommand{\tdata}{}{\text{data}}
 \NewDocumentCommand{\tmodel}{}{\text{model}}
@@ -454,7 +458,7 @@ Ligatures = TeX
 \NewDocumentCommand{\ttest}{}{\text{test}}
 \NewDocumentCommand{\tensemble}{}{\text{ensemble}}
 
-% text shorthand
+% % text shorthand
 
 \newlength{\marginwidth}
 \newlength{\widetextwidth}
@@ -474,5 +478,3 @@ Ligatures = TeX
   {\fxnote[#1]{\textbf{WON'T FIX}}}%
   {\fxnote[#1]{\textbf{WON'T FIX:} #2}}
 }
-
-\input{algorithms}
