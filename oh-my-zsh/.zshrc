@@ -66,6 +66,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   bundler
   cp
   docker
@@ -77,12 +78,17 @@ plugins=(
   github
   kubectl
   laravel
+  minikube
   node
   npm
+  nvm
   osx
   pip
   screen
+  sdk
+  # stack plugin not robust enough (does not check for presence/absence of stack), using .zshenv.d for now
   svn
+  # z plugin does not use installation from upstream (rupa/z), but provides own (outdated) version. Hence using .zshenv.d
   zsh-syntax-highlighting
 )
 
