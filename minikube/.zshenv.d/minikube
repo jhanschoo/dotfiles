@@ -2,7 +2,6 @@
 
 if [[ $commands[minikube] ]]
 then
-  source <(minikube completion zsh)
   export MINIKUBE_WANTUPDATENOTIFICATION=true
   export MINIKUBE_WANTREPORTERROR=false
   export MINIKUBE_WANTREPORTERRORPROMPT=false

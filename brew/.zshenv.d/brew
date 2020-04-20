@@ -1,12 +1,7 @@
 #!/usr/bin/env zsh
 
-if type brew > /dev/null && [[ -d "$(brew --prefix)/etc/bash_completion.d" ]]; then
-  autoload -U +X compinit && compinit
-  autoload -U +X bashcompinit && bashcompinit
-  for file in "$(brew --prefix)/etc/bash_completion.d/"*; do
-    #source "${file}"
-  done
-  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+if type brew > /dev/null && [[ -d "$(brew --prefix)/share/zsh/site-functions" ]]; then
+  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
 
 
