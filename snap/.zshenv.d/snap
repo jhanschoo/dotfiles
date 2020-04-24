@@ -1,0 +1,2 @@
+# workaround for https://bugs.launchpad.net/ubuntu/+source/snapd/+bug/1640514
+export PATH="${PATH}:/snap/bin"
