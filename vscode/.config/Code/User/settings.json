@@ -1,6 +1,6 @@
 {
   "editor.cursorBlinking": "solid",
-  "editor.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
+  "editor.fontFamily": "'Iosevka Extended', 'Sarasa Mono CL', Menlo, Monaco, monospace",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "all",
@@ -27,11 +27,12 @@
   "workbench.statusBar.feedback.visible": false,
   "git.autofetch": true,
   "window.restoreWindows": "none",
-  "python.pythonPath": "/home/jhanschoo/miniconda3/envs/jhanschoo/bin/python",
+  "python.pythonPath": "/home/jhanschoo/anaconda3/envs/jhanschoo/bin/python",
   "python.linting.mypyEnabled": true,
   "python.jediEnabled": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 0,
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.inheritEnv": false
 }
