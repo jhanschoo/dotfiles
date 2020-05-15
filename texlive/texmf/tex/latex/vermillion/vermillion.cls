@@ -132,7 +132,7 @@ urlcolor=pu
 % math c.f. fontspec and unicode-math
 \setmainfont{EB Garamond}[
 Numbers = OldStyle,
-Ligatures = TeX
+Ligatures = {Common,Discretionary,TeX}
 ]
 %\setmainfont{EBGaramond}[
 %Extension = .otf,
