@@ -46,6 +46,7 @@ values."
        emacs-lisp
        emoji
        git
+       haskell
        ;;helm
        html
        ivy
@@ -335,6 +336,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (require 'greek-polytonic)
   (message "environment" (string-join process-environment ", "))
+
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
+
   ;;(require 'exec-path-from-shell)
   ; set exec-path-from-shell to execute a normal shell, not an interactive login shell
   ;;(setq exec-path-from-shell-arguments '())
