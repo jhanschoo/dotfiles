@@ -20,7 +20,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.fontFamily": "Iosevka, 'Sarasa Mono CL Regular', Menlo, Monaco, monospace",
   "workbench.colorTheme": "Nord",
-  "window.titleBarStyle": "custom",
   "editor.smoothScrolling": true,
   "editor.mouseWheelScrollSensitivity": 0.25,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -34,5 +33,17 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 0,
   "extensions.ignoreRecommendations": true,
-  "terminal.integrated.inheritEnv": false
+  "terminal.integrated.inheritEnv": false,
+  "pgsql.resultsFontFamily": "",
+  "pgsql.connections": [
+    {
+      "host": "localhost",
+      "dbname": "",
+      "user": "jhanschoo",
+      "password": "",
+      "emptyPasswordInput": false,
+      "port": "5432",
+      "profileName": "jhanschoo"
+    }
+  ]
 }
