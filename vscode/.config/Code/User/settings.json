@@ -45,5 +45,6 @@
       "port": "5432",
       "profileName": "jhanschoo"
     }
-  ]
+  ],
+  "window.titleBarStyle": "custom"
 }
