@@ -46,5 +46,6 @@
       "profileName": "jhanschoo"
     }
   ],
-  "window.titleBarStyle": "custom"
+  "window.titleBarStyle": "custom",
+  "java.semanticHighlighting.enabled": true
 }
