@@ -41,9 +41,11 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      bibtex
-     c-c++
+     (c-c++ :variables
+            c-c++-lsp-enable-semantic-highlight t)
      coq
      csv
+     dap
      docker
      emacs-lisp
      emoji
@@ -54,6 +56,7 @@ This function should only modify configuration layer settings."
      ivy
      javascript
      latex
+     lsp
      markdown
      multiple-cursors
      ocaml
