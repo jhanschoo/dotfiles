@@ -39,6 +39,8 @@
 
 \LoadClass[a4paper,12pt,onecolumn,article]{memoir}
 
+\paragraphfootnotes
+
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 % \RequirePackage{graphicx}
@@ -51,6 +53,7 @@
 
 \RequirePackage{amsmath,amssymb}
 \RequirePackage[amsmath,hyperref,thmmarks]{ntheorem}
+\RequirePackage{tikz-cd}
 
 % hack for name conflict
 \let\greek\undefined
@@ -145,10 +148,10 @@ Ligatures = {Common,Discretionary,TeX}
 %]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-%\setmathfont{Garamond-Math}[
-%StylisticSet={8}
-%]
-\setmathfont{texgyrepagella-math.otf}[Scale=MatchLowercase]
+\setmathfont{Garamond-Math.otf}[
+StylisticSet={8}
+]
+%\setmathfont{texgyrepagella-math.otf}[Scale=MatchLowercase]
 \setmathfontface\mathrm{EBGaramond-Regular.otf}[Scale=MatchLowercase]
 \let\mathup\undefined
 \setmathfontface\mathup{EBGaramond-Regular.otf}[Scale=MatchLowercase]
