@@ -6,5 +6,7 @@ libgtksourceview2.0-dev
 liblz4-dev liblzo2-dev libpam0g-dev libpkcs11-helper1-dev libsystemd-dev
 # reason: entertainment
 cowsay
-# reason: C++20 support requiring ver 10.x, but focal provides 9.x by default
-g++-10
+calibre
+mcomix
+# reason: C++
+lldb clang-tidy clang-tools clang-format clangd
