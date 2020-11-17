@@ -10,3 +10,5 @@ calibre
 mcomix
 # reason: C++
 lldb clang-tidy clang-tools clang-format clangd
+# reason: C++ on focal
+g++-10
