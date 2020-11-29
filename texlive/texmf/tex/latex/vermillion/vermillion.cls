@@ -123,7 +123,7 @@ urlcolor=pu
   \array{#1}}
 
 % geometry, c.f. memoir
-\tolerance 1600
+%\tolerance 1600
 %\hbadness 1600
 \emergencystretch 1.5em
 %\hfuzz 0.3pt
@@ -160,6 +160,7 @@ StylisticSet={8}
 \setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
 
 \setoperatorfont\mathrm
+
 \newfontfamily\sourcesanspro{SourceSansPro}[
 Extension = .otf,
 Scale = MatchLowercase,
@@ -277,15 +278,15 @@ Ligatures = TeX
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
 \RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\sourcesansprolight\huge}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\sourcesansprolight\huge}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\sourcesansproblack\Huge}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\itshape\huge}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\itshape\huge}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\Huge}
 
-\setsecheadstyle{\normalfont\sourcesansproextrabold\Large}%
-\setsubsecheadstyle{\normalfont\sourcesansproextrabold\large}%
-\setsubsubsecheadstyle{\normalfont\sourcesanspro\large}%
-\setparaheadstyle{\normalfont\sourcesanspromedium\large}%
-\setsubparaheadstyle{\normalfont\sourcesanspro\large}%
+\setsecheadstyle{\normalfont\Large}%
+\setsubsecheadstyle{\normalfont\large}%
+\setsubsubsecheadstyle{\normalfont\large}%
+\setparaheadstyle{\normalfont\sourcesansproblack}%
+\setsubparaheadstyle{\normalfont\sourcesansproextrabold}%
 
 % customization of page styles cf. memoir
 \createmark{chapter}{left}{shownumber}
@@ -443,7 +444,6 @@ Ligatures = TeX
 \input{categorytheory}
 \input{computability}
 \input{complexity}
-%\input{vectordeprecated}
 \input{vector}
 \input{typetheory}
 %\input{rvdeprecated}
