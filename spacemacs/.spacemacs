@@ -46,7 +46,8 @@ This function should only modify configuration layer settings."
             c-c++-lsp-enable-semantic-highlight t)
      coq
      csv
-     dap
+     (dap :variables
+          dap-auto-configure-features '(sessions locals controls tooltip))
      docker
      emacs-lisp
      emoji
@@ -57,7 +58,9 @@ This function should only modify configuration layer settings."
      ivy
      javascript
      latex
-     lsp
+     (lsp :variables
+          lsp-auto-guess-root t
+          lsp-auto-configure t)
      markdown
      multiple-cursors
      ocaml
@@ -65,9 +68,9 @@ This function should only modify configuration layer settings."
      python
      selectric
      (shell :variables
-       shell-default-height 30
-       shell-default-position 'bottom
-       shell-default-shell 'multi-term)
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-shell 'multi-term)
      spell-checking
      syntax-checking
      sql
@@ -89,10 +92,10 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(exec-path-from-shell
-                                        package-lint
-                                        flycheck-package
-                                        greek-polytonic
-                                        )
+                                      package-lint
+                                      flycheck-package
+                                      greek-polytonic
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -222,6 +225,14 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
+
+   ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
+   ;; *scratch* buffer will be saved and restored automatically.
+   dotspacemacs-scratch-buffer-persistent nil
+
+   ;; If non-nil, `kill-buffer' on *scratch* buffer
+   ;; will bury it instead of killing.
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -527,6 +538,9 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (defun spacemacs//c-c++-setup-lsp-dap ()
+    "Setup DAP integration."
+    (require 'dap-cpptools))
   (require 'greek-polytonic)
   (message "environment" (string-join process-environment ", "))
 
