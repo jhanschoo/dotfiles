@@ -1,1 +1,2 @@
-/usr/local/bin/docker-compose
+# reason: LUKS keys
+/etc/keys/
