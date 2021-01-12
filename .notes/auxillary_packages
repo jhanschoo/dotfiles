@@ -12,3 +12,5 @@ mcomix
 lldb clang-tidy clang-tools clang-format clangd
 # reason: C++ on focal
 g++-10
+# reason: temperature
+lm-sensors

@@ -1,7 +1,7 @@
 [user]
 	name = Johannes Choo
 	email = jhanschoo@gmail.com
-	signingkey = Johannes Choo
+	signingkey = 0x39043A8743938F1F
 [color]
 	ui = true
 [core]
