@@ -569,35 +569,37 @@ before packages are loaded."
 
   ;; passthrough for MacOS dead key
   (if (eq system-type 'darwin)
-    (setq ns-right-alternate-modifier 'none))
+      (setq ns-right-alternate-modifier 'none))
 
   (add-hook
    'LaTeX-mode-hook
    (lambda ()
-     (setq TeX-view-predicate-list '((output-pdf-evince
-         (and (string-match "pdf" (TeX-output-extension))
-              (executable-find "evince")))
-        (output-pdf-okular
-         (and (string-match "pdf" (TeX-output-extension))
-              (executable-find "okular")))
-        (output-pdf-skim
-         (and (string-match "pdf" (TeX-output-extension))
-              (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
-     (setq TeX-view-program-list
-       '(
-          ;;("Evince"
-          ;;TeX-evince-sync-viewevince")
-          ;;("Okular" "okular --unique
-          ;;%o (mode-io-correlate "#src:%n%a")" "okular")
-          ("Skim"
-            "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"
-            "/Applications/Skim.app/Contents/SharedSupport/displayline")))
-     (add-to-list 'TeX-view-program-selection
-       '(output-pdf-skim "Skim"))
-     (add-to-list 'TeX-view-program-selection
-       '(output-pdf-okular "Okular"))
-     (add-to-list 'TeX-view-program-selection
-       '(output-pdf-evince "Evince"))))
+     ; when figuring out which viewer to call, we have e.g. output-pdf-okular evaluate to true when the current
+     ;   TeX output is "pdf" and the program "okular" is callable from the environment.
+     (setq TeX-view-predicate-list '((output-pdf-okular
+                                      (and (string-match "pdf" (TeX-output-extension))
+                                           (executable-find "okular")))
+                                     (output-pdf-evince
+                                      (and (string-match "pdf" (TeX-output-extension))
+                                           (executable-find "evince")))
+                                     (output-pdf-skim
+                                      (and (string-match "pdf" (TeX-output-extension))
+                                           (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
+      (setq TeX-view-program-list
+        '(("Skim"
+             "/Applications/Skim.app/Contents/SharedSupport/displayline %n %o %b"
+             "/Applications/Skim.app/Contents/SharedSupport/displayline")))
+      ;; change the order of add-to-list to change in which order View tries programs
+      ;; (among "Skim", "Evince", and "Okular")
+      ;; to open the output; it tries the most recently added one first
+      ;; (the last value called with add-to-list)
+      (add-to-list 'TeX-view-program-selection
+                   '(output-pdf-skim "Skim"))
+      (add-to-list 'TeX-view-program-selection
+                   '(output-pdf-evince "Evince"))
+      (add-to-list 'TeX-view-program-selection
+                   '(output-pdf-okular "Okular"))
+      ))
 
   (add-to-list 'default-frame-alist '(width . 100))
 

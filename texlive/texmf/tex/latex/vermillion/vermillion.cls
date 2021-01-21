@@ -280,7 +280,7 @@ Ligatures = TeX
 \RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
 \RenewDocumentCommand{\chapnamefont}{}{\normalfont\itshape\LARGE}
 \RenewDocumentCommand{\chapnumfont}{}{\normalfont\itshape\LARGE}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\Huge}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\LARGE}
 
 \setsecheadstyle{\normalfont\Large}%
 \setsubsecheadstyle{\normalfont\large}%
