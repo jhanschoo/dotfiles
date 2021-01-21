@@ -12,5 +12,9 @@ mcomix
 lldb clang-tidy clang-tools clang-format clangd
 # reason: C++ on focal
 g++-10
+# reason: PPP
+libfltk1.3-dev
 # reason: temperature
 lm-sensors
+# reason: guild wars 2 on wine
+libncurses5
