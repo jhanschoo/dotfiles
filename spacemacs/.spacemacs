@@ -411,7 +411,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -614,6 +614,9 @@ before packages are loaded."
 
   (setq font-latex-fontify-script 'multi-level)
   (setq font-latex-script-display '((raise -0.25) raise 0.25))
+
+  ;(pixel-scroll-mode t)
+  ;(setq pixel-resolution-fine-flag t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
