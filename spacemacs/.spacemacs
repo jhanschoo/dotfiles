@@ -209,9 +209,13 @@ It should only modify the values of Spacemacs settings."
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
-   ;; `recents' `bookmarks' `projects' `agenda' `todos'.
+   ;; `recents' `recents-by-project' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
+   ;; The exceptional case is `recents-by-project', where list-type must be a
+   ;; pair of numbers, e.g. `(recents-by-project . (7 .  5))', where the first
+   ;; number is the project limit and the second the limit on the recent files
+   ;; within a project.
    dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 7))
 
@@ -241,6 +245,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
+   ;; dotspacemacs-themes '(spacemacs-dark
+   ;;                       spacemacs-light)
    dotspacemacs-themes '(nord
                          sanityinc-tomorrow-day)
 
@@ -257,7 +263,13 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts.
+   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; a non-negative integer (pixel size), or a floating-point (point size).
+   ;; Point size is recommended, because it's device independent. (default 10.0)
+   ;; dotspacemacs-default-font '("Source Code Pro"
+   ;;                             :size 10.0
+   ;;                             :weight normal
+   ;;                             :width normal)
    dotspacemacs-default-font '("Iosevka"
                                :powerline-scale 2)
 
@@ -474,6 +486,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil - same as frame-title-format)
    dotspacemacs-icon-title-format nil
 
+   ;; Show trailing whitespace (default t)
+   dotspacemacs-show-trailing-whitespace t
+
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
@@ -506,7 +521,10 @@ It should only modify the values of Spacemacs settings."
 
    ;; If nil the home buffer shows the full path of agenda items
    ;; and todos. If non nil only the file name is shown.
-   dotspacemacs-home-shorten-agenda-source nil))
+   dotspacemacs-home-shorten-agenda-source nil
+
+   ;; If non-nil then byte-compile some of Spacemacs files.
+   dotspacemacs-byte-compile nil))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
