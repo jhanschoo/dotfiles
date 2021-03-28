@@ -82,6 +82,7 @@ plugins=(
   minikube
   node
   npm
+  zsh-nvm # loaded first for later plugin
   nvm
   osx
   pip

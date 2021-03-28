@@ -34,3 +34,6 @@
 	branch = master
 	path = z/.zdir
 	url = https://github.com/rupa/z.git
+[submodule "zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm"]
+	path = zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm.git
