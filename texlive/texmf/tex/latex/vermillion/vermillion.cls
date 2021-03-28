@@ -148,16 +148,14 @@ Ligatures = {Common,Discretionary,TeX}
 %]
 \setmonofont{DejaVuSansMono}[Scale=MatchLowercase,Ligatures=TeX]
 
-\setmathfont{Garamond-Math.otf}[
-StylisticSet={8}
-]
+\setmathfont{Garamond-Math.otf}
 %\setmathfont{texgyrepagella-math.otf}[Scale=MatchLowercase]
-\setmathfontface\mathrm{EBGaramond-Regular.otf}[Scale=MatchLowercase]
-\let\mathup\undefined
-\setmathfontface\mathup{EBGaramond-Regular.otf}[Scale=MatchLowercase]
-\setmathfontface\mathit{EBGaramond-Italic.otf}[Scale=MatchLowercase]
-\setmathfontface\mathbf{EBGaramond-Bold.otf}[Scale=MatchLowercase]
-\setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
+%\setmathfontface\mathrm{EBGaramond-Regular.otf}[Scale=MatchLowercase]
+%\let\mathup\undefined
+%\setmathfontface\mathup{EBGaramond-Regular.otf}[Scale=MatchLowercase]
+%\setmathfontface\mathit{EBGaramond-Italic.otf}[Scale=MatchLowercase]
+%\setmathfontface\mathbf{EBGaramond-Bold.otf}[Scale=MatchLowercase]
+%\setmathfontface\mathsf{libertinussans-regular.otf}[Scale=MatchLowercase]
 
 \setoperatorfont\mathrm
 
