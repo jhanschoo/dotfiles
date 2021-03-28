@@ -34,7 +34,3 @@
 	branch = master
 	path = z/.zdir
 	url = https://github.com/rupa/z.git
-[submodule "nvm/.nvm"]
-	path = nvm/.nvm
-	update = none
-	url = https://github.com/nvm-sh/nvm.git
