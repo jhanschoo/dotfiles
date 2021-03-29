@@ -73,6 +73,7 @@ plugins=(
   docker
   docker-compose
   extract
+  fasd
   gem
   git
   gitignore
