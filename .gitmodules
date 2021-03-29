@@ -30,10 +30,6 @@
 	branch = develop
 	path = spacemacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
-[submodule "z/.zdir"]
-	branch = master
-	path = z/.zdir
-	url = https://github.com/rupa/z.git
 [submodule "zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm"]
 	path = zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
