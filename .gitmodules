@@ -14,10 +14,6 @@
 	branch = master
 	path = asdf-plugins/.asdf/repository
 	url = https://github.com/asdf-vm/asdf-plugins.git
-[submodule "asdf-minikube/.asdf/plugins/minikube"]
-	branch = master
-	path = asdf-minikube/.asdf/plugins/minikube
-	url = https://github.com/alvarobp/asdf-minikube.git
 [submodule "asdf-nodejs/.asdf/plugins/nodejs"]
 	branch = master
 	path = asdf-nodejs/.asdf/plugins/nodejs
