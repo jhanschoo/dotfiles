@@ -612,12 +612,13 @@ before packages are loaded."
    (lambda ()
      ; when figuring out which viewer to call, we have e.g. output-pdf-okular evaluate to true when the current
      ;   TeX output is "pdf" and the program "okular" is callable from the environment.
-     (setq TeX-view-predicate-list '((output-pdf-okular
-                                      (and (string-match "pdf" (TeX-output-extension))
-                                           (executable-find "okular")))
+     (setq TeX-view-predicate-list '(
                                      (output-pdf-evince
                                       (and (string-match "pdf" (TeX-output-extension))
                                            (executable-find "evince")))
+                                     (output-pdf-okular
+                                      (and (string-match "pdf" (TeX-output-extension))
+                                           (executable-find "okular")))
                                      (output-pdf-skim
                                       (and (string-match "pdf" (TeX-output-extension))
                                            (executable-find "/Applications/Skim.app/Contents/SharedSupport/displayline")))))
@@ -632,9 +633,9 @@ before packages are loaded."
       (add-to-list 'TeX-view-program-selection
                    '(output-pdf-skim "Skim"))
       (add-to-list 'TeX-view-program-selection
-                   '(output-pdf-evince "Evince"))
-      (add-to-list 'TeX-view-program-selection
                    '(output-pdf-okular "Okular"))
+      (add-to-list 'TeX-view-program-selection
+                   '(output-pdf-evince "Evince"))
       ))
 
   (add-to-list 'default-frame-alist '(width . 100))
