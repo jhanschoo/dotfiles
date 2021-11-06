@@ -37,7 +37,7 @@
 
 \ProcessOptions\relax
 
-\LoadClass[a4paper,12pt,onecolumn,article]{memoir}
+\LoadClass[a4paper,10pt,onecolumn,article]{memoir}
 
 \paragraphfootnotes
 
@@ -125,7 +125,7 @@ urlcolor=pu
 % geometry, c.f. memoir
 %\tolerance 1600
 %\hbadness 1600
-\emergencystretch 1.5em
+%\emergencystretch 1.5em
 %\hfuzz 0.3pt
 %\widowpenalty=10000
 %\vfuzz \hfuzz
