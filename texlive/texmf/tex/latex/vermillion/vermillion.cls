@@ -414,7 +414,7 @@ Ligatures = TeX
 \NewDocumentCommand{\Pp}{m}{^{\p{#1}}}
 
 \NewDocumentCommand{\pinfty}{}{{+\infty}}
-\NewDocumentCommand{\minfty}{}{{-\infty}}
+\NewDocumentCommand{\ninfty}{}{{-\infty}}
 
 % Use \m to typeset math variables that take up multiple symbols.
 \NewDocumentCommand{\m}{m}{\mathit{#1}}
@@ -423,9 +423,9 @@ Ligatures = TeX
 
 % delimiters
 \input{delimiters}
-%\input{fcasedeprecated}
 \input{mathoperators}
 \input{constants}
+\input{caseexp}
 \input{mathfoundational}
 \input{numbertheory}
 \input{analysis}
