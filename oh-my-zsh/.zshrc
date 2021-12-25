@@ -85,7 +85,6 @@ plugins=(
   npm
   zsh-nvm # loaded first for later plugin
   nvm
-  osx
   pip
   screen
   sdk
