@@ -133,9 +133,17 @@ urlcolor=pu
 
 % Using Lato for display text, EB Garamond for body, and Garamond Math for
 % math c.f. fontspec and unicode-math
-\setmainfont{EB Garamond}[
+%using \setmainfont{EB Garamond}[...] somehow gives bold upright font bugs
+\setmainfont{EBGaramond}[
+Extension = .otf,
+UprightFont = *-Regular,
+ItalicFont = *-Italic,
+BoldFont = *-Bold,
+BoldItalicFont = *-BoldItalic,
 Numbers = OldStyle,
-Ligatures = {Common,Discretionary,TeX}
+Ligatures = {Common,Discretionary,TeX},
+% https://tex.stackexchange.com/questions/603442/error-linebreak-invalid-node-with-type-whatsit-and-subtype-19-found-in-discr
+Renderer=Node
 ]
 %\setmainfont{EBGaramond}[
 %Extension = .otf,
@@ -274,15 +282,15 @@ Ligatures = TeX
 
 \chapterstyle{default}
 \RenewDocumentCommand{\chapterheadstart}{}{\vspace*{30pt}}
-\RenewDocumentCommand{\afterchapternum}{}{\par\nobreak\vskip 5pt}
-\RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 10pt}
-\RenewDocumentCommand{\chapnamefont}{}{\normalfont\itshape\LARGE}
-\RenewDocumentCommand{\chapnumfont}{}{\normalfont\itshape\LARGE}
-\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\LARGE}
+\RenewDocumentCommand{\afterchapternum}{}{\par\nobreak}
+\RenewDocumentCommand{\afterchaptertitle}{}{\par\nobreak\vskip 5pt}
+\RenewDocumentCommand{\chapnamefont}{}{\normalfont\sourcesansprolight\itshape\LARGE}
+\RenewDocumentCommand{\chapnumfont}{}{\normalfont\sourcesansprolight\itshape\LARGE}
+\RenewDocumentCommand{\chaptitlefont}{}{\normalfont\sourcesansprolight\Huge}
 
-\setsecheadstyle{\normalfont\Large}%
-\setsubsecheadstyle{\normalfont\large}%
-\setsubsubsecheadstyle{\normalfont\large}%
+\setsecheadstyle{\normalfont\sourcesanspromedium\LARGE}%
+\setsubsecheadstyle{\normalfont\sourcesanspro\Large}%
+\setsubsubsecheadstyle{\normalfont\sourcesanspro\itshape\large}%
 \setparaheadstyle{\normalfont\sourcesansproblack}%
 \setsubparaheadstyle{\normalfont\sourcesansproextrabold}%
 
