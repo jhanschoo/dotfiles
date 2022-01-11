@@ -7,6 +7,8 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+[difftool "code"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [push]
 	default = simple
 [alias]
