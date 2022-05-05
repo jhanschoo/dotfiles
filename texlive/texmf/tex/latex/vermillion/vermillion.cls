@@ -123,13 +123,16 @@ urlcolor=pu
   \array{#1}}
 
 % geometry, c.f. memoir
-%\tolerance 1600
-%\hbadness 1600
-%\emergencystretch 1.5em
-%\hfuzz 0.3pt
-%\widowpenalty=10000
-%\vfuzz \hfuzz
+\tolerance 1600
+\hbadness 1600
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
 \raggedbottom
+% https://tex.stackexchange.com/questions/116479/how-to-force-normal-line-spacing-when-inline-math-in-text
+% https://tex.stackexchange.com/questions/319655/automatically-prevent-extra-line-spacing-because-of-math
+\lineskiplimit=-4pt
 
 % Using Lato for display text, EB Garamond for body, and Garamond Math for
 % math c.f. fontspec and unicode-math
