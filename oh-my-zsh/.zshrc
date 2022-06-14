@@ -90,7 +90,6 @@ plugins=(
   sdk
   # stack plugin not robust enough (does not check for presence/absence of stack), using .zshenv.d for now
   svn
-  # z plugin does not use installation from upstream (rupa/z), but provides own (outdated) version. Hence using .zshenv.d
   zsh-syntax-highlighting
 )
 
@@ -126,10 +125,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if type conda > /dev/null
-then
-  conda activate jhanschoo
-fi
+#if type conda > /dev/null
+#then
+#  conda activate jhanschoo
+#fi
 
 if type screen > /dev/null && [[ -f "${HOME}/.screenrc" && -z $STY && $- == *i* && $- != *l* ]]
 then
