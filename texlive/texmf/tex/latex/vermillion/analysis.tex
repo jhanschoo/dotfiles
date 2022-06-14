@@ -10,6 +10,7 @@
 
 % functional limits
 \NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
+\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\to #2}}
 \NewDocumentCommand{\limr}{m}{\lim_{> #1}}
 \NewDocumentCommand{\liml}{m}{\lim_{< #1}}
 \NewDocumentCommand{\limfr}{m m}{\lim_{#1\searrow #2}}
