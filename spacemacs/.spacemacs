@@ -58,7 +58,7 @@ This function should only modify configuration layer settings."
      ivy
      javascript
      (latex :variables
-            latex-backend 'company-auctex)
+            latex-backend 'nil)
      (lsp :variables
           lsp-auto-guess-root t
           lsp-auto-configure t)
