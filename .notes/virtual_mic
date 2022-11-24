@@ -4,7 +4,8 @@
 pactl load-module module-null-sink sink_name=Discord-Input-Sink
 # Set up a virtual combined sink to physical headphones and discord-input-sink
 pactl load-module module-combine-sink sink_name=Discord-And-Physical-Sink slaves=alsa_output.pci-0000_2d_00.4.analog-stereo,Discord-Input-Sink
-# Set up a loopback to the combined sink (intended source being desktop applications)
+# From GNOME Sound, set output to combined sink
+# Set up a loopback to the combined sink (intended source being physical mic)
 pactl load-module module-loopback sink=Discord-And-Physical-Sink latency_msec=1
 pactl load-module module-loopback sink=Discord-Input-Sink latency_msec=1
 # Launch discord with output being physical headphones
