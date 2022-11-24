@@ -14,5 +14,5 @@ pactl load-module module-loopback sink=Discord-Input-Sink latency_msec=1
 # default app output -> combined sink
 # combined sink + physical mic -> discord input sink
 # discord input sink -> discord input
-# combuned sink + discord output -> physical headphones
+# combined sink + discord output -> physical headphones
 
