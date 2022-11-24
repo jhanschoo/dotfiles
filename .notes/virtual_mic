@@ -1,0 +1,17 @@
+# https://www.reddit.com/r/linux_gaming/comments/gh3hlg/streaming_game_audio_on_discord_linux_client/
+# https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/
+# Set up a virtual sink
+pactl load-module module-null-sink sink_name=Discord-Input-Sink
+# Set up a virtual combined sink to physical headphones and discord-input-sink
+pactl load-module module-combine-sink sink_name=Discord-And-Physical-Sink slaves=alsa_output.pci-0000_2d_00.4.analog-stereo,Discord-Input-Sink
+# Set up a loopback to the combined sink (intended source being desktop applications)
+pactl load-module module-loopback sink=Discord-And-Physical-Sink latency_msec=1
+pactl load-module module-loopback sink=Discord-Input-Sink latency_msec=1
+# Launch discord with output being physical headphones
+# Use pavucontrol to set source for WEBRTC VoiceEngine (Discord source) to Discord-Input-Sink
+# After this setup should look like
+# default app output -> combined sink
+# combined sink + physical mic -> discord input sink
+# discord input sink -> discord input
+# combuned sink + discord output -> physical headphones
+
