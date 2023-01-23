@@ -1,4 +1,5 @@
 auto_activate_base: false
 channels:
+  - fastai
   - defaults
 ssl_verify: true
