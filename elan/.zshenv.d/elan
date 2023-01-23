@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-if [[ -d "${HOME}/.elan/bin" ]]
+if [[ -d "${HOME}/.elan" ]]
 then
-  export PATH="${HOME}/.elan/bin:${PATH}"
+    source "${HOME}/.elan/env"
 fi
