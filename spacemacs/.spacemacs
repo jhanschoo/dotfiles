@@ -287,7 +287,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :weight normal
    ;;                             :width normal)
    dotspacemacs-default-font '("Iosevka"
-                               :size 8.0
+                               :size 9.0
                                :powerline-scale 2)
 
    ;; The leader key (default "SPC")
