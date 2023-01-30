@@ -41,6 +41,8 @@
 
 \paragraphfootnotes
 
+\RequirePackage{subfiles}
+
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 % \RequirePackage{graphicx}
