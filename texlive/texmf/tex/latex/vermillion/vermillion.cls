@@ -41,6 +41,7 @@
 
 \paragraphfootnotes
 
+\RequirePackage{xr}
 \RequirePackage{subfiles}
 
 \RequirePackage{etoolbox}
@@ -94,6 +95,8 @@ filecolor=aq,
 menucolor=re,
 urlcolor=pu
 ]{hyperref}
+
+\externaldocument[M-]{\subfix{main}}
 
 \RequirePackage{cleveref}
 
