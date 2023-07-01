@@ -99,6 +99,7 @@ urlcolor=pu
 \externaldocument[M-]{\subfix{main}}
 
 \RequirePackage{cleveref}
+\RequirePackage{remreset}
 
 % color support
 %\definecolor{bg}{HTML}{2E3440}
