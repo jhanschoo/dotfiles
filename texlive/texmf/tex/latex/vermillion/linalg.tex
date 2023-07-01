@@ -8,7 +8,7 @@
 \NewDocumentCommand{\ep}{}{\wedge}
 
 % inner product
-\NewDocumentCommand{\ip}{m m}{\ad{{#1},{#2}}}
+\NewDocumentCommand{\ip}{m m O{}}{\ad{{#1},{#2}}_{#3}}
 
 % Hadamard product
 \NewDocumentCommand{\Hp}{}{\odot}
