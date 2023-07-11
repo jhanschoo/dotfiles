@@ -47,6 +47,6 @@
 \NewDocumentCommand{\dif}{}{\:\symup{d}}
 
 % shorthand for evaluating a differential at a point
-\NewDocumentCommand{\pD}{O{} m m}{\p{\D^{#1} #2}\p{#3}}
+\NewDocumentCommand{\pD}{O{} m O{} m}{\p{\D^{#1}_{#3} #2}\p{#4}}
 % antidifferential
 \NewDocumentCommand{\adif}{}{\D\inv}
