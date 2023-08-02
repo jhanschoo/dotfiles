@@ -1,3 +1,12 @@
+% language
+\NewDocumentCommand{\binalph}{}{\B{0,1}}
+\NewDocumentCommand{\binlang}{}{\binalph^*}
+\NewDocumentCommand{\binrepr}{m}{\ad{#1}_{2}}
+
+% TM symbols
+\NewDocumentCommand{\blsym}{}{\square}
+\NewDocumentCommand{\stsym}{}{\triangleright}
+
 % complexity classes
 \NewDocumentCommand{\caAM}{}{\ca{AM}}
 \NewDocumentCommand{\caAP}{}{\ca{AP}}
@@ -48,6 +57,7 @@
 \NewDocumentCommand{\CKTSAT}{}{\M{CKTSAT}}
 \NewDocumentCommand{\dHAMPATH}{}{\M{dHAMPATH}}
 \NewDocumentCommand{\EXPCOM}{}{\M{EXPCOM}}
+\NewDocumentCommand{\HALT}{}{\M{HALT}}
 \NewDocumentCommand{\INDSET}{}{\M{INDSET}}
 \NewDocumentCommand{\MINEQDNF}{}{\M{MINEQDNF}}
 \NewDocumentCommand{\numSAT}{}{\M{\#SAT}}
@@ -56,9 +66,11 @@
 \NewDocumentCommand{\threeSAT}{}{\M{3SAT}}
 \NewDocumentCommand{\TMSAT}{}{\M{TMSAT}}
 \NewDocumentCommand{\TQBF}{}{\M{TQBF}}
+\NewDocumentCommand{\UC}{}{\M{UC}}
 
 % reductions
 \NewDocumentCommand{\leqp}{}{\leq_{\Cp}}
 \NewDocumentCommand{\leql}{}{\leq_{\Constl}}
 
 \NewDocumentCommand{\str}{m}{\mleft\llcorner #1 \mright\lrcorner}
+\NewDocumentCommand{\tm}{m}{\mleft\ulcorner #1 \mright\urcorner}
