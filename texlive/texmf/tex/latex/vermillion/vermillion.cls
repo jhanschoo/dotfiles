@@ -456,8 +456,7 @@ Ligatures = TeX
 \input{graph}
 \input{setalg}
 \input{categorytheory}
-\input{computability}
-\input{complexity}
+\input{computation}
 \input{vector}
 \input{typetheory}
 %\input{rvdeprecated}
