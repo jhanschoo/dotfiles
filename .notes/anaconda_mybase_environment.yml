@@ -1,12 +1,11 @@
 name: mybase
 dependencies:
-  - conda=22.11.1
-  - python=3.10
+  - conda
+  - python=3.11
   - conda-env
   - conda-build
   - conda-verify
   - _ipyw_jlab_nb_ext_conf
-  - anaconda==2022.10=py310_0
+  - anaconda==2023.07=py311_1
   - anaconda-navigator
   - navigator-updater
-
