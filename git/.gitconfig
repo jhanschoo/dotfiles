@@ -50,20 +50,20 @@
 	cl = clone --recurse-submodules
 
 	c = commit --verbose
-  c1 = commit --verbose --amend
-  cn1 = commit --verbose --no-edit --amend
-  ca = commit --verbose --all
-  ca1 = commit --verbose --all --amend
-  can1 = commit --verbose --all --no-edit --amend
-  cans1 = commit --verbose --all --signoff --no-edit --amend
-  cam = commit --all -m
-  csm = commit --signoff -m
-  cmsg = commit -m
+	c1 = commit --verbose --amend
+	cn1 = commit --verbose --no-edit --amend
+	ca = commit --verbose --all
+	ca1 = commit --verbose --all --amend
+	can1 = commit --verbose --all --no-edit --amend
+	cans1 = commit --verbose --all --signoff --no-edit --amend
+	cam = commit --all -m
+	csm = commit --signoff -m
+	cmsg = commit -m
 	cs = commit -S
 
 	cf = config --list
 
-  dct = !git describe --tags $(git rev-list --tags --max-count=1)
+	dct = !git describe --tags $(git rev-list --tags --max-count=1)
 
 	d = diff
 	ds = diff --staged
@@ -84,7 +84,7 @@
 
 	pristine = !git reset --hard && git clean --force -dx
 
-  count = shortlog --numbered --summary
+	count = shortlog --numbered --summary
 [commit]
 	gpgsign = true
 [url "https://aur.archlinux.org/"]
