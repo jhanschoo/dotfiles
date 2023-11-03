@@ -3,5 +3,5 @@
 if [[ -f "${HOME}/.opam/opam-init/init.zsh" ]]
 then
   source "${HOME}/.opam/opam-init/init.zsh"
-  eval $(opam config env)
+  eval $(opam env)
 fi
