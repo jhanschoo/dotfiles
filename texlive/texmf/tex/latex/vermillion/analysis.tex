@@ -15,36 +15,36 @@
 \NewDocumentCommand{\liminfn}{O{n}}{\liminf_{#1\uparrow}}
 
 % functional limits
-\NewDocumentCommand{\limf}{m}{\lim_{\downarrow\abs{\Cx-#1}}}
-\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\downarrow\abs{#1-#2}}}
-\NewDocumentCommand{\limr}{m}{\lim_{\downarrow\abs{\Cx - #1},\downarrow}}
-\NewDocumentCommand{\liml}{m}{\lim_{\downarrow\abs{\Cx - #1},\uparrow}}
-\NewDocumentCommand{\limfr}{m m}{\lim_{#1\downarrow\abs{#1 - #2},\downarrow}}
-\NewDocumentCommand{\limfl}{m m}{\lim_{#1\downarrow\abs{#1 - #2},\uparrow}}
+\NewDocumentCommand{\limf}{m}{\lim_{\downarrow\Cd\p{\Cx , #1}}}
+\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\downarrow\Cd\p{#1 , #2}}}
+\NewDocumentCommand{\limr}{m}{\lim_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
+\NewDocumentCommand{\liml}{m}{\lim_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
+\NewDocumentCommand{\limfr}{m m}{\lim_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
+\NewDocumentCommand{\limfl}{m m}{\lim_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
 
-\NewDocumentCommand{\limsupf}{m}{\limsup_{\downarrow\abs{\Cx-#1}}}
-\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1\downarrow\abs{#1-#2}}}
-\NewDocumentCommand{\limsupr}{m}{\limsup_{\downarrow\abs{\Cx - #1},\downarrow}}
-\NewDocumentCommand{\limsupl}{m}{\limsup_{\downarrow\abs{\Cx - #1},\uparrow}}
-\NewDocumentCommand{\limsupfr}{m m}{\limsup_{#1\downarrow\abs{#1 - #2},\downarrow}}
-\NewDocumentCommand{\limsupfl}{m m}{\limsup_{#1\downarrow\abs{#1 - #2},\uparrow}}
+\NewDocumentCommand{\limsupf}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1}}}
+\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1\downarrow\Cd\p{#1 , #2}}}
+\NewDocumentCommand{\limsupr}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
+\NewDocumentCommand{\limsupl}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
+\NewDocumentCommand{\limsupfr}{m m}{\limsup_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
+\NewDocumentCommand{\limsupfl}{m m}{\limsup_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
 
-\NewDocumentCommand{\liminff}{m}{\liminf_{\downarrow\abs{\Cx-#1}}}
-\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1\downarrow\abs{#1-#2}}}
-\NewDocumentCommand{\liminfr}{m}{\liminf_{\downarrow\abs{\Cx - #1},\downarrow}}
-\NewDocumentCommand{\liminfl}{m}{\liminf_{\downarrow\abs{\Cx - #1},\uparrow}}
-\NewDocumentCommand{\liminffr}{m m}{\liminf_{#1\downarrow\abs{#1 - #2},\downarrow}}
-\NewDocumentCommand{\liminffl}{m m}{\liminf_{#1\downarrow\abs{#1 - #2},\uparrow}}
+\NewDocumentCommand{\liminff}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1}}}
+\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1\downarrow\Cd\p{#1 , #2}}}
+\NewDocumentCommand{\liminfr}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
+\NewDocumentCommand{\liminfl}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
+\NewDocumentCommand{\liminffr}{m m}{\liminf_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
+\NewDocumentCommand{\liminffl}{m m}{\liminf_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
 
 % series
 \NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
-\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{#3}^{#1} #2}
-\NewDocumentCommand{\sumtrig}{m O{n}}{\sum_{\leq0\leq}\seqn[\bbZ]{#1}[#2]}
+\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{#3\uparrow}^{#1} #2}
+\NewDocumentCommand{\sumtrig}{m O{n}}{\sum_{#2\uparrow\abs{\Cx}}^{\bbZ} #1}
 %\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
 
 % integrals
-\NewDocumentCommand{\intu}{m}{\int^{\searrow #1}}
-\NewDocumentCommand{\intl}{m}{\int^{\nearrow #1}}
+\NewDocumentCommand{\intu}{m}{\int^{#1}_{\sup}}
+\NewDocumentCommand{\intl}{m}{\int^{#1}_{\inf}}
 \NewDocumentCommand{\intd}{m}{\int^{#1}}
 
 % integrator
