@@ -1,40 +1,44 @@
 % sequential limits
-\NewDocumentCommand{\lims}{}{\lim_{<\infty}}
-\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
-\NewDocumentCommand{\uniflims}{}{\uniflim_{<\infty}}
-\NewDocumentCommand{\uniflimn}{O{n} O{}}{\uniflim_{#1\to{#2}\infty}}
+\NewDocumentCommand{\lims}{}{\lim_{\uparrow}}
+%\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
+\NewDocumentCommand{\limn}{O{n}}{\lim_{#1\uparrow}}
+\NewDocumentCommand{\uniflims}{}{\uniflim_{\uparrow}}
+%\NewDocumentCommand{\uniflimn}{O{n} O{}}{\uniflim_{#1\to{#2}\infty}}
+\NewDocumentCommand{\uniflimn}{O{n}}{\uniflim_{#1\uparrow}}
 
 % limits superior and inferior
-\NewDocumentCommand{\limsups}{}{\limsup_{<\infty}}
-\NewDocumentCommand{\liminfs}{}{\liminf_{<\infty}}
-\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
-\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
+\NewDocumentCommand{\limsups}{}{\limsup_{\uparrow}}
+\NewDocumentCommand{\liminfs}{}{\liminf_{\uparrow}}
+%\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
+\NewDocumentCommand{\limsupn}{O{n}}{\limsup_{#1\uparrow}}
+%\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
+\NewDocumentCommand{\liminfn}{O{n}}{\liminf_{#1\uparrow}}
 
 % functional limits
-\NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
-\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\to #2}}
-\NewDocumentCommand{\limr}{m}{\lim_{> #1}}
-\NewDocumentCommand{\liml}{m}{\lim_{< #1}}
-\NewDocumentCommand{\limfr}{m m}{\lim_{#1\searrow #2}}
-\NewDocumentCommand{\limfl}{m m}{\lim_{#1\nearrow #2}}
+\NewDocumentCommand{\limf}{m}{\lim_{\downarrow\abs{\Cx-#1}}}
+\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\downarrow\abs{#1-#2}}}
+\NewDocumentCommand{\limr}{m}{\lim_{\downarrow\abs{\Cx - #1},\downarrow}}
+\NewDocumentCommand{\liml}{m}{\lim_{\downarrow\abs{\Cx - #1},\uparrow}}
+\NewDocumentCommand{\limfr}{m m}{\lim_{#1\downarrow\abs{#1 - #2},\downarrow}}
+\NewDocumentCommand{\limfl}{m m}{\lim_{#1\downarrow\abs{#1 - #2},\uparrow}}
 
-\NewDocumentCommand{\limsupf}{m}{\limsup_{\neq #1}}
-\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1\to #2}}
-\NewDocumentCommand{\limsupr}{m}{\limsup_{> #1}}
-\NewDocumentCommand{\limsupl}{m}{\limsup_{< #1}}
-\NewDocumentCommand{\limsupfr}{m m}{\limsup_{#1\searrow #2}}
-\NewDocumentCommand{\limsupfl}{m m}{\limsup_{#1\nearrow #2}}
+\NewDocumentCommand{\limsupf}{m}{\limsup_{\downarrow\abs{\Cx-#1}}}
+\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1\downarrow\abs{#1-#2}}}
+\NewDocumentCommand{\limsupr}{m}{\limsup_{\downarrow\abs{\Cx - #1},\downarrow}}
+\NewDocumentCommand{\limsupl}{m}{\limsup_{\downarrow\abs{\Cx - #1},\uparrow}}
+\NewDocumentCommand{\limsupfr}{m m}{\limsup_{#1\downarrow\abs{#1 - #2},\downarrow}}
+\NewDocumentCommand{\limsupfl}{m m}{\limsup_{#1\downarrow\abs{#1 - #2},\uparrow}}
 
-\NewDocumentCommand{\liminff}{m}{\liminf_{\neq #1}}
-\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1\to #2}}
-\NewDocumentCommand{\liminfr}{m}{\liminf_{> #1}}
-\NewDocumentCommand{\liminfl}{m}{\liminf_{< #1}}
-\NewDocumentCommand{\liminffr}{m m}{\liminf_{#1\searrow #2}}
-\NewDocumentCommand{\liminffl}{m m}{\liminf_{#1\nearrow #2}}
+\NewDocumentCommand{\liminff}{m}{\liminf_{\downarrow\abs{\Cx-#1}}}
+\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1\downarrow\abs{#1-#2}}}
+\NewDocumentCommand{\liminfr}{m}{\liminf_{\downarrow\abs{\Cx - #1},\downarrow}}
+\NewDocumentCommand{\liminfl}{m}{\liminf_{\downarrow\abs{\Cx - #1},\uparrow}}
+\NewDocumentCommand{\liminffr}{m m}{\liminf_{#1\downarrow\abs{#1 - #2},\downarrow}}
+\NewDocumentCommand{\liminffl}{m m}{\liminf_{#1\downarrow\abs{#1 - #2},\uparrow}}
 
 % series
 \NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
-\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{<\infty}\seqn[#1]{#2}[#3]}
+\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{#3}^{#1} #2}
 \NewDocumentCommand{\sumtrig}{m O{n}}{\sum_{\leq0\leq}\seqn[\bbZ]{#1}[#2]}
 %\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
 
