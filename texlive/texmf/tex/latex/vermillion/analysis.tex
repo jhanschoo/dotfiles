@@ -1,45 +1,46 @@
 % sequential limits
-\NewDocumentCommand{\lims}{}{\lim_{\uparrow}}
+\NewDocumentCommand{\lims}{}{\lim}
 %\NewDocumentCommand{\limn}{O{n} O{}}{\lim_{#1\to{#2}\infty}}
-\NewDocumentCommand{\limn}{O{n}}{\lim_{#1\uparrow}}
-\NewDocumentCommand{\uniflims}{}{\uniflim_{\uparrow}}
-%\NewDocumentCommand{\uniflimn}{O{n} O{}}{\uniflim_{#1\to{#2}\infty}}
-\NewDocumentCommand{\uniflimn}{O{n}}{\uniflim_{#1\uparrow}}
+\NewDocumentCommand{\limn}{O{n}}{\lim_{#1}}
+\NewDocumentCommand{\uniflims}{}{\uniflim}
+\NewDocumentCommand{\uniflimn}{O{n}}{\uniflim_{#1}}
 
 % limits superior and inferior
-\NewDocumentCommand{\limsups}{}{\limsup_{\uparrow}}
-\NewDocumentCommand{\liminfs}{}{\liminf_{\uparrow}}
+\NewDocumentCommand{\limsups}{}{\limsup}
+\NewDocumentCommand{\liminfs}{}{\liminf}
 %\NewDocumentCommand{\limsupn}{O{n} O{}}{\limsup_{#1\to{#2}\infty}}
-\NewDocumentCommand{\limsupn}{O{n}}{\limsup_{#1\uparrow}}
+\NewDocumentCommand{\limsupn}{O{n}}{\limsup_{#1}}
 %\NewDocumentCommand{\liminfn}{O{n} O{}}{\liminf_{#1\to{#2}\infty}}
-\NewDocumentCommand{\liminfn}{O{n}}{\liminf_{#1\uparrow}}
+\NewDocumentCommand{\liminfn}{O{n}}{\liminf_{#1}}
 
 % functional limits
-\NewDocumentCommand{\limf}{m}{\lim_{\downarrow\Cd\p{\Cx , #1}}}
-\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1\downarrow\Cd\p{#1 , #2}}}
-\NewDocumentCommand{\limr}{m}{\lim_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
-\NewDocumentCommand{\liml}{m}{\lim_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
-\NewDocumentCommand{\limfr}{m m}{\lim_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
-\NewDocumentCommand{\limfl}{m m}{\lim_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
+%\NewDocumentCommand{\limf}{m}{\lim^{\downarrow\Cd\p{\Cx , #1}}_{\neq #1}}
+\NewDocumentCommand{\limf}{m}{\lim_{\neq #1}}
+\NewDocumentCommand{\limfx}{O{x} O{0}}{\lim_{#1:#1\neq#2}}
+\NewDocumentCommand{\limr}{m}{\lim^{\downarrow}_{>#1}}
+\NewDocumentCommand{\liml}{m}{\lim^{\uparrow}_{>#1}}
+\NewDocumentCommand{\limfr}{m m}{\lim^{\downarrow}_{#1:#1>#2}}
+\NewDocumentCommand{\limfl}{m m}{\lim^{\uparrow}_{#1:#1>#2}}
 
-\NewDocumentCommand{\limsupf}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1}}}
-\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1\downarrow\Cd\p{#1 , #2}}}
-\NewDocumentCommand{\limsupr}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
-\NewDocumentCommand{\limsupl}{m}{\limsup_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
-\NewDocumentCommand{\limsupfr}{m m}{\limsup_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
-\NewDocumentCommand{\limsupfl}{m m}{\limsup_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
+\NewDocumentCommand{\limsupf}{m}{\limsup_{\neq #1}}
+\NewDocumentCommand{\limsupfx}{O{x} O{0}}{\limsup_{#1:#1\neq#2}}
+\NewDocumentCommand{\limsupr}{m}{\limsup^{\downarrow}_{>#1}}
+\NewDocumentCommand{\limsupl}{m}{\limsup^{\uparrow}_{>#1}}
+\NewDocumentCommand{\limsupfr}{m m}{\limsup^{\downarrow}_{#1:#1>#2}}
+\NewDocumentCommand{\limsupfl}{m m}{\limsup^{\uparrow}_{#1:#1>#2}}
 
-\NewDocumentCommand{\liminff}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1}}}
-\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1\downarrow\Cd\p{#1 , #2}}}
-\NewDocumentCommand{\liminfr}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1},\downarrow}}
-\NewDocumentCommand{\liminfl}{m}{\liminf_{\downarrow\Cd\p{\Cx , #1},\uparrow}}
-\NewDocumentCommand{\liminffr}{m m}{\liminf_{#1\downarrow\Cd\p{#1 , #2},\downarrow}}
-\NewDocumentCommand{\liminffl}{m m}{\liminf_{#1\downarrow\Cd\p{#1 , #2},\uparrow}}
+\NewDocumentCommand{\liminff}{m}{\liminf_{\neq #1}}
+\NewDocumentCommand{\liminffx}{O{x} O{0}}{\liminf_{#1:#1\neq#2}}
+\NewDocumentCommand{\liminfr}{m}{\liminf^{\downarrow}_{>#1}}
+\NewDocumentCommand{\liminfl}{m}{\liminf^{\uparrow}_{>#1}}
+\NewDocumentCommand{\liminffr}{m m}{\liminf^{\downarrow}_{#1:#1>#2}}
+\NewDocumentCommand{\liminffl}{m m}{\liminf^{\uparrow}_{#1:#1>#2}}
 
 % series
 \NewDocumentCommand{\psum}{O{\n m} m O{n}}{\sum_{#3}^{#1} #2}
-\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum_{#3\uparrow}^{#1} #2}
-\NewDocumentCommand{\sumtrig}{m O{n}}{\sum_{#2\uparrow\abs{\Cx}}^{\bbZ} #1}
+%\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum^{\uparrow #1}_{#3} #2}
+\NewDocumentCommand{\sumn}{O{} m O{n}}{\sum^{#1}_{#3} #2}
+\NewDocumentCommand{\sumtrig}{m O{n}}{\sum^{\uparrow\abs{\bbZ}}_{#2} #1}
 %\NewDocumentCommand{\sumno}{O{\Zop} m O{n}}{\sum_{<\infty}\seqno[#1]{#2}[#3]}
 
 % integrals
