@@ -10,7 +10,10 @@
 \NewDocumentCommand{\iver}{m}{\sfupI\s{#1}}
 % as opposed to Knunth's Iversonian [phi], where phi is a logical statement, and defined as 1 if phi is well-defined and true, and 0 otherwise
 % our Iversonian I[phi] is defined wrt an Omega, and phi is a predicate on Omega, and is syntactic sugar for I({omega in Omega | phi(omega)}), the characteristic function of the set of elements of Omega that satisfy phi
-\NewDocumentCommand{\ind}{m}{\sfupI\p{#1}}
+\NewDocumentCommand{\ind}{m o}{\IfNoValueTF{#2}%
+  {\sfupI\p{#1}}%
+  {\sfupI\p{#1; #2}}%
+}
 
 % cartesian product
 \NewDocumentCommand{\cp}{}{\times}
