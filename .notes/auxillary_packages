@@ -19,4 +19,6 @@ lm-sensors
 # reason: guild wars 2 on wine
 libncurses5
 # reason: productivity
-fasd
+fasd fzf
+# git
+git-lfs
