@@ -74,6 +74,7 @@ plugins=(
   docker-compose
   extract
   fasd
+  fzf
   gem
   git
   gitignore
@@ -90,6 +91,7 @@ plugins=(
   sdk
   # stack plugin not robust enough (does not check for presence/absence of stack), using .zshenv.d for now
   svn
+  # fzf-zsh-plugin should be last, by plugin author's instructions
   zsh-syntax-highlighting
 )
 
