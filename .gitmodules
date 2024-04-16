@@ -29,3 +29,6 @@
 [submodule "zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm"]
 	path = zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "fzf-zsh-plugin/.oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
+	path = fzf-zsh-plugin/.oh-my-zsh/custom/plugins/fzf-zsh-plugin
+	url = https://github.com/unixorn/fzf-zsh-plugin.git
