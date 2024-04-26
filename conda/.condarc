@@ -1,5 +1,2 @@
-auto_activate_base: false
-channels:
-  - defaults
-ssl_verify: true
-solver: libmamba
+auto_activate_base: False
+add_pip_as_python_dependency: True
