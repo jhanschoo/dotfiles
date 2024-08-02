@@ -26,7 +26,7 @@
 \NewDocumentCommand{\conj}{s m}{\IfBooleanTF{#1}{\overline{#2}}{\bar{#2}}}
 
 % finite set of integers
-\NewDocumentCommand{\n}{O{1} m}{\B{{#1} .. {#2}}}
+\NewDocumentCommand{\n}{O{} m}{{#1} \mathrel{:} {#2}}
 
 % operators of functions
 \NewDocumentCommand{\cps}{}{\circ}
