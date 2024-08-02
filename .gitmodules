@@ -6,22 +6,6 @@
 	branch = master
 	path = zsh-syntax-highlighting/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "asdf/.asdf"]
-	branch = master
-	path = asdf/.asdf
-	url = https://github.com/asdf-vm/asdf.git
-[submodule "asdf-plugins/.asdf/repository"]
-	branch = master
-	path = asdf-plugins/.asdf/repository
-	url = https://github.com/asdf-vm/asdf-plugins.git
-[submodule "asdf-nodejs/.asdf/plugins/nodejs"]
-	branch = master
-	path = asdf-nodejs/.asdf/plugins/nodejs
-	url = https://github.com/asdf-vm/asdf-nodejs.git
-[submodule "asdf-ruby/.asdf/plugins/ruby"]
-	branch = master
-	path = asdf-ruby/.asdf/plugins/ruby
-	url = https://github.com/asdf-vm/asdf-ruby.git
 [submodule "spacemacs/.emacs.d"]
 	branch = develop
 	path = spacemacs/.emacs.d
@@ -29,7 +13,6 @@
 [submodule "zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm"]
 	path = zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
-
 [submodule "fzf/.fzf"]
 	path = fzf/.fzf
 	url = https://github.com/junegunn/fzf.git

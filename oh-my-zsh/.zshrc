@@ -66,7 +66,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  asdf
   bgnotify
   bundler
   cp
@@ -87,6 +86,7 @@ plugins=(
   zsh-nvm # loaded first for later plugin
   nvm
   pip
+  rvm
   screen
   sdk
   # stack plugin not robust enough (does not check for presence/absence of stack), using .zshenv.d for now
