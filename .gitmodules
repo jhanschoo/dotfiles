@@ -10,9 +10,6 @@
 	branch = develop
 	path = spacemacs/.emacs.d
 	url = https://github.com/syl20bnr/spacemacs.git
-[submodule "zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm"]
-	path = zsh-nvm/.oh-my-zsh/custom/plugins/zsh-nvm
-	url = https://github.com/lukechilds/zsh-nvm.git
 [submodule "fzf/.fzf"]
 	path = fzf/.fzf
 	url = https://github.com/junegunn/fzf.git

@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-if [[ -f "${HOME}/.phpbrew/bashrc" ]]
-then
-  export PATH="${HOME}/.phpbrew/bin:${PATH}"
-  source "${HOME}/.phpbrew/bashrc"
-fi

@@ -1,1 +1,0 @@
-export PGDATA="/var/lib/postgres/data"
