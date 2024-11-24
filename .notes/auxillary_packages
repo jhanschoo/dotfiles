@@ -2,8 +2,6 @@
 libzmq3-dev
 # reason: ocaml-top
 libgtksourceview2.0-dev
-# reason: build openvpn
-liblz4-dev liblzo2-dev libpam0g-dev libpkcs11-helper1-dev libsystemd-dev
 # reason: entertainment
 cowsay
 calibre
@@ -14,11 +12,11 @@ lldb clang-tidy clang-tools clang-format clangd
 g++-10
 # reason: PPP
 libfltk1.3-dev
-# reason: temperature
-lm-sensors
-# reason: guild wars 2 on wine
-libncurses5
 # reason: productivity
 fasd fzf
 # git
 git-lfs
+# reason: leanblueprint
+graphviz graphviz-dev python3-dev
+# reason: AppImage
+libfuse2 libxi6 libxrender1 libxtst6 mesa-utils libfontconfig libgtk-3-bin tar dbus-user-session
