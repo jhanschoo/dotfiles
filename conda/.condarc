@@ -1,4 +1,4 @@
 channels:
-  - defaults=
+  - defaults
 auto_activate_base: False
 add_pip_as_python_dependency: True
