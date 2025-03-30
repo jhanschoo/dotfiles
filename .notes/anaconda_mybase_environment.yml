@@ -1,4 +1,0 @@
-name: mybase
-dependencies:
-  - anaconda==2024.02
-  - anaconda-navigator
