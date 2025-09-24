@@ -1,0 +1,9 @@
+# these should ideally be located in /etc/environment but
+# https://github.com/microsoft/WSL/issues/1405
+if grep -qEi "(Microsoft|WSL)" /proc/version &>/dev/null; then
+  # https://devblogs.microsoft.com/commandline/d3d12-gpu-video-acceleration-in-the-windows-subsystem-for-linux-now-available/
+  export LIBVA_DRIVER_NAME=d3d12
+  # https://github.com/microsoft/wslg/issues/1332
+  export GALLIUM_DRIVER=d3d12
+fi
+
