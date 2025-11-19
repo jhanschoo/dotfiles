@@ -20,3 +20,5 @@ git-lfs
 graphviz graphviz-dev python3-dev
 # reason: AppImage
 libfuse2 libxi6 libxrender1 libxtst6 mesa-utils libfontconfig libgtk-3-bin tar dbus-user-session
+# reason: qmk_firmware with liatris target
+binutils-arm-none-eabi gcc-arm-none-eabi libnewlib-arm-none-eabi
