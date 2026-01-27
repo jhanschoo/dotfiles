@@ -1,4 +1,0 @@
-#!/usr/bin/env zsh
-
-export NVM_AUTOLOAD=1
-export NVM_AUTO_USE=true
