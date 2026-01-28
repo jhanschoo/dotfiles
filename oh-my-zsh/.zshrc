@@ -76,30 +76,32 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   bgnotify
-  bundler
   cp
   docker
   docker-compose
   extract
   fasd
   fzf
-  gem
   git
-  gitignore
-  github
+  git-lfs
+  gpg-agent
+  helm
+  jj
   kubectl
-  laravel
   minikube
   node
   npm
-  nvm
   pip
-  rvm
   screen
   sdk
+  snap
+  ssh
+  ssh-agent
   # stack plugin not robust enough (does not check for presence/absence of stack), using .zshenv.d for now
   svn
+  uv
   # fzf-zsh-plugin should be last, by plugin author's instructions
+  volta
   zsh-syntax-highlighting
 )
 
