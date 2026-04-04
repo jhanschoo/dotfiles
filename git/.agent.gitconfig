@@ -1,23 +1,13 @@
 [user]
-	name = Johannes Choo
+	name = AI Agent of Johannes Choo
 	email = jhanschoo@gmail.com
-	signingkey = 0x39043A8743938F1F
 [color]
 	ui = true
 [core]
-	editor = vim
 	excludesfile = ~/.gitignore
 	autocrlf = input
-[difftool "code"]
-	cmd = code --wait --diff $LOCAL $REMOTE
 [push]
 	default = simple
-[commit]
-	gpgsign = true
-[url "https://aur.archlinux.org/"]
-  insteadOf = "aur:"
-[url "https://aur4.archlinux.org/"]
-  pushInsteadOf = "aur:"
 [pull]
 	ff = only
 [credential]
