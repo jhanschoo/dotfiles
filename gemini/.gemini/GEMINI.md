@@ -4,7 +4,7 @@
 
 When performing automated Git commits, ensure they are signed using the user's dedicated GPG signing subkey by explicitly including the signing flag in the `git commit` command.
 
--   **GPG Signing Key ID:** `0x4D5966973637A05D` (Gemini Agent of Johannes Choo)
+-   **GPG Signing Key ID:** `0x4D5966973637A05D` (AI Agent of Johannes Choo)
 
 To sign commits, use the `-S` or `--gpg-sign` flag followed by the Key ID:
 
