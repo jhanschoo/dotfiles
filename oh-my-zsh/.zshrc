@@ -102,6 +102,7 @@ plugins=(
   svn
   uv
   # fzf-zsh-plugin should be last, by plugin author's instructions
+  zoxide
   zsh-syntax-highlighting
 )
 
