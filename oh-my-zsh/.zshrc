@@ -81,6 +81,7 @@ plugins=(
   docker-compose
   extract
   fasd
+  fnm
   fzf
   git
   git-lfs
@@ -101,7 +102,6 @@ plugins=(
   svn
   uv
   # fzf-zsh-plugin should be last, by plugin author's instructions
-  volta
   zsh-syntax-highlighting
 )
 
