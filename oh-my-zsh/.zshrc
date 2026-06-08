@@ -106,6 +106,9 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+# Setup fnm plugin to automatically start and use-on-cd
+zstyle ':omz:plugins:fnm' autostart yes
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -139,6 +142,3 @@ then
   echo "[launching screen -xRR]"
   screen -xRR
 fi
-
-# Setup fnm plugin to automatically start and use-on-cd
-zstyle ':omz:plugins:fnm' autostart yes
