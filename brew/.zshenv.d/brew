@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-if type brew > /dev/null && [[ -d "$(brew --prefix)/share/zsh/site-functions" ]]; then
-  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
-fi
-
-
