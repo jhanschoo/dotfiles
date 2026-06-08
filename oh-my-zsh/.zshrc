@@ -140,3 +140,5 @@ then
   screen -xRR
 fi
 
+# Setup fnm plugin to automatically start and use-on-cd
+zstyle ':omz:plugins:fnm' autostart yes
